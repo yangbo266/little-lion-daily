@@ -7,3 +7,4 @@
 /editions/*
 !/editions/*.html
 !/img/
+!/manifest.webmanifest
