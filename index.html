@@ -189,6 +189,25 @@ p{margin:0 0 .8em;hyphens:auto}
   .week div:first-child{border-left:0}
   .ear{max-width:150px}
 }
+/* Highlights-style boxes */
+.timeline{font-size:16px;line-height:1.7;border-left:3px solid var(--spot);padding-left:12px}
+.timeline b{font-family:var(--f-mono);font-size:13px;letter-spacing:.04em;display:inline-block;min-width:68px}
+.sfx{font-family:var(--f-head);font-size:22px;color:var(--spot);letter-spacing:.04em}
+.weird,.tryit{break-inside:avoid;margin:8px 0 16px;padding:12px 14px;font-size:15.5px}
+.weird{background:var(--found)}
+.weird ul{margin:0;padding-left:1.1em;display:flex;flex-direction:column;gap:8px}
+.weird .box-label,.tryit .box-label{margin-bottom:8px}
+.tryit{border:2px dashed var(--rule)}
+.tryit p{margin-bottom:.5em}
+.small{font-size:14px;color:var(--ink-soft)}
+/* Future You */
+.future-head h2{font-size:clamp(28px,3.6vw,40px);line-height:1.05}
+.future-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:14px}
+.future-grid>div{padding:0 18px;border-left:1px solid var(--hair);font-size:15.5px}
+.future-grid>div:first-child{padding-left:0;border-left:0}
+.future-grid>div:last-child{padding-right:0}
+@media (max-width:860px){.future-grid{grid-template-columns:1fr;gap:16px}.future-grid>div{padding:0;border-left:0}}
+@media print{.future-grid{grid-template-columns:repeat(3,1fr)}.future-grid>div{padding:0 12px;border-left:1px solid var(--hair)}.future-grid>div:first-child{padding-left:0;border-left:0}}
 </style>
 
 <!-- ==================== PAGE A1 ==================== -->
@@ -273,7 +292,8 @@ p{margin:0 0 .8em;hyphens:auto}
         <ol>
           <li><span>Today's news (2 links)</span><span>A1</span></li>
           <li><span>Prime-number cicadas</span><span>A1</span></li>
-          <li><span>Why it pours at 3pm</span><span>A2</span></li>
+          <li><span>Is the sky timing your bell?</span><span>A2</span></li>
+          <li><span>Future You: think like a lawyer</span><span>A2</span></li>
           <li><span>成语角 · 未雨绸缪</span><span>A2</span></li>
           <li><span>Recipe: kaya toast set</span><span>A2</span></li>
           <li><span>Word search</span><span>A3</span></li>
@@ -290,18 +310,36 @@ p{margin:0 0 .8em;hyphens:auto}
 
   <div class="with-side" style="margin-top:0">
     <section class="feature">
-      <div class="kicker">Explainer · about 3 minutes</div>
-      <h2>Why does it always pour just as school ends?</h2>
-      <p class="deck">Heavy rain hit many parts of Singapore this week. There is a simple reason the storms love the afternoon.</p>
+      <div class="kicker">Weather mystery · 4 min read + 2 experiments</div>
+      <h2>Is the sky timing your dismissal bell?</h2>
+      <p class="deck">It isn't personal. But this afternoon's storm really was planned hours in advance, by the sun.</p>
       <div class="byline">By the Little Lion weather desk</div>
       <div class="cols">
-        <p class="dropcap">You leave home under a blue sky. By dismissal time, the sky has turned the colour of a bruise and the rain is coming down so hard you can't see the bus stop across the road. If this feels like it happens a lot in November, you are right.</p>
-        <p>Singapore sits just north of the equator, so the sun is strong all year round. Every morning, it heats the ground, the roads and the roofs. The ground warms the air just above it. Warm air is lighter than cool air, so it rises, carrying lots of moisture from the sea that surrounds us.</p>
-        <p>As that air climbs, it cools. Cool air can't hold as much water vapour, so the vapour condenses into tiny droplets, and clouds form. On a calm, humid day, this keeps going for hours. The clouds grow taller and taller until they become <b>cumulonimbus</b> clouds, the giant anvil-shaped towers that can reach more than ten kilometres high. By mid-afternoon, they are heavy enough to dump their water all at once.</p>
-        <div class="fact">Oct to Nov<small>The inter-monsoon months, when winds are light and afternoon storms are common</small></div>
-        <p>So why November in particular? Singapore's year has two monsoon seasons: the Northeast Monsoon from about December to March, and the Southwest Monsoon from about June to September. In between come the <b>inter-monsoon periods</b>, when the winds are weak and change direction. Without strong winds to spread out the heat and moisture, the "heat, rise, cloud, storm" cycle happens almost every afternoon. November and December are usually among the wettest months of the year.</p>
-        <p>The tall storm clouds also explain the lightning. Inside a cumulonimbus, ice crystals and hailstones crash into each other as air rushes up and down, building up electric charge. Singapore has some of the highest lightning activity in the world. That is why schools stop outdoor activities when the lightning alert goes up.</p>
-        <p>The good news is that afternoon storms are usually short. They often clear up within an hour or two. Wait it out under shelter, or take the advice in the idiom corner next to this article: bring an umbrella before you need it.</p>
+        <p class="timeline"><b>1.55 pm</b> Blue sky. Fluffy clouds. Your umbrella is drying at home on the balcony.<br><b>2.40 pm</b> The sky turns the colour of a wet whiteboard.<br><b>2.45 pm</b> The bell rings.<br><b>2.46 pm</b> <span class="sfx">KRA-KOOOM.</span></p>
+        <p>Coincidence? Not really. Singapore runs an <b>afternoon storm factory</b>, and it follows the same recipe almost every day.</p>
+        <p><b>Ingredient 1: a ridiculous amount of sun.</b> Singapore sits only about 140 km north of the equator. From the moment the sun comes up, it cooks the roads, the HDB roofs and the school field. By lunchtime, the air just above the ground is warm and lighter than the air around it, so it starts to rise, like a hot-air balloon with no balloon.</p>
+        <p><b>Ingredient 2: sea air you could almost drink.</b> We're surrounded by warm sea, so that rising air is packed with invisible water vapour.</p>
+        <p><b>Ingredient 3: a few hours of patience.</b> As the warm, wet air climbs, it cools. Cool air can't hold as much water, so the vapour squeezes out into tiny droplets, and you get a cloud. Keep feeding it warm air all day and the cloud keeps growing upward. By mid-afternoon it can become a <b>cumulonimbus</b>, a storm tower that can grow taller than Mount Everest. Then it lets everything go at once.</p>
+        <p>So why does November feel extra bad? Most of the year, steady monsoon winds push the storm ingredients around. In the <b>inter-monsoon</b> months, roughly October to November and April to May, the winds go lazy. The heat and moisture just hang around over the island, and the factory goes into overtime.</p>
+        <div class="weird">
+          <div class="box-label">Weird but true</div>
+          <ul>
+            <li>A lightning bolt can heat the air around it to about <b>30,000°C</b>. That's roughly five times hotter than the surface of the sun.</li>
+            <li>Raindrops aren't tear-shaped. Small ones are round. Big ones get squashed flat on the bottom as they fall, like a burger bun.</li>
+            <li>That "rain smell" has a name: <b>petrichor</b>. Much of it comes from a chemical called geosmin, made by bacteria in the soil. Your nose can pick up a tiny trace of it.</li>
+            <li>Singapore has one of the highest rates of lightning activity in the world. The lightning alert at school isn't your teacher being dramatic.</li>
+          </ul>
+        </div>
+        <div class="tryit">
+          <div class="box-label">Try this 1 · The thunder counter</div>
+          <p>Next storm, watch for a flash and start counting seconds until you hear the thunder. <b>Divide by 3</b> to get the distance in kilometres, because sound travels about 1 km every 3 seconds. Count 6 and the storm is about 2 km away.</p>
+          <p class="small">Safety: if you can hear thunder at all, you are close enough to be struck. Go indoors and stay there until about 30 minutes after the last rumble.</p>
+        </div>
+        <div class="tryit">
+          <div class="box-label">Try this 2 · Make a cloud in a jar</div>
+          <p>Pour about 3 cm of hot (not boiling) water into a glass jar. With an adult's help, light a match, blow it out, and drop it in so a little smoke goes in. Put a small plate of ice cubes on top. Watch a mini cloud swirl inside. Lift the plate and the cloud escapes.</p>
+          <p class="small">Why it works: the warm, wet air rises, the ice cools it, and the water vapour condenses onto the smoke particles. Real clouds need specks of dust or sea salt in exactly the same way.</p>
+        </div>
       </div>
     </section>
 
@@ -317,6 +355,32 @@ p{margin:0 0 .8em;hyphens:auto}
       </section>
     </aside>
   </div>
+
+  <hr class="rule-sec">
+
+  <section class="future" aria-label="Future You">
+    <div class="future-head">
+      <div class="kicker">Future You · Law</div>
+      <h2>Think like a lawyer in four letters</h2>
+    </div>
+    <div class="future-grid">
+      <div>
+        <div class="box-label">Know this</div>
+        <p>Law students around the world answer problem questions with a method called <b>IRAC</b>: <b>I</b>ssue (what's the question?), <b>R</b>ule (what law or principle applies?), <b>A</b>pplication (how does the rule fit these facts?), <b>C</b>onclusion (so what's the answer?).</p>
+        <p>Most weak arguments skip the A. They state a rule and jump straight to the answer without showing why.</p>
+      </div>
+      <div>
+        <div class="box-label">Try this</div>
+        <p>Pick a school rule, such as "no phones during recess". Run it through IRAC. What's the issue? What is the rule trying to protect? Does it fit a student texting a parent about a late pickup? What would a fair conclusion be?</p>
+        <p>You just did what a judge does. The same structure works for Social Studies source questions and argumentative essays.</p>
+      </div>
+      <div>
+        <div class="box-label">For your application</div>
+        <p>Singapore has three law schools: the <b>NUS Faculty of Law</b>, <b>SMU Yong Pung How School of Law</b>, and the <b>SUSS School of Law</b>, which focuses on criminal and family law.</p>
+        <p>Shortlisted applicants usually go through a written test, an interview, or both, and interviewers often ask about current affairs. The news links on page A1 are good practice. Try forming an opinion on one of them every day.</p>
+      </div>
+    </div>
+  </section>
 
   <hr class="rule-sec">
 
