@@ -1,0 +1,9 @@
+# Publish only the website; scripts, logs and PDFs stay on this Mac
+/*
+!/index.html
+!/.nojekyll
+!/.gitignore
+!/editions/
+/editions/*
+!/editions/*.html
+!/img/
