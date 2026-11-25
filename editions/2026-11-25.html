@@ -1,0 +1,544 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#a8262e">
+<meta name="apple-mobile-web-app-title" content="小狮日报">
+<link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32.png?v=2">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png?v=2">
+<link rel="manifest" href="../manifest.webmanifest">
+<script>(function(){var t=Date.now();function c(){if(document.visibilityState==="visible"&&Date.now()-t>18e5)location.reload();}document.addEventListener("visibilitychange",c);addEventListener("pageshow",function(e){if(e.persisted)c();});})();</script>
+<style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body>
+<title>The Little Lion Daily</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Libre+Caslon+Display&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Noto+Serif+SC:wght@400;700&family=IBM+Plex+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: printed sheets (A1, A2, A3…) stacked; multi-column newsprint inside, one column on phones */
+:root{
+  --paper:#eeebe3;
+  --sheet:#f7f5ef;
+  --ink:#1c1b18;
+  --ink-soft:#4d4a42;
+  --rule:#1c1b18;
+  --hair:#c9c4b6;
+  --spot:#a8262e;
+  --found:#e9d98c;
+  --f-mast:"UnifrakturMaguntia","Old English Text MT",serif;
+  --f-head:"Libre Caslon Display","Didot","Bodoni 72",Georgia,serif;
+  --f-body:"Source Serif 4","Iowan Old Style",Georgia,serif;
+  --f-zh:"Noto Serif SC","Songti SC","STSong",serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --paper:#111214; --sheet:#1b1c1f; --ink:#e7e3d8; --ink-soft:#b2ad9f;
+    --rule:#e7e3d8; --hair:#3d3d40; --spot:#e4706f; --found:#5c5222;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --paper:#111214; --sheet:#1b1c1f; --ink:#e7e3d8; --ink-soft:#b2ad9f;
+  --rule:#e7e3d8; --hair:#3d3d40; --spot:#e4706f; --found:#5c5222;
+}
+
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--f-body);font-size:17px;line-height:1.55;padding-inline:16px;padding-block:28px 60px}
+.sheet{max-width:1120px;margin:0 auto 36px;background:var(--sheet);padding:28px clamp(16px,4vw,44px) 36px;box-shadow:0 1px 0 var(--hair),0 10px 30px -18px rgba(0,0,0,.35);position:relative}
+.folio{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-family:var(--f-mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft);border-bottom:1px solid var(--rule);padding-bottom:6px;margin-bottom:18px}
+
+/* Masthead */
+.mast{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:16px}
+.ear{border:1px solid var(--rule);padding:8px 10px;font-family:var(--f-mono);font-size:11.5px;line-height:1.45;text-transform:uppercase;letter-spacing:.05em;max-width:200px}
+.ear.r{justify-self:end;text-align:right}
+.ear b{display:block;font-size:13px;color:var(--spot)}
+.title{text-align:center}
+.title h1{font-family:var(--f-mast);font-weight:400;font-size:clamp(44px,8vw,92px);line-height:.95;margin:0;letter-spacing:.01em}
+.title .zh{font-family:var(--f-zh);font-size:15px;letter-spacing:.5em;margin-top:6px;color:var(--ink-soft)}
+.dateline{display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px 18px;border-top:3px double var(--rule);border-bottom:1px solid var(--rule);margin-top:14px;padding:6px 0;font-family:var(--f-mono);font-size:12.5px;text-transform:uppercase;letter-spacing:.06em}
+
+h2,h3{font-family:var(--f-head);font-weight:400;text-wrap:balance;margin:0}
+.kicker{font-family:var(--f-mono);font-size:11.5px;text-transform:uppercase;letter-spacing:.12em;color:var(--spot);margin-bottom:6px}
+.byline{font-family:var(--f-mono);font-size:12px;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.05em;margin:8px 0 12px}
+p{margin:0 0 .8em;hyphens:auto}
+.dropcap::first-letter{font-family:var(--f-head);float:left;font-size:4.1em;line-height:.8;padding:6px 8px 0 0;color:var(--spot)}
+.rule-sec{border:0;border-top:1px solid var(--rule);margin:26px 0 18px}
+
+/* Pictures */
+.fig{margin:14px 0 16px;break-inside:avoid}
+.fig img{display:block;width:100%;max-width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;filter:grayscale(.2) contrast(1.04) sepia(.08);border:1px solid var(--hair)}
+.fig figcaption{font-size:14px;line-height:1.4;color:var(--ink-soft);margin-top:6px;font-style:italic}
+.fig .credit{display:block;font-style:normal;font-family:var(--f-mono);font-size:10.5px;letter-spacing:.04em;text-transform:uppercase;margin-top:3px}
+
+/* Front page: briefing */
+.brief{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:22px;border-bottom:1px solid var(--rule)}
+.story{padding:4px 22px 20px 0}
+.story + .story{padding:4px 0 20px 22px;border-left:1px solid var(--hair)}
+.story h2{font-size:clamp(26px,3vw,34px);line-height:1.08;margin-bottom:10px}
+.story h2.zh{font-family:var(--f-zh);font-weight:700;font-size:clamp(23px,2.6vw,29px);line-height:1.3}
+.story .src{font-family:var(--f-mono);font-size:12px;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.05em}
+.story p.why{font-size:16px;color:var(--ink-soft);margin-top:10px}
+.story .zh-body{font-family:var(--f-zh);font-size:16px;line-height:1.8}
+.readlink{display:inline-block;margin-top:6px;font-family:var(--f-mono);font-size:13px;font-weight:600;color:var(--ink);text-decoration:none;border:1px solid var(--rule);padding:7px 12px;letter-spacing:.04em}
+.readlink:hover{background:var(--ink);color:var(--sheet)}
+.readlink:focus-visible,button:focus-visible,.ws td:focus-visible,summary:focus-visible,.archive a:focus-visible{outline:2px solid var(--spot);outline-offset:2px}
+
+/* Feature with sidebar */
+.with-side{display:grid;grid-template-columns:2.2fr 1fr;gap:28px;margin-top:22px}
+.feature h2{font-size:clamp(32px,4.4vw,50px);line-height:1.02}
+.deck{font-family:var(--f-body);font-style:italic;font-size:19px;color:var(--ink-soft);margin:10px 0 6px;max-width:60ch}
+.cols{column-count:2;column-gap:26px;column-rule:1px solid var(--hair)}
+.fact{break-inside:avoid;border-top:2px solid var(--rule);border-bottom:1px solid var(--rule);padding:10px 0;margin:6px 0 14px;font-family:var(--f-head);font-size:22px;line-height:1.2;text-align:center}
+.fact small{display:block;font-family:var(--f-mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft);margin-top:4px}
+.side{border-left:1px solid var(--hair);padding-left:24px;display:flex;flex-direction:column;gap:24px}
+.box-label{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;border-bottom:1px solid var(--rule);padding-bottom:4px;margin-bottom:10px}
+.quote blockquote{margin:0;font-family:var(--f-head);font-size:27px;line-height:1.18}
+.quote cite{display:block;margin-top:10px;font-style:normal;font-family:var(--f-mono);font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-soft)}
+.quote p{font-size:15px;color:var(--ink-soft);margin-top:10px}
+.joke p{font-size:16px}
+.joke .punch{font-style:italic}
+.index ol{list-style:none;margin:0;padding:0;font-size:15px}
+.index li{display:flex;justify-content:space-between;gap:10px;border-bottom:1px dotted var(--hair);padding:5px 0}
+.index li span:last-child{font-family:var(--f-mono);font-variant-numeric:tabular-nums;color:var(--ink-soft)}
+
+/* Chinese corner */
+.zhbox{font-family:var(--f-zh)}
+.zhbox .idiom{font-size:38px;font-weight:700;letter-spacing:.2em;line-height:1.2}
+.zhbox .py{font-family:var(--f-mono);font-size:13px;color:var(--ink-soft);margin-bottom:8px}
+.zhbox p{font-size:16px;line-height:1.85}
+
+/* Recipe */
+.recipe{display:grid;grid-template-columns:1fr 1.4fr;gap:28px;align-items:start}
+.recipe h2{font-size:clamp(30px,4vw,44px);line-height:1.04}
+.recipe .meta{display:flex;flex-wrap:wrap;gap:6px 16px;font-family:var(--f-mono);font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-soft);margin:8px 0 14px}
+.recipe h3{font-family:var(--f-mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;border-bottom:1px solid var(--rule);padding-bottom:4px;margin:4px 0 10px}
+.recipe ul,.recipe ol{margin:0 0 14px;padding-left:1.2em;font-size:16px}
+.recipe li{margin-bottom:6px}
+.tip{border:1px solid var(--rule);padding:10px 14px;font-size:15px}
+.tip b{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--spot)}
+
+/* Fun page */
+.puzzles{display:grid;grid-template-columns:auto 1fr;gap:30px;align-items:start}
+.puzzles h2,.riddles h2{font-size:32px;line-height:1.05;margin-bottom:6px}
+.instr{font-size:15px;color:var(--ink-soft);max-width:46ch}
+.ws-wrap{overflow-x:auto}
+.ws{border-collapse:collapse;font-family:var(--f-mono);font-weight:600;user-select:none;margin-top:8px}
+.ws td{width:32px;height:32px;text-align:center;border:1px solid var(--hair);font-size:16px;cursor:pointer;padding:0}
+.ws td.sel{background:var(--ink);color:var(--sheet)}
+.ws td.hit{background:var(--found)}
+.wordlist{display:flex;flex-wrap:wrap;gap:6px 14px;list-style:none;padding:0;margin:12px 0 0;font-family:var(--f-mono);font-size:13.5px;max-width:420px}
+.wordlist li.done{text-decoration:line-through;color:var(--ink-soft)}
+.ws-status{font-family:var(--f-mono);font-size:13px;margin-top:8px;color:var(--spot);min-height:1.4em}
+.riddles ol{margin:0;padding-left:1.4em;display:flex;flex-direction:column;gap:12px}
+.riddles li{font-size:16.5px}
+.riddles details summary{cursor:pointer;font-family:var(--f-mono);font-size:12.5px;color:var(--spot);letter-spacing:.04em;margin-top:2px}
+.riddles details[open] summary{margin-bottom:2px}
+.week{margin-top:26px;border-top:3px double var(--rule);padding-top:12px;display:grid;grid-template-columns:repeat(7,1fr);gap:0}
+.week div{padding:4px 10px;border-left:1px solid var(--hair);font-size:14px}
+.week div:first-child{border-left:0}
+.week b{display:block;font-family:var(--f-mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase}
+.week .today{background:var(--ink);color:var(--sheet)}
+.archive{margin-top:22px}
+.archive ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.archive a{display:inline-block;font-family:var(--f-mono);font-size:13px;color:var(--ink);text-decoration:none;border:1px solid var(--hair);padding:6px 10px}
+.archive a:hover{border-color:var(--rule)}
+.archive a[aria-current]{background:var(--ink);color:var(--sheet);border-color:var(--ink)}
+.colophon{text-align:center;font-family:var(--f-mono);font-size:11.5px;color:var(--ink-soft);margin-top:18px;letter-spacing:.05em}
+
+@page{size:A4;margin:12mm}
+@media print{
+  :root,:root[data-theme="dark"]{color-scheme:light;--paper:#fff;--sheet:#fff;--ink:#111;--ink-soft:#444;--rule:#111;--hair:#bbb;--spot:#a8262e;--found:#e9d98c}
+  body{padding:0;font-size:11pt;background:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .sheet{max-width:none;margin:0;padding:0;box-shadow:none;break-after:page}
+  .sheet:last-of-type{break-after:auto}
+  .fig,.fact,.book,.tip,.zhbox,.recipe>div,.riddles li,.ws-wrap{break-inside:avoid}
+  .readlink{border:0;padding:0;text-decoration:underline}
+  .readlink::after{content:" " attr(href);font-weight:400;font-size:9pt;word-break:break-all}
+  .ws-status,.archive{display:none}
+  .riddles details>*:not(summary){display:none}
+}
+@media (max-width:860px){
+  .with-side,.puzzles,.recipe{grid-template-columns:1fr}
+  .side{border-left:0;padding-left:0;border-top:1px solid var(--rule);padding-top:18px}
+  .week{grid-template-columns:repeat(4,1fr);row-gap:10px}
+  .week div:nth-child(5){border-left:0}
+}
+@media (max-width:640px){
+  body{font-size:16.5px}
+  .mast{grid-template-columns:1fr}
+  .ear{display:none}
+  .brief{grid-template-columns:1fr}
+  .story{padding-right:0}
+  .story + .story{padding-left:0;border-left:0;border-top:1px solid var(--hair);padding-top:16px}
+  .cols{column-count:1}
+  .ws td{width:26px;height:26px;font-size:14px}
+  .week{grid-template-columns:repeat(2,1fr)}
+  .week div:nth-child(odd){border-left:0}
+}
+/* Print keeps the desktop column layout on A4 */
+@media print{
+  .with-side{grid-template-columns:2.2fr 1fr;gap:20px}
+  .side{border-left:1px solid var(--hair);padding-left:16px;border-top:0;padding-top:0}
+  .recipe{grid-template-columns:1fr 1.4fr}
+  .puzzles{grid-template-columns:auto 1fr}
+  .week{grid-template-columns:repeat(7,1fr)}
+  .week div{border-left:1px solid var(--hair)}
+  .week div:first-child{border-left:0}
+  .ear{max-width:150px}
+}
+/* Highlights-style boxes */
+.timeline{font-size:16px;line-height:1.7;border-left:3px solid var(--spot);padding-left:12px}
+.timeline b{font-family:var(--f-mono);font-size:13px;letter-spacing:.04em;display:inline-block;min-width:68px}
+.sfx{font-family:var(--f-head);font-size:22px;color:var(--spot);letter-spacing:.04em}
+.weird,.tryit{break-inside:avoid;margin:8px 0 16px;padding:12px 14px;font-size:15.5px}
+.weird{background:var(--found)}
+.weird ul{margin:0;padding-left:1.1em;display:flex;flex-direction:column;gap:8px}
+.weird .box-label,.tryit .box-label{margin-bottom:8px}
+.tryit{border:2px dashed var(--rule)}
+.tryit p{margin-bottom:.5em}
+.small{font-size:14px;color:var(--ink-soft)}
+/* Future You */
+.future-head h2{font-size:clamp(28px,3.6vw,40px);line-height:1.05}
+.future-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:14px}
+.future-grid>div{padding:0 18px;border-left:1px solid var(--hair);font-size:15.5px}
+.future-grid>div:first-child{padding-left:0;border-left:0}
+.future-grid>div:last-child{padding-right:0}
+@media (max-width:860px){.future-grid{grid-template-columns:1fr;gap:16px}.future-grid>div{padding:0;border-left:0}}
+@media print{.future-grid{grid-template-columns:repeat(3,1fr)}.future-grid>div{padding:0 12px;border-left:1px solid var(--hair)}.future-grid>div:first-child{padding-left:0;border-left:0}}
+/* Wednesday: quiz + riddles side by side, case-file boxes */
+.duo{display:grid;grid-template-columns:1.15fr 1fr;gap:30px;align-items:start}
+.duo h2{font-size:32px;line-height:1.05;margin-bottom:6px}
+.got{display:inline-flex;align-items:center;gap:6px;font-family:var(--f-mono);font-size:12px;color:var(--ink-soft);margin-left:10px;cursor:pointer}
+.quiz-score{font-family:var(--f-mono);font-size:13.5px;margin-top:14px;color:var(--spot);min-height:1.4em}
+.exhibit{break-inside:avoid;border:1px solid var(--rule);padding:10px 14px;margin:8px 0 14px;font-size:15.5px}
+.exhibit .box-label{color:var(--spot)}
+.exhibit ol{margin:0;padding-left:1.2em;display:flex;flex-direction:column;gap:6px}
+.tryit details summary,.exhibit details summary,.future details summary{cursor:pointer;font-family:var(--f-mono);font-size:12.5px;color:var(--spot);letter-spacing:.04em}
+.fig.diagram img{aspect-ratio:auto;object-fit:contain;filter:none;background:#fff}
+.fig.tall img{aspect-ratio:auto}
+@media (max-width:860px){.duo{grid-template-columns:1fr}}
+@media print{.duo{grid-template-columns:1.15fr 1fr}.got,.quiz-score{display:none}.exhibit details>*:not(summary),.tryit details>*:not(summary),.future details>*:not(summary){display:none}}
+</style>
+
+<!-- ==================== PAGE A1 ==================== -->
+<article class="sheet" aria-label="Front page">
+  <div class="folio"><span>Vol. I · No. 2</span><span>Page A1</span><span>Singapore edition</span></div>
+
+  <header class="mast">
+    <div class="ear"><b>Read time</b>15 minutes, plus 2 news links</div>
+    <div class="title">
+      <h1>The Little Lion Daily</h1>
+      <div class="zh">小狮日报</div>
+    </div>
+    <div class="ear r"><b>This Saturday</b>Weekend classic: The Yellow Wallpaper</div>
+  </header>
+  <div class="dateline">
+    <span>Wednesday, 25 November 2026</span>
+    <span>星期三 · 十一月二十五日</span>
+    <span>Price: free for curious minds</span>
+  </div>
+
+  <!-- Today's news: links only -->
+  <section class="brief" aria-label="Today's news">
+    <div class="story">
+      <div class="kicker">Today's news · Singapore</div>
+      <h2>Singapore's rule of law balances individual rights with collective needs: Chief Justice</h2>
+      <div class="src">CNA · Singapore · 25 Nov 2026</div>
+      <p class="why">Why read it: Singapore is marking 200 years of the rule of law. Chief Justice Sundaresh Menon explains how the courts respect the government's right to make policy while making sure its powers stay within limits. It's a clear look at how the three branches of government check one another, which is core Social Studies material and a good warm-up for today's Future You page.</p>
+      <a class="readlink" href="https://www.channelnewsasia.com/singapore/200-years-rule-law-balance-individual-collective-chief-justice-6578516" target="_blank" rel="noopener">Read on channelnewsasia.com →</a>
+    </div>
+    <div class="story">
+      <div class="kicker">今日中文新闻 · 联合早报</div>
+      <h2 class="zh">"字述一年"开跑　10大候选字看尽年度风云</h2>
+      <div class="src">联合早报 · 新加坡 · 2026年11月25日</div>
+      <p class="zh-body why">为什么值得读：一年快结束了，如果只能用一个汉字来总结2026年，你会选哪个？今年的候选字包括"弈""熬""惑""代"等。读一读每个字背后的故事，再想想：哪一个字最能代表你自己的这一年？（今天A2版的"汉字故事"也和这个话题有关。）</p>
+      <a class="readlink" href="https://www.zaobao.com.sg/news/singapore/story20261125-10047281" target="_blank" rel="noopener">在联合早报阅读 →</a>
+    </div>
+  </section>
+
+  <div class="with-side">
+    <section class="feature">
+      <div class="kicker">Body science · 4 min read + 2 experiments</div>
+      <h2>"Is that really what I sound like?!"</h2>
+      <p class="deck">Why your voice on a recording sounds thin, squeaky and frankly embarrassing, and why your friends think it sounds perfectly normal.</p>
+      <div class="byline">By the Little Lion science desk</div>
+      <div class="cols">
+        <p class="timeline"><b>8.02 pm</b> Your group records a practice for Chinese oral. You do your part. Nailed it.<br><b>8.03 pm</b> Someone plays it back in the chat.<br><b>8.03 pm + 2 s</b> <span class="sfx">"WHO IS THAT?"</span><br><b>8.04 pm</b> You leave the group chat. Briefly.</p>
+        <p>Relax. Nothing is wrong with your phone, and nothing is wrong with you. You have simply caught your brain in a lifelong lie. The voice you hear when you talk is <b>not</b> the voice the rest of the world hears. The recording is the honest one.</p>
+        <p>Here's why. Every sound you hear reaches your inner ear by a road. When <i>other people</i> talk, there's only one road. When <i>you</i> talk, there are two.</p>
+        <p><b>Road 1: the air route.</b> Your vocal folds buzz, the air in front of your mouth wobbles, and those wobbles travel round your cheek and into your ear canal. They drum on your eardrum, which shakes three tiny bones in a row (the hammer, the anvil and the stirrup), which pass the shake into the <b>cochlea</b>, a fluid-filled, snail-shaped tube lined with sensor cells. The cochlea turns the wobble into nerve signals. This is the only road a microphone, or your friend's ear, ever uses.</p>
+        <figure class="fig diagram">
+          <img src="../img/ear-anatomy.png" alt="Labelled diagram of the human ear showing the outer ear, ear canal, eardrum, the three middle-ear bones and the snail-shaped cochlea" width="960" height="729">
+          <figcaption>Road 1, mapped: sound goes in the ear canal, hits the eardrum, crosses the three tiny bones and ends in the coiled cochlea.<span class="credit">Diagram: Lars Chittka &amp; Axel Brockmann / Wikimedia Commons, CC BY 2.5</span></figcaption>
+        </figure>
+        <p><b>Road 2: the secret tunnel.</b> When you speak, the buzz from your throat also travels straight through the bones and soft tissue of your head to the cochlea, skipping the ear canal entirely. This is called <b>bone conduction</b>. Your skull is basically a speaker that only you can hear.</p>
+        <p>The catch: your head doesn't pass all pitches equally. Bone and tissue carry the deep, low-pitched parts of your voice better than the high ones. So the version arriving by Road 2 is boomier and richer, like someone turned the bass up. Your brain mixes both roads together and says, "Ah, that's me."</p>
+        <div class="fact">2 roads in, 1 road out<small>You hear your voice through air and bone. Everyone else hears only the air.</small></div>
+        <p>A recording strips out Road 2. Suddenly the bass is gone and you're left with the thinner, higher version that your family, your teachers and your CCA friends have been hearing all along. Psychologists even have a name for that awful moment: <b>"voice confrontation"</b>.</p>
+        <p>One idea for why it stings so much: we tend to like things we're used to. You've had sixteen-ish years of hearing the bass-boosted version, so the real one sounds like a stranger doing a bad impression of you. Most people find that the more they listen to their recorded voice, the less it bothers them. Debaters, singers and radio presenters train exactly this way.</p>
+        <p>Bone conduction isn't just a party trick, either. Some sports headphones sit on your cheekbones instead of in your ears, sending sound through the bone so you can still hear traffic. And there's a famous story that Beethoven, as he lost his hearing, would clamp a rod between his teeth and rest the other end on his piano, so he could feel the music travel through his jaw. Whether every detail is true or not, the physics works.</p>
+        <div class="weird">
+          <div class="box-label">Weird but true</div>
+          <ul>
+            <li>The stirrup bone (stapes) in your middle ear is the smallest bone in your body, only about <b>3 mm</b> long. That's shorter than a grain of rice.</li>
+            <li>A tiny muscle in your middle ear tightens when you hear very loud noises, and also when you talk. It quietly turns down the volume on your own voice.</li>
+            <li>"Cochlea" comes from the Greek word for snail. Uncoiled, yours would be only about 3.5 cm long.</li>
+            <li>Earwax mostly cleans itself. Talking and chewing move your jaw, which helps shuffle old wax towards the outside. Cotton buds tend to push it back in.</li>
+          </ul>
+        </div>
+        <div class="tryit">
+          <div class="box-label">Try this 1 · Turn up your own bass</div>
+          <p>Hum a long "mmmmm". Now press your fingers gently over the openings of both ears and keep humming. It gets louder and deeper, even though you blocked the sound coming <i>in</i>.</p>
+          <details><summary>Why?</summary><p class="small">Road 2 is still running through your skull, and blocking the ear canal stops some of that low sound from leaking back out, so more of it reaches your cochlea. Audiologists call it the occlusion effect.</p></details>
+        </div>
+        <div class="tryit">
+          <div class="box-label">Try this 2 · The spoon cathedral</div>
+          <p>Tie a metal spoon to the middle of a 1-metre piece of string. Wrap the ends around your index fingers and press your fingertips lightly into the outer part of your ears (no poking inside). Lean forward and let the spoon swing gently against a table edge. Instead of a little "tink", you'll hear something like a big church bell.</p>
+          <details><summary>Why?</summary><p class="small">The vibration travels up the string and into your fingers and head, solid all the way. Solids carry vibration far better than open air, so much more of the spoon's ringing reaches you.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <aside class="side">
+      <div class="quote">
+        <div class="box-label">Quote of the day</div>
+        <blockquote>"The first principle is that you must not fool yourself, and you are the easiest person to fool."</blockquote>
+        <cite>Richard Feynman, physicist</cite>
+        <p>Feynman said this in 1974, in a graduation speech at Caltech about honest science. It fits today's paper twice: your brain fools you about your own voice (A1), and a con man fooled very clever people about the Eiffel Tower (A2).</p>
+      </div>
+      <div class="joke">
+        <div class="box-label">Laugh line</div>
+        <p>I'm reading a book about anti-gravity.</p>
+        <p class="punch">It's impossible to put down.</p>
+      </div>
+      <div class="joke">
+        <div class="box-label">And another</div>
+        <p>Never trust an atom.</p>
+        <p class="punch">They make up everything.</p>
+      </div>
+      <nav class="index" aria-label="Inside this edition">
+        <div class="box-label">Inside</div>
+        <ol>
+          <li><span>Today's news (2 links)</span><span>A1</span></li>
+          <li><span>Why your recorded voice sounds weird</span><span>A1</span></li>
+          <li><span>Case file: the man who sold the Eiffel Tower</span><span>A2</span></li>
+          <li><span>汉字故事 · 解</span><span>A2</span></li>
+          <li><span>Future You: triage, medicine's sorting hat</span><span>A2</span></li>
+          <li><span>Science quiz: 10 questions</span><span>A3</span></li>
+          <li><span>Eight riddles</span><span>A3</span></li>
+        </ol>
+      </nav>
+    </aside>
+  </div>
+</article>
+
+<!-- ==================== PAGE A2 ==================== -->
+<article class="sheet" aria-label="Page A2">
+  <div class="folio"><span>The Little Lion Daily</span><span>Page A2</span><span>Wednesday, 25 November 2026</span></div>
+
+  <div class="with-side" style="margin-top:0">
+    <section class="feature">
+      <div class="kicker">History's great hoaxes · Case file · 5 min read</div>
+      <h2>The man who sold the Eiffel Tower</h2>
+      <p class="deck">It's 1925. The most famous landmark in the world is for sale. The seller doesn't own it. The buyer pays anyway.</p>
+      <div class="byline">By the Little Lion history desk</div>
+      <div class="cols">
+        <p class="dropcap">Picture the smartest-looking man in one of the grandest hotels in Paris. Perfect suit. Calm voice. Official government letterhead. He has invited a handful of the city's scrap-metal dealers to a private meeting, and he has a secret to share: the government can't afford the Eiffel Tower any more. It's going to be torn down and sold for scrap, about 7,000 tonnes of iron. One of them will get the contract. But, he says, lowering his voice, nobody must know yet. The public would riot.</p>
+        <p>The man was <b>Victor Lustig</b>. He was not a government official. He was one of the most famous con artists of the 20th century, and this was his most outrageous job.</p>
+
+        <div class="exhibit">
+          <div class="box-label">Exhibit A · Why it was believable</div>
+          <p>This is the clever part. The Eiffel Tower was built for the <b>1889 World's Fair</b> and was never meant to be permanent. Its builder was given a permit for just 20 years, and plenty of Parisians had called it an eyesore. It survived partly because it turned out to be useful as a giant radio antenna. So in 1925, the idea that the government might finally get rid of the rusting, costly thing didn't sound crazy. Newspapers had even written about how expensive it was to maintain.</p>
+        </div>
+
+        <figure class="fig tall">
+          <img src="../img/eiffel-tower-construction-1888.jpg" alt="Sepia photograph of the Eiffel Tower under construction, with the lower levels complete and scaffolding at the top" width="960" height="1221">
+          <figcaption>The tower going up in 1888. Many Parisians at the time expected it to come down again one day, which helped Lustig's story sound real.<span class="credit">Photo: Louis-Émile Durandelle / Wikimedia Commons, public domain</span></figcaption>
+        </figure>
+
+        <p><b>Exhibit B · Choosing the target.</b> Lustig picked a dealer named <b>André Poisson</b>, who, the story goes, felt like an outsider among the big Paris businessmen and badly wanted to be taken seriously. Winning the most famous contract in France would change everything for him.</p>
+        <p><b>Exhibit C · The masterstroke.</b> Poisson's wife was suspicious. Why so secret? Why so rushed? So Lustig did something brilliant and sneaky. He "confessed". He admitted he was a poorly paid official who wanted a little extra money on the side, in other words a bribe. That calmed Poisson down completely. A crooked official asking for a bribe? That felt <i>real</i>. Nobody would make that up.</p>
+        <p>Poisson paid for the tower and paid the bribe on top. Lustig took the money and left for Vienna.</p>
+        <p><b>Exhibit D · The silence.</b> And then … nothing happened. Poisson never went to the police. He was too embarrassed to admit, in public, that he had tried to buy the Eiffel Tower in a secret deal. Lustig had counted on that.</p>
+        <p>According to most accounts, Lustig was so pleased that he came back to Paris and tried the same trick again. This time the victim did go to the police, and Lustig slipped away before he could be caught.</p>
+
+        <figure class="fig tall">
+          <img src="../img/victor-lustig-1931.jpg" alt="A 1931 US Bureau of Investigation record card with front and side photographs of Victor Lustig and typed notes about his arrests" width="460" height="442">
+          <figcaption>A 1931 US Bureau of Investigation record card for Lustig, who is described on it as an "international con man".<span class="credit">Photo: United States Department of Justice / Wikimedia Commons, public domain</span></figcaption>
+        </figure>
+
+        <p><b>Exhibit E · How it ended.</b> Lustig moved on to the United States, where he sold a "money-printing box" that supposedly copied banknotes (it didn't) and later got into real counterfeiting. Secret Service agents caught up with him in 1935. He was sent to the island prison of Alcatraz and died in prison custody in 1947.</p>
+
+        <div class="exhibit">
+          <div class="box-label">Detective's notes · The con-man's toolkit</div>
+          <ol>
+            <li><b>Authority:</b> official letterhead, a smart suit, a fancy hotel.</li>
+            <li><b>A believable backstory:</b> the tower really was costly and unloved.</li>
+            <li><b>Secrecy:</b> "Don't tell anyone." Secrets stop victims from checking.</li>
+            <li><b>Urgency and greed:</b> one lucky winner, decide now.</li>
+            <li><b>A flaw that feels honest:</b> the bribe "confession" made the lie more convincing.</li>
+          </ol>
+        </div>
+        <p>Here's the uncomfortable part. Not one of those five tricks needs Paris, 1925 or a top hat. They arrive on phones in Singapore every single day: a "bank officer" who needs you to act fast, a "government official" who says the matter is confidential, a "once-only" investment your friends mustn't hear about. Same toolkit, new costume.</p>
+
+        <div class="tryit">
+          <div class="box-label">You be the detective</div>
+          <p>Which of these messages have the con-man's fingerprints on them? Count the tricks in each.</p>
+          <p><b>A.</b> "This is an officer from a government agency. Your bank account is linked to a crime. Do not tell your family, as this is a confidential investigation. Transfer your savings to this 'safe account' within 1 hour."</p>
+          <p><b>B.</b> "Hi, it's your CCA teacher. Training is moved to 4pm tomorrow because of the rain. See you at the usual place."</p>
+          <p><b>C.</b> "Congratulations! You've been specially picked for a limited trial. Earn $500 a day from home. Only 3 spots left. Don't share this link."</p>
+          <details><summary>Detective's verdict</summary>
+            <p class="small"><b>A</b> uses authority, secrecy and urgency: a classic. Real officers will not ask you to move money into a "safe account". <b>C</b> uses greed, urgency and secrecy. <b>B</b> asks for nothing, but if a message ever surprises you, check it through a channel you already trust, like calling the person or asking a parent. Singapore's free <b>ScamShield</b> app can also help filter scam calls and messages.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <aside class="side">
+      <section class="zhbox">
+        <div class="box-label">汉字故事</div>
+        <div class="idiom">解</div>
+        <div class="py">jiě · 也读 jiè、xiè</div>
+        <p><b>拆开来看：</b>"解"由"角""刀""牛"三个部分组成。古人造这个字时，画的正是用刀把牛角从牛身上分开的样子。所以"解"最早的意思是<b>剖开、分开</b>。</p>
+        <p><b>故事：</b>《庄子·养生主》里有个厨师叫庖丁，他替梁惠王宰牛，刀法熟练得像跳舞一样。他说自己顺着牛身上骨肉之间的空隙下刀，所以一把刀用了十九年，还像新磨的一样。这就是成语<b>"庖丁解牛"</b>，比喻掌握了事物的规律，做事就能得心应手。</p>
+        <p><b>意思的旅行：</b>从"把东西分开"，慢慢引申出"把问题分开来看"：<b>解释、解答、了解、解决</b>。原来，解题和解牛，靠的是同一种本事：找到关节，一块一块拆开。</p>
+        <p><b>小考考：</b>"浑身解数"的"解"怎么读？</p>
+        <details><summary>看答案</summary><p>读 <b>xiè</b>。"解数"指武术的招数，"使出浑身解数"就是把所有本领都拿出来。</p></details>
+        <p><b>想一想：</b>早报"字述一年"在选年度汉字。如果要用一个字总结你的2026年，你会选哪个字？为什么？</p>
+      </section>
+    </aside>
+  </div>
+
+  <hr class="rule-sec">
+
+  <section class="future" aria-label="Future You">
+    <div class="future-head">
+      <div class="kicker">Future You · Medicine</div>
+      <h2>Triage: why the person who arrived first isn't seen first</h2>
+    </div>
+    <div class="future-grid">
+      <div>
+        <div class="box-label">Know this</div>
+        <p><b>Triage</b> comes from the French word <i>trier</i>, "to sort". The idea is usually traced to Napoleon's army surgeon Dominique-Jean Larrey, who treated wounded soldiers by how badly they were hurt, not by rank or by who arrived first.</p>
+        <p>Emergency departments still work this way. In Singapore, patients are given a <b>Patient Acuity Category</b>, from <b>P1</b> (critically ill, needs help immediately) through P2 and P3 down to <b>P4</b> (non-emergency). That's why a person with a sprained ankle may wait hours while someone who came in later goes straight in.</p>
+      </div>
+      <div>
+        <div class="box-label">Try this</div>
+        <p>You're the triage nurse. Four people arrive at 10am. Put them in order:</p>
+        <p class="small">(a) a teen with a twisted ankle, limping but walking · (b) a man in his 60s with crushing chest pain, pale and sweaty · (c) a 5-year-old with a fever who is chatting and playing · (d) a cyclist with a deep cut on the arm, bleeding slowed by pressure</p>
+        <details><summary>A sensible order</summary><p class="small"><b>b, d, c, a.</b> Chest pain with sweating could be a heart attack, and every minute counts. The cut needs proper care soon. The child is alert, which is reassuring, but needs checking. The ankle can wait safely. Real triage uses vital signs and trained judgement, but the habit of asking "who is most at risk right now?" is the heart of it.</p></details>
+      </div>
+      <div>
+        <div class="box-label">For your application</div>
+        <p>Singapore has two undergraduate medical schools, <b>NUS Yong Loo Lin School of Medicine</b> and <b>NTU Lee Kong Chian School of Medicine</b>, while <b>Duke-NUS</b> takes graduates. Shortlisted applicants go through interviews and assessments that look at communication, empathy and how you reason through ethical dilemmas, not just grades.</p>
+        <p>Start a <b>reflection log</b> now. After any volunteering, such as eldercare visits or helping at a community event, write three lines: what I saw, what I felt, what I'd do differently. Real stories beat "I am passionate about helping people". Always check entry details on the schools' official websites.</p>
+      </div>
+    </div>
+  </section>
+</article>
+
+<!-- ==================== PAGE A3 ==================== -->
+<article class="sheet" aria-label="Page A3">
+  <div class="folio"><span>The Little Lion Daily</span><span>Page A3 · Fun &amp; games</span><span>Wednesday, 25 November 2026</span></div>
+
+  <section class="duo" aria-label="Quiz and riddles">
+    <div class="riddles">
+      <div class="kicker">Wednesday quiz · Science &amp; general knowledge</div>
+      <h2>Ten questions. No phone.</h2>
+      <p class="instr">Say your answer out loud first, then open it. Tick "I got it" to keep score.</p>
+      <ol id="quiz">
+        <li>Which planet in our solar system has the shortest day?
+          <details><summary>Show answer</summary>Jupiter. It spins once in about 10 hours. (Venus is the opposite: its day is longer than its year.)</details><label class="got"><input type="checkbox"> I got it</label></li>
+        <li>What is the hardest substance in the human body?
+          <details><summary>Show answer</summary>Tooth enamel, the outer coating of your teeth.</details><label class="got"><input type="checkbox"> I got it</label></li>
+        <li>Roughly how long does sunlight take to reach Earth: 8 seconds, 8 minutes or 8 hours?
+          <details><summary>Show answer</summary>About 8 minutes. When you look at the sun (please don't, directly), you're seeing it as it was 8 minutes ago.</details><label class="got"><input type="checkbox"> I got it</label></li>
+        <li>The chemical symbol Fe stands for which element?
+          <details><summary>Show answer</summary>Iron, from its Latin name <i>ferrum</i>. Fitting for a day about the Eiffel Tower.</details><label class="got"><input type="checkbox"> I got it</label></li>
+        <li>Which metal is liquid at room temperature?
+          <details><summary>Show answer</summary>Mercury.</details><label class="got"><input type="checkbox"> I got it</label></li>
+        <li>How many hearts does an octopus have?
+          <details><summary>Show answer</summary>Three. Two pump blood through the gills and one pumps it around the body. Its blood is blue, too.</details><label class="got"><input type="checkbox"> I got it</label></li>
+        <li>What is Singapore's highest natural point, and is it more or less than 200 m tall?
+          <details><summary>Show answer</summary>Bukit Timah Hill, at about 163 m. Less than 200 m, so shorter than some of our tallest buildings.</details><label class="got"><input type="checkbox"> I got it</label></li>
+        <li>True or false: water boils at a lower temperature at the top of Mount Everest.
+          <details><summary>Show answer</summary>True. With less air pressure, it boils at only about 70°C, which makes cooking an egg properly very hard.</details><label class="got"><input type="checkbox"> I got it</label></li>
+        <li>What do the letters DNA stand for?
+          <details><summary>Show answer</summary>Deoxyribonucleic acid.</details><label class="got"><input type="checkbox"> I got it</label></li>
+        <li>Does sound travel faster through air or through water?
+          <details><summary>Show answer</summary>Water, and by a lot: roughly four times faster. Sound travels faster still through solids like bone, which links back to today's A1 feature.</details><label class="got"><input type="checkbox"> I got it</label></li>
+      </ol>
+      <div class="quiz-score" id="quiz-score" aria-live="polite">Score: 0 / 10</div>
+    </div>
+
+    <div class="riddles">
+      <div class="kicker">Brain teasers</div>
+      <h2>Eight riddles for the bus home</h2>
+      <ol>
+        <li>What gets wetter the more it dries?
+          <details><summary>Show answer</summary>A towel.</details></li>
+        <li>The more of these you take, the more you leave behind. What are they?
+          <details><summary>Show answer</summary>Footsteps.</details></li>
+        <li>What can travel around the world while staying in one corner?
+          <details><summary>Show answer</summary>A stamp.</details></li>
+        <li>A man pushes his car up to a hotel and immediately knows he's bankrupt. What's going on?
+          <details><summary>Show answer</summary>He's playing Monopoly.</details></li>
+        <li>Which word becomes shorter when you add two letters to it?
+          <details><summary>Show answer</summary>"Short." Add "er" and it becomes "shorter".</details></li>
+        <li>一口咬掉牛尾巴。（打一字）
+          <details><summary>看答案</summary>告。"牛"字去掉下面的尾巴，再加一个"口"。</details></li>
+        <li>千里相逢。（打一字）
+          <details><summary>看答案</summary>重。"千"和"里"上下叠在一起。</details></li>
+        <li>歇后语：外甥打灯笼——？
+          <details><summary>看答案</summary>照舅（照旧）。外甥提着灯笼，照的是舅舅，谐音"照旧"，意思是一切和以前一样。</details></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="week" aria-label="This week's line-up">
+    <div><b>Mon</b>Comic strip</div>
+    <div><b>Tue</b>Recipe &amp; word search</div>
+    <div class="today"><b>Wed · today</b>Science quiz &amp; riddles</div>
+    <div><b>Thu</b>Comic &amp; fun facts</div>
+    <div><b>Fri</b>Crossword</div>
+    <div><b>Sat</b>Weekend classic: short story</div>
+    <div><b>Sun</b>Weekend classic &amp; surprise</div>
+  </section>
+
+  <nav class="archive" aria-label="Past editions">
+    <div class="box-label">往期 · Past editions</div>
+    <ul>
+<!--ARCHIVE-->
+      <li><a href="2026-11-25.html" aria-current="page">Wed 25 Nov 2026</a></li>
+      <li><a href="2026-11-24.html">Tue 24 Nov 2026</a></li>
+<!--/ARCHIVE-->
+    </ul>
+  </nav>
+
+  <div class="colophon">The Little Lion Daily · Printed with pixels in Singapore · News stories belong to CNA and Lianhe Zaobao</div>
+</article>
+
+<script>
+(function(){
+  var quiz=document.getElementById("quiz"), out=document.getElementById("quiz-score");
+  var boxes=quiz.querySelectorAll('input[type="checkbox"]');
+  function verdict(n){
+    if(n===10) return "Perfect. Are you sure you didn't use your phone?";
+    if(n>=8) return "Excellent. Quiz-night material.";
+    if(n>=5) return "Solid. Read tomorrow's paper and come back stronger.";
+    if(n>=1) return "Every answer you opened is one you'll remember now.";
+    return "";
+  }
+  function update(){
+    var n=0; boxes.forEach(function(b){if(b.checked)n++;});
+    out.textContent="Score: "+n+" / "+boxes.length+(n?" · "+verdict(n):"");
+  }
+  quiz.addEventListener("change",update);
+})();
+</script>
+</body>
+</html>
