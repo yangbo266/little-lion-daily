@@ -8,8 +8,8 @@
 <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png?v=2">
 <link rel="apple-touch-icon" href="img/apple-touch-icon.png?v=2">
 <link rel="manifest" href="manifest.webmanifest">
-<meta name="edition" content="2026-11-25">
-<script>(function(){var me="2026-11-25",busy=0;function c(){if(document.visibilityState!=="visible"||busy)return;busy=1;fetch("index.html",{cache:"no-store"}).then(function(r){return r.text();}).then(function(t){var m=t.match(/name="edition" content="([^"]+)"/);if(m&&m[1]>me&&location.pathname.indexOf("/editions/")<0)location.reload();}).catch(function(){}).then(function(){busy=0;});}document.addEventListener("visibilitychange",c);addEventListener("pageshow",c);addEventListener("focus",c);})();</script>
+<meta name="edition" content="2026-11-26">
+<script>(function(){var me="2026-11-26",busy=0;function c(){if(document.visibilityState!=="visible"||busy)return;busy=1;fetch("index.html",{cache:"no-store"}).then(function(r){return r.text();}).then(function(t){var m=t.match(/name="edition" content="([^"]+)"/);if(m&&m[1]>me&&location.pathname.indexOf("/editions/")<0)location.reload();}).catch(function(){}).then(function(){busy=0;});}document.addEventListener("visibilitychange",c);addEventListener("pageshow",c);addEventListener("focus",c);})();</script>
 <style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 </head>
 <body>
@@ -237,82 +237,109 @@ p{margin:0 0 .8em;hyphens:auto}
 @media (max-width:640px){.tale-intro,.tale .cols{column-count:1}.tale-extras{grid-template-columns:1fr}}
 @media print{.tale-extras{grid-template-columns:1fr 1.3fr}}
 </style>
+<style>
+/* Thursday: comic strip + fun facts */
+.comic{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:12px}
+.comic svg{display:block;width:100%;height:auto;border:2px solid var(--rule);background:var(--sheet);color:var(--ink)}
+.comic .bub{fill:var(--sheet);stroke:currentColor;stroke-width:1.5}
+.comic text{fill:currentColor;font-family:var(--f-body);font-size:12.5px}
+.comic text.sfx-t{font-family:var(--f-head);font-size:22px;fill:var(--spot)}
+.comic text.cap{font-family:var(--f-mono);font-size:10px;letter-spacing:.06em}
+.comic .ln{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.comic .solid{fill:currentColor}
+.comic .stain{fill:#9a6a3a;opacity:.75}
+.facts-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:12px;border-top:2px solid var(--rule)}
+.facts-grid>div{padding:12px 14px;border-left:1px solid var(--hair);border-bottom:1px solid var(--hair);font-size:15px}
+.facts-grid>div:nth-child(4n+1){border-left:0;padding-left:0}
+.facts-grid b.n{display:block;font-family:var(--f-head);font-size:30px;line-height:1;color:var(--spot);margin-bottom:4px}
+.poem{font-size:24px;line-height:1.9;letter-spacing:.12em;text-align:center;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:8px 0;margin:8px 0 12px}
+.voice{break-inside:avoid;border-left:3px solid var(--spot);padding:6px 0 6px 12px;margin:0 0 14px;font-size:15.5px;font-style:italic}
+.voice b{font-style:normal;font-family:var(--f-mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;display:block;color:var(--spot)}
+.count{font-family:var(--f-head);font-size:40px;line-height:1;color:var(--spot);float:left;margin:0 10px 0 0}
+@media (max-width:860px){.comic{grid-template-columns:repeat(2,1fr)}.facts-grid{grid-template-columns:1fr 1fr}.facts-grid>div:nth-child(4n+1){border-left:1px solid var(--hair);padding-left:14px}.facts-grid>div:nth-child(2n+1){border-left:0;padding-left:0}}
+@media (max-width:480px){.comic{grid-template-columns:1fr}.facts-grid{grid-template-columns:1fr}.facts-grid>div{border-left:0!important;padding-left:0!important}}
+@media print{.comic{grid-template-columns:repeat(4,1fr)}.facts-grid{grid-template-columns:repeat(4,1fr)}}
+</style>
 
 <!-- ==================== PAGE A1 ==================== -->
 <article class="sheet" aria-label="Front page">
-  <div class="folio"><span>Vol. I · No. 2</span><span>Page A1</span><span>Singapore edition</span></div>
+  <div class="folio"><span>Vol. I · No. 3</span><span>Page A1</span><span>Singapore edition</span></div>
 
   <header class="mast">
-    <div class="ear"><b>Read time</b>15 minutes, plus 2 news links</div>
+    <div class="ear"><b>Read time</b>15 minutes, plus 2 news links and a story</div>
     <div class="title">
       <h1>The Little Lion Daily</h1>
       <div class="zh">小狮日报</div>
     </div>
-    <div class="ear r"><b>New: a story every day</b>Until 31 Dec · Sat: The Yellow Wallpaper</div>
+    <div class="ear r"><b>New series today</b>Juni of the Desert, Episode 1 · Page A3</div>
   </header>
   <div class="dateline">
-    <span>Wednesday, 25 November 2026</span>
-    <span>星期三 · 十一月二十五日</span>
+    <span>Thursday, 26 November 2026</span>
+    <span>星期四 · 十一月二十六日</span>
     <span>Price: free for curious minds</span>
   </div>
 
   <!-- Today's news: links only -->
   <section class="brief" aria-label="Today's news">
     <div class="story">
-      <div class="kicker">Today's news · Singapore</div>
-      <h2>Singapore's rule of law balances individual rights with collective needs: Chief Justice</h2>
-      <div class="src">CNA · Singapore · 25 Nov 2026</div>
-      <p class="why">Why read it: Singapore is marking 200 years of the rule of law. Chief Justice Sundaresh Menon explains how the courts respect the government's right to make policy while making sure its powers stay within limits. It's a clear look at how the three branches of government check one another, which is core Social Studies material and a good warm-up for today's Future You page.</p>
-      <a class="readlink" href="https://www.channelnewsasia.com/singapore/200-years-rule-law-balance-individual-collective-chief-justice-6578516" target="_blank" rel="noopener">Read on channelnewsasia.com →</a>
+      <div class="kicker">Today's news · Environment &amp; science</div>
+      <h2>Singapore's sole offshore marine lab renamed national station, launches regional network</h2>
+      <div class="src">The Straits Times · Singapore · 25 Nov 2026</div>
+      <p class="why">Why read it: Singapore's only offshore marine research station has been renamed a national station, and it is leading a new South-east Asian network to keep watch on warming seas and the risk of coral bleaching. More than 10 marine research stations from five ASEAN countries have joined. Oceans don't stop at borders, so this is a neat example of science and regional cooperation working together. (Then turn to A2 to meet one of the strangest animals living in our seas.)</p>
+      <a class="readlink" href="https://www.straitstimes.com/singapore/environment/singapores-sole-offshore-marine-lab-renamed-as-national-station-launches-regional-network" target="_blank" rel="noopener">Read on straitstimes.com →</a>
     </div>
     <div class="story">
       <div class="kicker">今日中文新闻 · 联合早报</div>
-      <h2 class="zh">"字述一年"开跑　10大候选字看尽年度风云</h2>
-      <div class="src">联合早报 · 新加坡 · 2026年11月25日</div>
-      <p class="zh-body why">为什么值得读：一年快结束了，如果只能用一个汉字来总结2026年，你会选哪个？今年的候选字包括"弈""熬""惑""代"等。读一读每个字背后的故事，再想想：哪一个字最能代表你自己的这一年？（今天A2版的"汉字故事"也和这个话题有关。）</p>
-      <a class="readlink" href="https://www.zaobao.com.sg/news/singapore/story20261125-10047281" target="_blank" rel="noopener">在联合早报阅读 →</a>
+      <h2 class="zh">美国完成产能过剩调查　拟对中欧等14经济体加征关税　新加坡不超过20%</h2>
+      <div class="src">联合早报 · 国际 · 2026年11月26日</div>
+      <p class="zh-body why">为什么值得读：美国打算对中国、欧盟、新加坡等14个贸易伙伴加征关税，理由是这些经济体在制造业造成"产能过剩"。对新加坡的拟议税率不超过20%，如果谈判成功，可能降到10%。新加坡靠贸易吃饭，关税会影响出口、企业和工作机会。读的时候可以想一想：什么是"关税"？谁最终为它付钱？</p>
+      <a class="readlink" href="https://www.zaobao.com.sg/news/world/story20261126-10057503" target="_blank" rel="noopener">在联合早报阅读 →</a>
     </div>
   </section>
 
   <div class="with-side">
     <section class="feature">
-      <div class="kicker">Body science · 4 min read + 2 experiments</div>
-      <h2>"Is that really what I sound like?!"</h2>
-      <p class="deck">Why your voice on a recording sounds thin, squeaky and frankly embarrassing, and why your friends think it sounds perfectly normal.</p>
-      <div class="byline">By the Little Lion science desk</div>
+      <div class="kicker">How things work · 5 min read + 1 experiment</div>
+      <h2>Why a QR code still works when it's dirty, torn or has a logo slapped in the middle</h2>
+      <p class="deck">The little black-and-white square at every hawker stall is secretly carrying spare copies of itself. Here's the trick.</p>
+      <div class="byline">By the Little Lion tech desk</div>
       <div class="cols">
-        <p class="timeline"><b>8.02 pm</b> Your group records a practice for Chinese oral. You do your part. Nailed it.<br><b>8.03 pm</b> Someone plays it back in the chat.<br><b>8.03 pm + 2 s</b> <span class="sfx">"WHO IS THAT?"</span><br><b>8.04 pm</b> You leave the group chat. Briefly.</p>
-        <p>Relax. Nothing is wrong with your phone, and nothing is wrong with you. You have simply caught your brain in a lifelong lie. The voice you hear when you talk is <b>not</b> the voice the rest of the world hears. The recording is the honest one.</p>
-        <p>Here's why. Every sound you hear reaches your inner ear by a road. When <i>other people</i> talk, there's only one road. When <i>you</i> talk, there are two.</p>
-        <p><b>Road 1: the air route.</b> Your vocal folds buzz, the air in front of your mouth wobbles, and those wobbles travel round your cheek and into your ear canal. They drum on your eardrum, which shakes three tiny bones in a row (the hammer, the anvil and the stirrup), which pass the shake into the <b>cochlea</b>, a fluid-filled, snail-shaped tube lined with sensor cells. The cochlea turns the wobble into nerve signals. This is the only road a microphone, or your friend's ear, ever uses.</p>
+        <p class="timeline"><b>12.41 pm</b> Hawker centre. Chicken rice, $4.50. You lift your phone.<br><b>12.41 pm</b> The QR sticker on the stall is faded, peeling at one corner and has a mystery sauce stain across it.<br><b>12.41 pm + 1 s</b> <span class="sfx">BEEP.</span> Paid.<br><b>12.42 pm</b> You never once wonder how. Until now.</p>
+        <p>That stain should have been a disaster. A QR code is just a grid of tiny black and white squares (the squares are called <b>modules</b>), and each one is a bit of information. Smudge a chunk of them and you'd expect the message to be wrecked, like ripping a few words out of a sentence.</p>
+        <p>Instead it shrugs it off. To see why, we have to go back to a car-parts factory in Japan.</p>
+        <p><b>The problem.</b> In the early 1990s, workers at factories in the Toyota group tracked parts with ordinary barcodes, those stripy ones on snack packets. A stripy barcode only holds a short string of numbers, so boxes of parts needed lots of them, and workers spent ages scanning one after another.</p>
+        <p><b>The fix.</b> An engineer called <b>Masahiro Hara</b> at the company <b>Denso Wave</b> led a small team to invent a two-dimensional code that could hold far more and be read in a flash. It came out in <b>1994</b>, and its name tells you the goal: <b>QR</b> stands for <b>Quick Response</b>. Hara has said the black-and-white look was partly inspired by the stones on a board of Go.</p>
+
+        <div class="fact">3 squares, any angle<small>The big squares in three corners tell your phone where the code is and which way up it is</small></div>
+
+        <p><b>Secret 1: the three big squares.</b> Look at any QR code. Three corners have a large square with a dot in the middle. These are <b>finder patterns</b>. Draw a line straight through the middle of one and you get black, white, black-black-black, white, black, in the ratio 1:1:3:1:1. That pattern is very rare in ordinary pictures and text, so your phone can spot it instantly, from any angle, even upside down. The missing fourth corner tells it which way the code is turned.</p>
+        <p><b>Secret 2: the spare copies.</b> This is the clever bit. When a QR code is made, the computer doesn't just store your message. It also adds extra <b>error-correction</b> data, calculated from the message with some serious maths called <b>Reed–Solomon codes</b> (invented by two American mathematicians, Irving Reed and Gustave Solomon, in 1960). If part of the code is missing, your phone can use that extra data to work out what the missing part must have said.</p>
+        <p>The person making the code chooses how much protection to add. There are four levels:</p>
+        <p class="timeline"><b>L</b> can recover about 7% damage<br><b>M</b> about 15%<br><b>Q</b> about 25%<br><b>H</b> about 30%</p>
+        <p>More protection means more squares used up by spare data, so the code gets bigger and busier. It's a trade-off, like packing a spare tyre: safer, but it takes up room in the boot.</p>
+
         <figure class="fig diagram">
-          <img src="img/ear-anatomy.png" alt="Labelled diagram of the human ear showing the outer ear, ear canal, eardrum, the three middle-ear bones and the snail-shaped cochlea" width="960" height="729">
-          <figcaption>Road 1, mapped: sound goes in the ear canal, hits the eardrum, crosses the three tiny bones and ends in the coiled cochlea.<span class="credit">Diagram: Lars Chittka &amp; Axel Brockmann / Wikimedia Commons, CC BY 2.5</span></figcaption>
+          <img src="img/qr-code-with-picture.png" alt="A QR code with the word WIKIPEDIA printed in large letters right across its middle, covering many of the squares, with the three corner finder squares still visible" width="960" height="684">
+          <figcaption>A designer's "extreme" QR code linking to Wikipedia's mobile site. A whole word is printed over the middle, and it's built to scan anyway, because the error correction fills in what the letters hide. Notice the three finder squares are left untouched.<span class="credit">Image: Qrc-designer / Wikimedia Commons, CC BY 3.0</span></figcaption>
         </figure>
-        <p><b>Road 2: the secret tunnel.</b> When you speak, the buzz from your throat also travels straight through the bones and soft tissue of your head to the cochlea, skipping the ear canal entirely. This is called <b>bone conduction</b>. Your skull is basically a speaker that only you can hear.</p>
-        <p>The catch: your head doesn't pass all pitches equally. Bone and tissue carry the deep, low-pitched parts of your voice better than the high ones. So the version arriving by Road 2 is boomier and richer, like someone turned the bass up. Your brain mixes both roads together and says, "Ah, that's me."</p>
-        <div class="fact">2 roads in, 1 road out<small>You hear your voice through air and bone. Everyone else hears only the air.</small></div>
-        <p>A recording strips out Road 2. Suddenly the bass is gone and you're left with the thinner, higher version that your family, your teachers and your CCA friends have been hearing all along. Psychologists even have a name for that awful moment: <b>"voice confrontation"</b>.</p>
-        <p>One idea for why it stings so much: we tend to like things we're used to. You've had sixteen-ish years of hearing the bass-boosted version, so the real one sounds like a stranger doing a bad impression of you. Most people find that the more they listen to their recorded voice, the less it bothers them. Debaters, singers and radio presenters train exactly this way.</p>
-        <p>Bone conduction isn't just a party trick, either. Some sports headphones sit on your cheekbones instead of in your ears, sending sound through the bone so you can still hear traffic. And there's a famous story that Beethoven, as he lost his hearing, would clamp a rod between his teeth and rest the other end on his piano, so he could feel the music travel through his jaw. Whether every detail is true or not, the physics works.</p>
+
+        <p><b>Secret 3: it was given away.</b> Denso Wave holds the patent for the QR code, but it chose not to use it to charge people. Anyone can make QR codes for free. That generosity is a big reason they ended up everywhere, from boarding passes to the <b>SGQR</b> codes that, since 2018, let one sticker at a Singapore stall accept many different payment apps.</p>
+        <p><b>The dark side.</b> A QR code is just a link in disguise, and you can't read it with your eyes. Scammers sometimes stick a fake QR code over a real one, on a parking sign or a poster, to send people to a look-alike website. This even has a name: <b>"quishing"</b> (QR + phishing). Before you pay or type a password, check the website or name that appears on your phone.</p>
+
         <div class="weird">
           <div class="box-label">Weird but true</div>
           <ul>
-            <li>The stirrup bone (stapes) in your middle ear is the smallest bone in your body, only about <b>3 mm</b> long. That's shorter than a grain of rice.</li>
-            <li>A tiny muscle in your middle ear tightens when you hear very loud noises, and also when you talk. It quietly turns down the volume on your own voice.</li>
-            <li>"Cochlea" comes from the Greek word for snail. Uncoiled, yours would be only about 3.5 cm long.</li>
-            <li>Earwax mostly cleans itself. Talking and chewing move your jaw, which helps shuffle old wax towards the outside. Cotton buds tend to push it back in.</li>
+            <li>The biggest standard QR code, <b>version 40</b>, is a grid of 177 × 177 squares and can hold up to <b>7,089</b> digits. The smallest, version 1, is just 21 × 21.</li>
+            <li>The same family of maths that rescues a stained QR code also helped scratched CDs and DVDs keep playing, and was used to send pictures home from NASA's Voyager space probes.</li>
+            <li>A QR code needs a blank border around it, called the <b>quiet zone</b>. Print it right up against a busy pattern and scanners can struggle, even though the code itself is perfect.</li>
+            <li>Those custom codes with a logo in the middle work by "spending" some of the error-correction budget on the logo. Cover too much more and they fail.</li>
           </ul>
         </div>
         <div class="tryit">
-          <div class="box-label">Try this 1 · Turn up your own bass</div>
-          <p>Hum a long "mmmmm". Now press your fingers gently over the openings of both ears and keep humming. It gets louder and deeper, even though you blocked the sound coming <i>in</i>.</p>
-          <details><summary>Why?</summary><p class="small">Road 2 is still running through your skull, and blocking the ear canal stops some of that low sound from leaking back out, so more of it reaches your cochlea. Audiologists call it the occlusion effect.</p></details>
-        </div>
-        <div class="tryit">
-          <div class="box-label">Try this 2 · The spoon cathedral</div>
-          <p>Tie a metal spoon to the middle of a 1-metre piece of string. Wrap the ends around your index fingers and press your fingertips lightly into the outer part of your ears (no poking inside). Lean forward and let the spoon swing gently against a table edge. Instead of a little "tink", you'll hear something like a big church bell.</p>
-          <details><summary>Why?</summary><p class="small">The vibration travels up the string and into your fingers and head, solid all the way. Solids carry vibration far better than open air, so much more of the spoon's ringing reaches you.</p></details>
+          <div class="box-label">Try this · Damage test (no scissors needed)</div>
+          <p>Find any QR code, on a cereal box, a poster or a friend's screen. Then:</p>
+          <p><b>1.</b> Cover a small chunk of the <i>middle</i> with your fingertip or a sticky note. Scan. <b>2.</b> Make the covered chunk bigger and bigger. How much can you hide before it fails? <b>3.</b> Now uncover the middle and cover just <i>one corner finder square</i>. Scan again.</p>
+          <details><summary>What usually happens</summary><p class="small">Small patches in the middle are often no problem, because error correction rebuilds them. Each code has a limit, though, and it depends on the protection level the maker chose. Covering a finder square often stops the scan completely: the data isn't damaged, but your phone can no longer find the code or tell which way up it is. Same amount of paper, very different result. Location matters.</p></details>
         </div>
       </div>
     </section>
@@ -320,31 +347,32 @@ p{margin:0 0 .8em;hyphens:auto}
     <aside class="side">
       <div class="quote">
         <div class="box-label">Quote of the day</div>
-        <blockquote>"The first principle is that you must not fool yourself, and you are the easiest person to fool."</blockquote>
-        <cite>Richard Feynman, physicist</cite>
-        <p>Feynman said this in 1974, in a graduation speech at Caltech about honest science. It fits today's paper twice: your brain fools you about your own voice (A1), and a con man fooled very clever people about the Eiffel Tower (A2).</p>
+        <blockquote>"If a child is to keep alive his inborn sense of wonder … he needs the companionship of at least one adult who can share it."</blockquote>
+        <cite>Rachel Carson, The Sense of Wonder (1965)</cite>
+        <p>Carson was a marine biologist whose writing helped start the modern environmental movement. This line is about exploring nature together, which is exactly what Juni and her grandfather do in today's story on A3.</p>
       </div>
       <div class="joke">
         <div class="box-label">Laugh line</div>
-        <p>I'm reading a book about anti-gravity.</p>
-        <p class="punch">It's impossible to put down.</p>
+        <p>The past, the present and the future walked into a bar.</p>
+        <p class="punch">It was tense.</p>
       </div>
       <div class="joke">
         <div class="box-label">And another</div>
-        <p>Never trust an atom.</p>
-        <p class="punch">They make up everything.</p>
+        <p>Time flies like an arrow.</p>
+        <p class="punch">Fruit flies like a banana.</p>
+        <p class="small">(Read it twice. Then read the second sentence as if "flies" is the animal.)</p>
       </div>
       <nav class="index" aria-label="Inside this edition">
         <div class="box-label">Inside</div>
         <ol>
           <li><span>Today's news (2 links)</span><span>A1</span></li>
-          <li><span>Why your recorded voice sounds weird</span><span>A1</span></li>
-          <li><span>Case file: the man who sold the Eiffel Tower</span><span>A2</span></li>
-          <li><span>汉字故事 · 解</span><span>A2</span></li>
-          <li><span>Future You: triage, medicine's sorting hat</span><span>A2</span></li>
-          <li><span>Daily story: The Open Window</span><span>A3</span></li>
-          <li><span>Science quiz: 10 questions</span><span>A4</span></li>
-          <li><span>Eight riddles</span><span>A4</span></li>
+          <li><span>Why a dirty QR code still scans</span><span>A1</span></li>
+          <li><span>Countdown: the mantis shrimp's 5 superpowers</span><span>A2</span></li>
+          <li><span>古诗一首 · 题西林壁</span><span>A2</span></li>
+          <li><span>Daily story: Juni of the Desert, Ep. 1</span><span>A3</span></li>
+          <li><span>Comic: The Teh Tarik Incident</span><span>A4</span></li>
+          <li><span>Eight fun facts</span><span>A4</span></li>
+          <li><span>Six riddles</span><span>A4</span></li>
         </ol>
       </nav>
     </aside>
@@ -353,173 +381,176 @@ p{margin:0 0 .8em;hyphens:auto}
 
 <!-- ==================== PAGE A2 ==================== -->
 <article class="sheet" aria-label="Page A2">
-  <div class="folio"><span>The Little Lion Daily</span><span>Page A2</span><span>Wednesday, 25 November 2026</span></div>
+  <div class="folio"><span>The Little Lion Daily</span><span>Page A2</span><span>Thursday, 26 November 2026</span></div>
 
   <div class="with-side" style="margin-top:0">
     <section class="feature">
-      <div class="kicker">History's great hoaxes · Case file · 5 min read</div>
-      <h2>The man who sold the Eiffel Tower</h2>
-      <p class="deck">It's 1925. The most famous landmark in the world is for sale. The seller doesn't own it. The buyer pays anyway.</p>
-      <div class="byline">By the Little Lion history desk</div>
+      <div class="kicker">Strange animals · Countdown · 5 min read</div>
+      <h2>The mantis shrimp: five superpowers, ranked</h2>
+      <p class="deck">It's about the length of your hand. It punches like a superhero. And it may be living on a shore near you.</p>
+      <div class="byline">By the Little Lion nature desk</div>
       <div class="cols">
-        <p class="dropcap">Picture the smartest-looking man in one of the grandest hotels in Paris. Perfect suit. Calm voice. Official government letterhead. He has invited a handful of the city's scrap-metal dealers to a private meeting, and he has a secret to share: the government can't afford the Eiffel Tower any more. It's going to be torn down and sold for scrap, about 7,000 tonnes of iron. One of them will get the contract. But, he says, lowering his voice, nobody must know yet. The public would riot.</p>
-        <p>The man was <b>Victor Lustig</b>. He was not a government official. He was one of the most famous con artists of the 20th century, and this was his most outrageous job.</p>
+        <p class="dropcap">If animals had a boxing league, the heavyweight champion wouldn't be a lion or a bear. It would be a colourful little sea creature that lives in a burrow and looks like a cross between a lobster and a rainbow. Divers have a nickname for some kinds: <b>"thumb splitters"</b>. You'll see why.</p>
+        <p>Let's count down its powers, from merely impressive to frankly ridiculous.</p>
 
-        <div class="exhibit">
-          <div class="box-label">Exhibit A · Why it was believable</div>
-          <p>This is the clever part. The Eiffel Tower was built for the <b>1889 World's Fair</b> and was never meant to be permanent. Its builder was given a permit for just 20 years, and plenty of Parisians had called it an eyesore. It survived partly because it turned out to be useful as a giant radio antenna. So in 1925, the idea that the government might finally get rid of the rusting, costly thing didn't sound crazy. Newspapers had even written about how expensive it was to maintain.</p>
-        </div>
+        <p><span class="count">5</span><b>The name is a double lie.</b> A mantis shrimp is not a mantis, and it isn't really a shrimp either. It's a crustacean from its own group, the <b>stomatopods</b>, which split off from other crustaceans hundreds of millions of years ago. It got the name because its folded front limbs look like the arms of a praying mantis. In Singapore you might have met them on a seafood menu as <b>濑尿虾</b> or <b>虾蛄</b>.</p>
 
-        <figure class="fig tall">
-          <img src="img/eiffel-tower-construction-1888.jpg" alt="Sepia photograph of the Eiffel Tower under construction, with the lower levels complete and scaffolding at the top" width="960" height="1221">
-          <figcaption>The tower going up in 1888. Many Parisians at the time expected it to come down again one day, which helped Lustig's story sound real.<span class="credit">Photo: Louis-Émile Durandelle / Wikimedia Commons, public domain</span></figcaption>
+        <figure class="fig">
+          <img src="img/peacock-mantis-shrimp.jpg" alt="A peacock mantis shrimp with a bright green body, orange legs and stalked eyes, sitting on the sea floor" width="960" height="720">
+          <figcaption>A peacock mantis shrimp. The folded "elbows" at the front are its clubs, the deadliest part of a very pretty animal.<span class="credit">Photo: Jens Petersen / Wikimedia Commons, CC BY 2.5</span></figcaption>
         </figure>
 
-        <p><b>Exhibit B · Choosing the target.</b> Lustig picked a dealer named <b>André Poisson</b>, who, the story goes, felt like an outsider among the big Paris businessmen and badly wanted to be taken seriously. Winning the most famous contract in France would change everything for him.</p>
-        <p><b>Exhibit C · The masterstroke.</b> Poisson's wife was suspicious. Why so secret? Why so rushed? So Lustig did something brilliant and sneaky. He "confessed". He admitted he was a poorly paid official who wanted a little extra money on the side, in other words a bribe. That calmed Poisson down completely. A crooked official asking for a bribe? That felt <i>real</i>. Nobody would make that up.</p>
-        <p>Poisson paid for the tower and paid the bribe on top. Lustig took the money and left for Vienna.</p>
-        <p><b>Exhibit D · The silence.</b> And then … nothing happened. Poisson never went to the police. He was too embarrassed to admit, in public, that he had tried to buy the Eiffel Tower in a secret deal. Lustig had counted on that.</p>
-        <p>According to most accounts, Lustig was so pleased that he came back to Paris and tried the same trick again. This time the victim did go to the police, and Lustig slipped away before he could be caught.</p>
+        <p><span class="count">4</span><b>Each eye works like a pair.</b> Its eyes sit on stalks and swivel separately, so one can look forward while the other looks up. Even stranger, each eye is split into three zones that can each look at the same object. That means a mantis shrimp can judge distance with <i>one</i> eye, something you need both of yours to do.</p>
 
-        <figure class="fig tall">
-          <img src="img/victor-lustig-1931.jpg" alt="A 1931 US Bureau of Investigation record card with front and side photographs of Victor Lustig and typed notes about his arrests" width="460" height="442">
-          <figcaption>A 1931 US Bureau of Investigation record card for Lustig, who is described on it as an "international con man".<span class="credit">Photo: United States Department of Justice / Wikimedia Commons, public domain</span></figcaption>
-        </figure>
+        <p><span class="count">3</span><b>It sees light you can't imagine.</b> Your eyes have three types of colour sensor: red, green and blue. Mantis shrimps have <b>12 or more</b>. They can also see ultraviolet and <b>polarised light</b>, which is light whose waves wiggle in one particular direction. Some species even send secret signals to each other by flashing polarised patterns on their bodies, a private channel other animals can't read.</p>
+        <p><b>Myth vs fact:</b> For years, people said this meant mantis shrimps see "millions more colours" than us. Then, in 2014, scientists tested them and found they were actually <i>worse</i> than humans at telling two very similar colours apart. The best current idea is that they don't mix colours in the brain the way we do. Instead, their eyes may just recognise each colour instantly, like a fast checklist. Fewer shades, quicker answers: handy when you're about to punch something.</p>
 
-        <p><b>Exhibit E · How it ended.</b> Lustig moved on to the United States, where he sold a "money-printing box" that supposedly copied banknotes (it didn't) and later got into real counterfeiting. Secret Service agents caught up with him in 1935. He was sent to the island prison of Alcatraz and died in prison custody in 1947.</p>
+        <div class="fact">About 80 km/h<small>Roughly how fast a peacock mantis shrimp's club swings, underwater, where everything is meant to be slow</small></div>
 
-        <div class="exhibit">
-          <div class="box-label">Detective's notes · The con-man's toolkit</div>
-          <ol>
-            <li><b>Authority:</b> official letterhead, a smart suit, a fancy hotel.</li>
-            <li><b>A believable backstory:</b> the tower really was costly and unloved.</li>
-            <li><b>Secrecy:</b> "Don't tell anyone." Secrets stop victims from checking.</li>
-            <li><b>Urgency and greed:</b> one lucky winner, decide now.</li>
-            <li><b>A flaw that feels honest:</b> the bribe "confession" made the lie more convincing.</li>
-          </ol>
-        </div>
-        <p>Here's the uncomfortable part. Not one of those five tricks needs Paris, 1925 or a top hat. They arrive on phones in Singapore every single day: a "bank officer" who needs you to act fast, a "government official" who says the matter is confidential, a "once-only" investment your friends mustn't hear about. Same toolkit, new costume.</p>
+        <p><span class="count">2</span><b>The punch.</b> The peacock mantis shrimp uses a club-shaped limb to smash snails, crabs and clams. Its body works like a crossbow: a spring-like part is locked in place, loaded with energy, and released all at once. The club shoots out at around <b>23 metres per second</b> with an acceleration often compared to a bullet leaving a gun. It is one of the fastest strikes known in the animal kingdom.</p>
+        <p>And it hits <i>twice</i>. The club moves so fast that the water in front of it can't keep up, and tiny bubbles form in the low-pressure gap behind it. This is called <b>cavitation</b>. When the bubbles collapse, they release a second shock wave, plus a tiny flash of light and a burst of heat. Even if the club misses, the bubbles can stun the prey. Aquarium keepers tell stories of mantis shrimps cracking the glass of their tanks.</p>
+
+        <p><span class="count">1</span><b>The club doesn't break.</b> Here's the ridiculous part. Hitting hard shells at that speed, over and over, should shatter the club. It doesn't, and scientists have spent years finding out why. Inside, the club is built from layers of fibres, each layer twisted slightly from the one below it, like a spiral staircase. When a crack starts, it can't run straight through. It has to twist and turn along the spiral, losing energy until it stops. Engineers are now copying this design to make tougher materials for things like helmets and aircraft parts.</p>
 
         <div class="tryit">
-          <div class="box-label">You be the detective</div>
-          <p>Which of these messages have the con-man's fingerprints on them? Count the tricks in each.</p>
-          <p><b>A.</b> "This is an officer from a government agency. Your bank account is linked to a crime. Do not tell your family, as this is a confidential investigation. Transfer your savings to this 'safe account' within 1 hour."</p>
-          <p><b>B.</b> "Hi, it's your CCA teacher. Training is moved to 4pm tomorrow because of the rain. See you at the usual place."</p>
-          <p><b>C.</b> "Congratulations! You've been specially picked for a limited trial. Earn $500 a day from home. Only 3 spots left. Don't share this link."</p>
-          <details><summary>Detective's verdict</summary>
-            <p class="small"><b>A</b> uses authority, secrecy and urgency: a classic. Real officers will not ask you to move money into a "safe account". <b>C</b> uses greed, urgency and secrecy. <b>B</b> asks for nothing, but if a message ever surprises you, check it through a channel you already trust, like calling the person or asking a parent. Singapore's free <b>ScamShield</b> app can also help filter scam calls and messages.</p>
-          </details>
+          <div class="box-label">Pop quiz · 3 questions</div>
+          <p><b>1.</b> What group of animals does the mantis shrimp belong to? <b>2.</b> What is the name for the collapsing bubbles that give its punch a "second hit"? <b>3.</b> True or false: having more colour sensors means it is better than you at telling similar shades apart.</p>
+          <details><summary>Answers</summary><p class="small"><b>1.</b> Stomatopods (crustaceans). <b>2.</b> Cavitation. <b>3.</b> False. In a 2014 study, they did worse than humans at telling close colours apart.</p></details>
         </div>
       </div>
     </section>
 
     <aside class="side">
       <section class="zhbox">
-        <div class="box-label">汉字故事</div>
-        <div class="idiom">解</div>
-        <div class="py">jiě · 也读 jiè、xiè</div>
-        <p><b>拆开来看：</b>"解"由"角""刀""牛"三个部分组成。古人造这个字时，画的正是用刀把牛角从牛身上分开的样子。所以"解"最早的意思是<b>剖开、分开</b>。</p>
-        <p><b>故事：</b>《庄子·养生主》里有个厨师叫庖丁，他替梁惠王宰牛，刀法熟练得像跳舞一样。他说自己顺着牛身上骨肉之间的空隙下刀，所以一把刀用了十九年，还像新磨的一样。这就是成语<b>"庖丁解牛"</b>，比喻掌握了事物的规律，做事就能得心应手。</p>
-        <p><b>意思的旅行：</b>从"把东西分开"，慢慢引申出"把问题分开来看"：<b>解释、解答、了解、解决</b>。原来，解题和解牛，靠的是同一种本事：找到关节，一块一块拆开。</p>
-        <p><b>小考考：</b>"浑身解数"的"解"怎么读？</p>
-        <details><summary>看答案</summary><p>读 <b>xiè</b>。"解数"指武术的招数，"使出浑身解数"就是把所有本领都拿出来。</p></details>
-        <p><b>想一想：</b>早报"字述一年"在选年度汉字。如果要用一个字总结你的2026年，你会选哪个字？为什么？</p>
+        <div class="box-label">古诗一首</div>
+        <div class="idiom" style="font-size:30px;letter-spacing:.12em">题西林壁</div>
+        <div class="py">北宋 · 苏轼 · 约1084年</div>
+        <div class="poem">横看成岭侧成峰，<br>远近高低各不同。<br>不识庐山真面目，<br>只缘身在此山中。</div>
+        <p><b>背景：</b>苏轼（苏东坡）游览江西的庐山，看了十几天，最后在西林寺的墙壁上写下这首诗。"题"就是"写在上面"的意思。</p>
+        <p><b>白话：</b>从正面看，庐山是一道长长的山岭；从侧面看，它又变成一座座高峰。站得远、站得近、站得高、站得低，看到的样子都不一样。为什么我看不清庐山真正的样子呢？只因为我自己就站在这座山里面。</p>
+        <p><b>道理：</b>后来人们常用"不识庐山真面目"来说：身在事情当中的人，往往看不清全貌；退后一步、换个角度，才能看得更清楚。考试前觉得一切都乱糟糟？也许你只是"身在此山中"。</p>
+        <p><b>想一想：</b>今天A1版的QR码，专门设计成"横看侧看都能认出来"。还有什么东西，换个角度看，会变得完全不一样？</p>
+        <p><b>小考考：</b>"横看成岭侧成峰"里的"侧"是什么意思？</p>
+        <details><summary>看答案</summary><p>从侧面看。"横看"是从正面看，"侧"是从旁边看。</p></details>
       </section>
     </aside>
   </div>
-
-  <hr class="rule-sec">
-
-  <section class="future" aria-label="Future You">
-    <div class="future-head">
-      <div class="kicker">Future You · Medicine</div>
-      <h2>Triage: why the person who arrived first isn't seen first</h2>
-    </div>
-    <div class="future-grid">
-      <div>
-        <div class="box-label">Know this</div>
-        <p><b>Triage</b> comes from the French word <i>trier</i>, "to sort". The idea is usually traced to Napoleon's army surgeon Dominique-Jean Larrey, who treated wounded soldiers by how badly they were hurt, not by rank or by who arrived first.</p>
-        <p>Emergency departments still work this way. In Singapore, patients are given a <b>Patient Acuity Category</b>, from <b>P1</b> (critically ill, needs help immediately) through P2 and P3 down to <b>P4</b> (non-emergency). That's why a person with a sprained ankle may wait hours while someone who came in later goes straight in.</p>
-      </div>
-      <div>
-        <div class="box-label">Try this</div>
-        <p>You're the triage nurse. Four people arrive at 10am. Put them in order:</p>
-        <p class="small">(a) a teen with a twisted ankle, limping but walking · (b) a man in his 60s with crushing chest pain, pale and sweaty · (c) a 5-year-old with a fever who is chatting and playing · (d) a cyclist with a deep cut on the arm, bleeding slowed by pressure</p>
-        <details><summary>A sensible order</summary><p class="small"><b>b, d, c, a.</b> Chest pain with sweating could be a heart attack, and every minute counts. The cut needs proper care soon. The child is alert, which is reassuring, but needs checking. The ankle can wait safely. Real triage uses vital signs and trained judgement, but the habit of asking "who is most at risk right now?" is the heart of it.</p></details>
-      </div>
-      <div>
-        <div class="box-label">For your application</div>
-        <p>Singapore has two undergraduate medical schools, <b>NUS Yong Loo Lin School of Medicine</b> and <b>NTU Lee Kong Chian School of Medicine</b>, while <b>Duke-NUS</b> takes graduates. Shortlisted applicants go through interviews and assessments that look at communication, empathy and how you reason through ethical dilemmas, not just grades.</p>
-        <p>Start a <b>reflection log</b> now. After any volunteering, such as eldercare visits or helping at a community event, write three lines: what I saw, what I felt, what I'd do differently. Real stories beat "I am passionate about helping people". Always check entry details on the schools' official websites.</p>
-      </div>
-    </div>
-  </section>
 </article>
 
 <!-- ==================== STORY PAGE ==================== -->
 <article class="sheet" aria-label="Page A3 story">
-  <div class="folio"><span>The Little Lion Daily</span><span>Page A3 · Daily story</span><span>Wednesday, 25 November 2026</span></div>
+  <div class="folio"><span>The Little Lion Daily</span><span>Page A3 · Daily story</span><span>Thursday, 26 November 2026</span></div>
 
   <section class="tale">
-    <div class="kicker">Daily story · a classic · about 6 minutes</div>
-    <h2>The Open Window</h2>
-    <div class="byline">By Saki (H. H. Munro) · first published 1914</div>
+    <div class="kicker">Daily story · Juni of the Desert · Episode 1 · about 9 minutes</div>
+    <h2>The Cactus That Got Fat Overnight</h2>
+    <div class="byline">A Little Lion original series</div>
     <div class="tale-intro">
-      <p><b>Before you read.</b> Saki was the pen name of Hector Hugh Munro, born in 1870 in British Burma (now Myanmar) and raised by two strict aunts in England. He became famous for short, sharp stories in which clever young people run rings around pompous adults. He was killed in France during the First World War in 1916.</p>
-      <p>This is his most famous story, and one of the most-taught short stories in English. It is only about 1,200 words long, and nearly every sentence is doing a job. Watch the niece carefully.</p>
+      <p><b>Before you read.</b> Meet a new friend. Juniper "Juni" Castillo is 14 and lives in Tucson, Arizona, in the Sonoran Desert of the United States. She keeps a battered field notebook and can't decide whether she wants to be a scientist or a detective. In this series, she tries being both.</p>
+      <p>Her pen pal is Wei Ling Tan, a Sec 2 student in Singapore, so expect some desert-versus-tropics comparisons. Juni's world has real science in it: everything this episode says about saguaro cacti and desert tortoises is true. Watch for the clues Juni collects, and see if you can solve the mystery before she does.</p>
     </div>
     <div class="cols">
-        <p class="dropcap">“My aunt will be down presently, Mr. Nuttel,” said a very self-possessed young lady of fifteen; “in the meantime you must try and put up with me.”</p>
-        <p>Framton Nuttel endeavoured to say the correct something which should duly flatter the niece of the moment without unduly discounting the aunt that was to come. Privately he doubted more than ever whether these formal visits on a succession of total strangers would do much towards helping the nerve cure which he was supposed to be undergoing.</p>
-        <p>“I know how it will be,” his sister had said when he was preparing to migrate to this rural retreat; “you will bury yourself down there and not speak to a living soul, and your nerves will be worse than ever from moping. I shall just give you letters of introduction to all the people I know there. Some of them, as far as I can remember, were quite nice.”</p>
-        <p>Framton wondered whether Mrs. Sappleton, the lady to whom he was presenting one of the letters of introduction, came into the nice division.</p>
-        <p>“Do you know many of the people round here?” asked the niece, when she judged that they had had sufficient silent communion.</p>
-        <p>“Hardly a soul,” said Framton. “My sister was staying here, at the rectory, you know, some four years ago, and she gave me letters of introduction to some of the people here.”</p>
-        <p>He made the last statement in a tone of distinct regret.</p>
-        <p>“Then you know practically nothing about my aunt?” pursued the self-possessed young lady.</p>
-        <p>“Only her name and address,” admitted the caller. He was wondering whether Mrs. Sappleton was in the married or widowed state. An undefinable something about the room seemed to suggest masculine habitation.</p>
-        <p>“Her great tragedy happened just three years ago,” said the child; “that would be since your sister’s time.”</p>
-        <p>“Her tragedy?” asked Framton; somehow in this restful country spot tragedies seemed out of place.</p>
-        <p>“You may wonder why we keep that window wide open on an October afternoon,” said the niece, indicating a large French window that opened on to a lawn.</p>
-        <p>“It is quite warm for the time of the year,” said Framton; “but has that window got anything to do with the tragedy?”</p>
-        <p>“Out through that window, three years ago to a day, her husband and her two young brothers went off for their day’s shooting. They never came back. In crossing the moor to their favourite snipe-shooting ground they were all three engulfed in a treacherous piece of bog. It had been that dreadful wet summer, you know, and places that were safe in other years gave way suddenly without warning. Their bodies were never recovered. That was the dreadful part of it.” Here the child’s voice lost its self-possessed note and became falteringly human. “Poor aunt always thinks that they will come back some day, they and the little brown spaniel that was lost with them, and walk in at that window just as they used to do. That is why the window is kept open every evening till it is quite dusk. Poor dear aunt, she has often told me how they went out, her husband with his white waterproof coat over his arm, and Ronnie, her youngest brother, singing ‘Bertie, why do you bound?’ as he always did to tease her, because she said it got on her nerves. Do you know, sometimes on still, quiet evenings like this, I almost get a creepy feeling that they will all walk in through that window—”</p>
-        <p>She broke off with a little shudder. It was a relief to Framton when the aunt bustled into the room with a whirl of apologies for being late in making her appearance.</p>
-        <p>“I hope Vera has been amusing you?” she said.</p>
-        <p>“She has been very interesting,” said Framton.</p>
-        <p>“I hope you don’t mind the open window,” said Mrs. Sappleton briskly; “my husband and brothers will be home directly from shooting, and they always come in this way. They’ve been out for snipe in the marshes to-day, so they’ll make a fine mess over my poor carpets. So like you men-folk, isn’t it?”</p>
-        <p>She rattled on cheerfully about the shooting and the scarcity of birds, and the prospects for duck in the winter. To Framton it was all purely horrible. He made a desperate but only partially successful effort to turn the talk on to a less ghastly topic; he was conscious that his hostess was giving him only a fragment of her attention, and her eyes were constantly straying past him to the open window and the lawn beyond. It was certainly an unfortunate coincidence that he should have paid his visit on this tragic anniversary.</p>
-        <p>“The doctors agree in ordering me complete rest, an absence of mental excitement, and avoidance of anything in the nature of violent physical exercise,” announced Framton, who laboured under the tolerably widespread delusion that total strangers and chance acquaintances are hungry for the least detail of one’s ailments and infirmities, their cause and cure. “On the matter of diet they are not so much in agreement,” he continued.</p>
-        <p>“No?” said Mrs. Sappleton, in a voice which only replaced a yawn at the last moment. Then she suddenly brightened into alert attention—but not to what Framton was saying.</p>
-        <p>“Here they are at last!” she cried. “Just in time for tea, and don’t they look as if they were muddy up to the eyes!”</p>
-        <p>Framton shivered slightly and turned towards the niece with a look intended to convey sympathetic comprehension. The child was staring out through the open window with dazed horror in her eyes. In a chill shock of nameless fear Framton swung round in his seat and looked in the same direction.</p>
-        <p>In the deepening twilight three figures were walking across the lawn towards the window; they all carried guns under their arms, and one of them was additionally burdened with a white coat hung over his shoulders. A tired brown spaniel kept close at their heels. Noiselessly they neared the house, and then a hoarse young voice chanted out of the dusk: “I said, Bertie, why do you bound?”</p>
-        <p>Framton grabbed wildly at his stick and hat; the hall-door, the gravel-drive, and the front gate were dimly-noted stages in his headlong retreat. A cyclist coming along the road had to run into the hedge to avoid an imminent collision.</p>
-        <p>“Here we are, my dear,” said the bearer of the white mackintosh, coming in through the window; “fairly muddy, but most of it’s dry. Who was that who bolted out as we came up?”</p>
-        <p>“A most extraordinary man, a Mr. Nuttel,” said Mrs. Sappleton; “could only talk about his illnesses, and dashed off without a word of good-bye or apology when you arrived. One would think he had seen a ghost.”</p>
-        <p>“I expect it was the spaniel,” said the niece calmly; “he told me he had a horror of dogs. He was once hunted into a cemetery somewhere on the banks of the Ganges by a pack of pariah dogs, and had to spend the night in a newly dug grave with the creatures snarling and grinning and foaming just above him. Enough to make anyone lose their nerve.”</p>
-        <p>Romance at short notice was her speciality.</p>
-        <p class="end">— THE END —</p>
+      <p class="voice"><b>Voice note from Wei Ling · Singapore · 9.14 pm</b>"Juni! Geography homework emergency. Is there actually water inside a cactus, or is that just a cartoon thing? Also, it rained here again today. Third time this week. It is Tuesday."</p>
+      <p class="voice"><b>Voice note from Juni · Tucson · 6.14 am</b>"Give me one week. I have a saguaro and a tape measure."</p>
+      <p class="dropcap">The saguaro behind Abuelo Tomás's repair shop was called Señor Grande, and he was older than the shop, older than the street, and, according to Abuelo, older than the invention of the electric toaster. He stood four storeys tall with two arms raised as if somebody had just said, "Hands up!" and he had politely agreed.</p>
+      <p>Juni had been measuring him every Saturday since March. Not his height, which would have needed a ladder and a permission slip, but his waist. She wrapped a cloth tape measure around his trunk at exactly the height of her own chin, carefully, between the spines, and wrote the number in her notebook.</p>
+      <p>The numbers had been boring, in a good, scientific way. Through the long, dry spring and the furnace of June, Señor Grande had got very slightly thinner each week:</p>
+      <p class="timeline"><b>7 June</b> 187 cm<br><b>14 June</b> 186 cm<br><b>21 June</b> 185 cm<br><b>28 June</b> 184 cm</p>
+      <p>Then, on the first Thursday in July, the monsoon arrived.</p>
+      <p>Wei Ling never believed Juni when she said Arizona had a monsoon. But it did. All summer, the desert heated up like a frying pan, until one afternoon the clouds piled up over the mountains, turned the colour of a bruise, and dropped a whole month's worth of rain in forty minutes. The streets flooded. The dry riverbeds, which everyone in Tucson calls washes, roared with brown water. And the whole desert smelled like a giant had crushed a billion leaves in his fist.</p>
+      <p>On Saturday, Juni wrapped the tape around Señor Grande.</p>
+      <p>196 cm.</p>
+      <p>She did it again. 196 cm.</p>
+      <p>"Abuelo," she called into the shop, "Señor Grande got fat."</p>
+      <p>Abuelo Tomás looked up from his workbench, where an old accordion lay open like a patient on an operating table. He pushed his glasses onto his forehead, where they joined two other pairs.</p>
+      <p>"Twelve centimetres in a week?" he said. "Then he ate something. Have you seen the Hendersons' cat?"</p>
+      <p>"Abuelo."</p>
+      <p>Right on cue, the Hendersons' cat strolled along the back wall, gave them both a look of deep contempt, and dropped out of sight.</p>
+      <p>"Cleared," said Abuelo. "Good. I'd hate to explain that to the Hendersons."</p>
+      <p>Juni opened her notebook to a fresh page and wrote at the top in capitals: <b>THE CASE OF THE FAT CACTUS</b>. Underneath she wrote <b>SUSPECTS</b>, then crossed it out, because the suspect was obviously a cactus, and wrote <b>THEORIES</b> instead.</p>
+      <p><i>Theory 1: I measured it wrong.</i></p>
+      <p>This was the most likely answer, and Juni knew it. Real scientists, she had read, always suspect themselves first. So she checked the tape measure. It was a cloth one from the shop, and Abuelo had repaired its little metal end with what looked like a spring from a toaster.</p>
+      <p>"Is this stretchy?" she asked.</p>
+      <p>"Everything in this shop is a little bit stretchy," said Abuelo. "Including the truth."</p>
+      <p>She laid the tape along a steel metre ruler from the toolbox. It matched perfectly, millimetre for millimetre. She measured Señor Grande a third time, at chin height, between the same two spines she always used. 196.</p>
+      <p>She crossed out Theory 1.</p>
+      <p><i>Theory 2: He's sick. Swelling?</i></p>
+      <p><i>Theory 3: He grew.</i></p>
+      <p>Theory 3 didn't seem likely. Saguaros grow so slowly that a young one can be no taller than a mug after ten years. Señor Grande had not suddenly hit a growth spurt at the age of about a hundred and fifty.</p>
+      <p>Which left Theory 2. Juni looked up at the huge green column, and something cold walked down the back of her neck.</p>
+      <p>That afternoon, Mr. Herrera from across the street came over with a lawnmower blade that needed sharpening. He squinted at the saguaro.</p>
+      <p>"He's looking heavy," he said. "Careful. My cousin's saguaro fell over in a storm once. Wet ground, big wind, <i>boom</i>. Took the fence with it."</p>
+      <p>Juni looked at Señor Grande. Then at the shop roof, which was directly underneath his left arm. Then at the sky, where the clouds were already piling up over the mountains again.</p>
+      <p>"There's another storm tonight," she said.</p>
+      <p>"Then we'd better think fast," said Abuelo.</p>
+
+      <p><b>Clue number one</b> came from the slowest member of the family.</p>
+      <p>Professor was the desert tortoise who lived in a burrow at the end of the yard. He was about sixty years old, he had opinions about lettuce, and he was, as Abuelo often said, the smartest one in the family, because he never did anything in a hurry and never had to apologise.</p>
+      <p>After Thursday's storm, Juni remembered, Professor had walked out to a puddle by the back gate and drunk from it for a very, very long time. Then he had gone back into his burrow looking smug.</p>
+      <p>"He tanks up," said Abuelo, when she asked. "Desert tortoises drink as much as they can when it rains and store it inside, in the bladder, like a canteen. He might not see another puddle for weeks. He's no fool."</p>
+      <p>Juni wrote: <i>Clue 1: Desert animals stock up on water when it finally comes.</i></p>
+
+      <p><b>Clue number two</b> was on the cactus itself.</p>
+      <p>A saguaro isn't smooth like a pipe. It has long ridges running from top to bottom, like the folds of a curtain, with spines along the top of each ridge. Back in March, Juni had drawn them in her notebook and noted that she could slide a pencil sideways into the grooves between the ridges right up to the eraser.</p>
+      <p>She tried it now. The pencil went in only halfway.</p>
+      <p>The grooves were shallower. The ridges were further apart. The whole cactus looked smoother, rounder, tighter. Like a balloon somebody had been blowing into.</p>
+      <p><i>Clue 2: The folds have opened out.</i></p>
+
+      <p><b>Clue number three</b> was on Abuelo's workbench, wheezing.</p>
+      <p>Abuelo was testing the accordion. He pulled the two ends apart, and the folded paper bellows in the middle opened out, getting bigger and bigger as air rushed in. He pushed it closed, the folds tucked back together, and the box shrank, with a sad little honk.</p>
+      <p>Open. Bigger. Closed. Smaller. Same accordion. No new material. Just folds.</p>
+      <p>Juni stared at it. Then she stared at the window, through which she could see Señor Grande. Then back at the accordion.</p>
+      <p>"Abuelo," she said slowly, "Señor Grande is an accordion."</p>
+      <p>Abuelo honked the accordion thoughtfully. "Go on."</p>
+      <p>"The ridges are folds. When it's dry, he uses up the water stored inside him, and he shrinks. The folds get deeper. That's why he got thinner every week in June. But when the rain comes, he drinks as fast as he can, and the folds open out to make room for all that water. He didn't get sick. He didn't grow. He <i>filled up</i>. Like Professor at the puddle, only bigger."</p>
+      <p>"Much bigger," said Abuelo. "A big saguaro can hold hundreds of litres. Most of what makes him heavy is water."</p>
+      <p>"But how does he drink it so fast? It only rained for forty minutes."</p>
+      <p>Abuelo put the accordion down and smiled. "When your abuela planted that paloverde tree by the gate, we dug the hole and hit roots. Saguaro roots. All the way over there." He pointed across the yard, a distance about as long as the cactus was tall. "Saguaros keep their roots shallow, just under the surface, spread out like a net. When the rain soaks in, the net catches it before the sun can steal it back."</p>
+      <p>Juni wrote so fast her pencil tore the page.</p>
+
+      <p>That still left Mr. Herrera's warning. Heavy cactus. Wet ground. Wind on the way.</p>
+      <p>Juni was not going to sleep under a falling saguaro without data. She borrowed Abuelo's plumb bob, a pointed brass weight on a string that builders use to find a perfectly straight up-and-down line. She held the string up beside Señor Grande's trunk and let the weight settle. The string hung straight. The cactus ran right alongside it, top to bottom. No lean. Not even a little.</p>
+      <p>"Straight as a ruler," she reported. "And his roots are spread out in every direction like a net. If he were going to tip, I think he'd be leaning already."</p>
+      <p>"Good science," said Abuelo. "We will still move my good chair out of that corner of the shop. Good science and a little caution make a fine team."</p>
+      <p>The storm came at nine. The wind howled. The rain drummed on the roof like a thousand impatient fingers. Juni lay awake listening for a <i>boom</i> that never came.</p>
+      <p>In the morning, Señor Grande stood exactly where he always had, arms up, dripping and gleaming. Juni ran out with the tape measure.</p>
+      <p>199 cm.</p>
+      <p>"He had a second helping," she announced.</p>
+
+      <p class="voice"><b>Voice note from Juni · Tucson · 7.02 am</b>"Wei Ling. Real water. Inside a cactus. Folded up like an accordion. He drinks after a storm and gets fatter, then slowly uses it up and gets thinner until the next rain. I have the numbers. Your homework is saved."</p>
+      <p class="voice"><b>Voice note from Wei Ling · Singapore · 10.30 pm</b>"That is so cool. If our trees did that, Singapore's trees would be the size of HDB blocks by now. It's raining again, by the way."</p>
+
+      <p>There was one more thing Juni wanted to check. She went to the kitchen, borrowed the scale, and found Professor sunning himself by his burrow. She lifted him on gently. He did not appreciate it.</p>
+      <p>She checked her notebook. Last month, Professor had weighed 3.1 kilograms. Today: 3.4.</p>
+      <p>"Professor," said Juni, "you're an accordion too."</p>
+      <p>Professor gave her a long, slow look of tremendous dignity. Then he climbed off the scale, turned around, and walked back into his burrow.</p>
+      <p>It took him four minutes. Abuelo timed it.</p>
+      <p class="end">— THE END —</p>
+      <figure class="fig">
+        <img src="img/saguaro-tucson.jpg" alt="A desert trail near Tucson, Arizona, with tall saguaro cacti standing on a rocky hill, prickly pear cacti in front and mountains in the distance" width="960" height="720">
+        <figcaption>Juni's neighbourhood: saguaros on a hillside in Saguaro National Park, just outside Tucson. Saguaros grow wild only in the Sonoran Desert.<span class="credit">Photo: WClarke / Wikimedia Commons, CC BY-SA 3.0</span></figcaption>
+      </figure>
     </div>
     <div class="tale-extras">
       <div>
         <div class="box-label">Glossary</div>
         <dl>
-          <dt>presently</dt><dd>soon (old-fashioned)</dd>
-          <dt>self-possessed</dt><dd>calm, confident, in control</dd>
-          <dt>rectory</dt><dd>the house where a parish priest lives</dd>
-          <dt>snipe</dt><dd>a small wading bird of marshes</dd>
-          <dt>bog / moor</dt><dd>soft, wet ground / open wild land</dd>
-          <dt>mackintosh</dt><dd>a raincoat</dd>
-          <dt>pariah dogs</dt><dd>stray, half-wild dogs</dd>
-          <dt>romance</dt><dd>here: a made-up, exciting story</dd>
+          <dt>saguaro</dt><dd>a giant cactus of the Sonoran Desert, said "sah-WAH-roh"</dd>
+          <dt>abuelo / abuela</dt><dd>Spanish for grandfather / grandmother</dd>
+          <dt>monsoon</dt><dd>a seasonal wind change that brings a rainy season</dd>
+          <dt>wash</dt><dd>a dry riverbed that floods only after heavy rain</dd>
+          <dt>contempt</dt><dd>a feeling that someone is beneath you</dd>
+          <dt>bellows</dt><dd>a folding bag that pushes or pulls air</dd>
+          <dt>plumb bob</dt><dd>a weight on a string that hangs perfectly vertical</dd>
+          <dt>paloverde</dt><dd>a desert tree with a green trunk</dd>
         </dl>
       </div>
       <div>
         <div class="box-label">Talk about it</div>
         <ol>
-          <li>Go back to the first paragraph. Which words should have warned Framton (and you) about Vera?</li>
-          <li>Vera tells two lies. How does she make each one believable? Look at the details she chooses.</li>
-          <li>The last line is only six words. What does it tell you about Vera, and why does Saki save it for the very end?</li>
+          <li>Juni checks her own tape measure before blaming the cactus. Why is "suspect yourself first" a good habit for a scientist, or a detective?</li>
+          <li>Which of the three clues did you find most useful? Could you have solved the case before Juni did?</li>
+          <li>Singapore gets rain all year round, while Tucson's rain comes in bursts. How might a plant that lives here be designed differently from a saguaro?</li>
         </ol>
       </div>
     </div>
@@ -528,70 +559,137 @@ p{margin:0 0 .8em;hyphens:auto}
 
 <!-- ==================== PAGE A4 ==================== -->
 <article class="sheet" aria-label="Page A4">
-  <div class="folio"><span>The Little Lion Daily</span><span>Page A4 · Fun &amp; games</span><span>Wednesday, 25 November 2026</span></div>
+  <div class="folio"><span>The Little Lion Daily</span><span>Page A4 · Fun &amp; games</span><span>Thursday, 26 November 2026</span></div>
 
-  <section class="duo" aria-label="Quiz and riddles">
-    <div class="riddles">
-      <div class="kicker">Wednesday quiz · Science &amp; general knowledge</div>
-      <h2>Ten questions. No phone.</h2>
-      <p class="instr">Say your answer out loud first, then open it. Tick "I got it" to keep score.</p>
-      <ol id="quiz">
-        <li>Which planet in our solar system has the shortest day?
-          <details><summary>Show answer</summary>Jupiter. It spins once in about 10 hours. (Venus is the opposite: its day is longer than its year.)</details><label class="got"><input type="checkbox"> I got it</label></li>
-        <li>What is the hardest substance in the human body?
-          <details><summary>Show answer</summary>Tooth enamel, the outer coating of your teeth.</details><label class="got"><input type="checkbox"> I got it</label></li>
-        <li>Roughly how long does sunlight take to reach Earth: 8 seconds, 8 minutes or 8 hours?
-          <details><summary>Show answer</summary>About 8 minutes. When you look at the sun (please don't, directly), you're seeing it as it was 8 minutes ago.</details><label class="got"><input type="checkbox"> I got it</label></li>
-        <li>The chemical symbol Fe stands for which element?
-          <details><summary>Show answer</summary>Iron, from its Latin name <i>ferrum</i>. Fitting for a day about the Eiffel Tower.</details><label class="got"><input type="checkbox"> I got it</label></li>
-        <li>Which metal is liquid at room temperature?
-          <details><summary>Show answer</summary>Mercury.</details><label class="got"><input type="checkbox"> I got it</label></li>
-        <li>How many hearts does an octopus have?
-          <details><summary>Show answer</summary>Three. Two pump blood through the gills and one pumps it around the body. Its blood is blue, too.</details><label class="got"><input type="checkbox"> I got it</label></li>
-        <li>What is Singapore's highest natural point, and is it more or less than 200 m tall?
-          <details><summary>Show answer</summary>Bukit Timah Hill, at about 163 m. Less than 200 m, so shorter than some of our tallest buildings.</details><label class="got"><input type="checkbox"> I got it</label></li>
-        <li>True or false: water boils at a lower temperature at the top of Mount Everest.
-          <details><summary>Show answer</summary>True. With less air pressure, it boils at only about 70°C, which makes cooking an egg properly very hard.</details><label class="got"><input type="checkbox"> I got it</label></li>
-        <li>What do the letters DNA stand for?
-          <details><summary>Show answer</summary>Deoxyribonucleic acid.</details><label class="got"><input type="checkbox"> I got it</label></li>
-        <li>Does sound travel faster through air or through water?
-          <details><summary>Show answer</summary>Water, and by a lot: roughly four times faster. Sound travels faster still through solids like bone, which links back to today's A1 feature.</details><label class="got"><input type="checkbox"> I got it</label></li>
-      </ol>
-      <div class="quiz-score" id="quiz-score" aria-live="polite">Score: 0 / 10</div>
+  <section aria-label="Comic strip">
+    <div class="kicker">Thursday comic</div>
+    <h2 style="font-size:32px;line-height:1.05">The Teh Tarik Incident</h2>
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+      <defs>
+        <symbol id="kid" viewBox="0 0 60 120">
+          <circle cx="30" cy="22" r="16" class="ln"/>
+          <path d="M15 18 Q20 2 32 5 Q44 3 46 18 Q38 10 30 12 Q22 10 15 18Z" class="solid"/>
+          <circle cx="24" cy="23" r="1.8" class="solid"/><circle cx="36" cy="23" r="1.8" class="solid"/>
+          <path d="M30 38 L30 78 M30 78 L19 112 M30 78 L41 112" class="ln"/>
+          <path d="M18 44 L42 44 L44 80 L16 80Z" class="ln"/>
+        </symbol>
+        <symbol id="uncle" viewBox="0 0 90 100">
+          <circle cx="45" cy="26" r="20" class="ln"/>
+          <path d="M30 14 Q45 4 60 14" class="ln"/>
+          <circle cx="38" cy="25" r="2" class="solid"/><circle cx="52" cy="25" r="2" class="solid"/>
+          <path d="M36 34 Q45 38 54 34" class="ln"/>
+          <path d="M22 100 L26 54 Q45 46 64 54 L68 100" class="ln"/>
+          <path d="M34 54 L34 70 M56 54 L56 70" class="ln"/>
+          <path d="M60 50 L74 54 L70 78 L60 74Z" class="ln"/>
+        </symbol>
+        <symbol id="stall" viewBox="0 0 120 80">
+          <rect x="2" y="2" width="116" height="76" class="ln"/>
+          <rect x="16" y="18" width="34" height="34" class="ln"/>
+          <rect x="19" y="21" width="9" height="9" class="solid"/><rect x="38" y="21" width="9" height="9" class="solid"/><rect x="19" y="40" width="9" height="9" class="solid"/>
+          <rect x="31" y="31" width="4" height="4" class="solid"/><rect x="38" y="40" width="4" height="4" class="solid"/><rect x="43" y="45" width="4" height="4" class="solid"/><rect x="31" y="22" width="4" height="4" class="solid"/>
+          <path d="M70 30 L106 30 M70 42 L100 42" class="ln"/>
+        </symbol>
+      </defs>
+    </svg>
+    <div class="comic" role="img" aria-label="Four-panel comic. Panel 1: a hawker uncle says his QR sticker got teh tarik on it so it cannot scan. Panel 2: a student scans it anyway and it beeps: paid. Panel 3: the student explains error correction rebuilds missing bits. Panel 4: the uncle asks if it can rebuild the student's missing homework, and the student admits some data is lost forever.">
+      <svg viewBox="0 0 240 260" aria-hidden="true">
+        <text class="cap" x="8" y="16">1 · 12.41 PM, HAWKER CENTRE</text>
+        <use href="#uncle" x="128" y="88" width="90" height="100"/>
+        <use href="#stall" x="110" y="168" width="124" height="84"/>
+        <ellipse cx="143" cy="207" rx="17" ry="10" class="stain"/>
+        <use href="#kid" x="22" y="128" width="60" height="120"/>
+        <path d="M10 26 H230 V78 H190 L178 92 L176 78 H10Z" class="bub"/>
+        <text x="18" y="44">Aiyo, my QR sticker kena</text>
+        <text x="18" y="60">teh tarik. Cannot scan lah.</text>
+        <text x="18" y="74" font-style="italic">Pay cash, can?</text>
+      </svg>
+      <svg viewBox="0 0 240 260" aria-hidden="true">
+        <text class="cap" x="8" y="16">2</text>
+        <use href="#uncle" x="128" y="88" width="90" height="100"/>
+        <use href="#stall" x="110" y="168" width="124" height="84"/>
+        <ellipse cx="143" cy="207" rx="17" ry="10" class="stain"/>
+        <use href="#kid" x="22" y="128" width="60" height="120"/>
+        <rect x="72" y="160" width="16" height="26" rx="3" class="ln"/>
+        <path d="M90 165 L112 160 M90 173 L112 175" class="ln" stroke-dasharray="3 3"/>
+        <text class="sfx-t" x="40" y="70">BEEP!</text>
+        <text x="40" y="92">✓ PAID $4.50</text>
+        <path d="M150 40 H230 V72 H196 L188 84 L186 72 H150Z" class="bub"/>
+        <text x="160" y="61">HUH?!</text>
+      </svg>
+      <svg viewBox="0 0 240 260" aria-hidden="true">
+        <text class="cap" x="8" y="16">3</text>
+        <use href="#uncle" x="128" y="88" width="90" height="100"/>
+        <use href="#stall" x="110" y="168" width="124" height="84"/>
+        <use href="#kid" x="22" y="128" width="60" height="120"/>
+        <path d="M8 24 H232 V108 H70 L56 124 L56 108 H8Z" class="bub"/>
+        <text x="16" y="42">Error correction, Uncle! The</text>
+        <text x="16" y="58">code stores spare data, so</text>
+        <text x="16" y="74">it can rebuild the missing</text>
+        <text x="16" y="90">bits, if not too much is gone.</text>
+      </svg>
+      <svg viewBox="0 0 240 260" aria-hidden="true">
+        <text class="cap" x="8" y="16">4</text>
+        <use href="#uncle" x="128" y="88" width="90" height="100"/>
+        <use href="#stall" x="110" y="168" width="124" height="84"/>
+        <use href="#kid" x="22" y="128" width="60" height="120"/>
+        <path d="M84 138 Q88 128 90 138 Q88 144 84 138Z" class="ln"/>
+        <path d="M100 24 H232 V74 H190 L176 88 L178 74 H100Z" class="bub"/>
+        <text x="108" y="42">Wah. Then your</text>
+        <text x="108" y="57">missing homework</text>
+        <text x="108" y="70">also can rebuild?</text>
+        <path d="M6 84 H108 V118 H52 L44 128 L42 118 H6Z" class="bub"/>
+        <text x="12" y="99" font-size="11">Some data is</text>
+        <text x="12" y="112" font-size="11">lost forever.</text>
+      </svg>
     </div>
+  </section>
 
-    <div class="riddles">
-      <div class="kicker">Brain teasers</div>
-      <h2>Eight riddles for the bus home</h2>
-      <ol>
-        <li>What gets wetter the more it dries?
-          <details><summary>Show answer</summary>A towel.</details></li>
-        <li>The more of these you take, the more you leave behind. What are they?
-          <details><summary>Show answer</summary>Footsteps.</details></li>
-        <li>What can travel around the world while staying in one corner?
-          <details><summary>Show answer</summary>A stamp.</details></li>
-        <li>A man pushes his car up to a hotel and immediately knows he's bankrupt. What's going on?
-          <details><summary>Show answer</summary>He's playing Monopoly.</details></li>
-        <li>Which word becomes shorter when you add two letters to it?
-          <details><summary>Show answer</summary>"Short." Add "er" and it becomes "shorter".</details></li>
-        <li>一口咬掉牛尾巴。（打一字）
-          <details><summary>看答案</summary>告。"牛"字去掉下面的尾巴，再加一个"口"。</details></li>
-        <li>千里相逢。（打一字）
-          <details><summary>看答案</summary>重。"千"和"里"上下叠在一起。</details></li>
-        <li>歇后语：外甥打灯笼——？
-          <details><summary>看答案</summary>照舅（照旧）。外甥提着灯笼，照的是舅舅，谐音"照旧"，意思是一切和以前一样。</details></li>
-      </ol>
+  <hr class="rule-sec">
+
+  <section aria-label="Fun facts">
+    <div class="kicker">Thursday fun facts</div>
+    <h2 style="font-size:32px;line-height:1.05">Eight facts to win any argument at recess</h2>
+    <div class="facts-grid">
+      <div><b class="n">1</b>Cleopatra lived closer in time to the Moon landing (1969) than to the building of the Great Pyramid of Giza, which was already about 2,500 years old in her day.</div>
+      <div><b class="n">2</b>Oxford University is older than the Aztec Empire. Teaching there had begun by 1096. The Aztec capital, Tenochtitlan, was founded in 1325.</div>
+      <div><b class="n">3</b>Sharks are older than trees. Sharks have been around for more than 400 million years. The first true trees appeared roughly 385 million years ago.</div>
+      <div><b class="n">4</b>Botanically, a banana is a berry. A strawberry isn't: its "seeds" on the outside are actually its tiny fruits.</div>
+      <div><b class="n">5</b>Wombats produce cube-shaped poo. The stacks of little cubes are thought to help mark their territory without rolling away.</div>
+      <div><b class="n">6</b>Scotland's official national animal is the unicorn.</div>
+      <div><b class="n">7</b>Singapore's national flower, the Vanda Miss Joaquim, is a hybrid orchid first bred right here in the 1890s. It became our national flower in 1981.</div>
+      <div><b class="n">8</b>Hippos can't really swim. In deep water they push off the bottom and bounce along in a kind of underwater gallop.</div>
     </div>
+  </section>
+
+  <hr class="rule-sec">
+
+  <section class="riddles" aria-label="Riddles">
+    <div class="kicker">Brain teasers</div>
+    <h2>Six riddles for the bus home</h2>
+    <ol>
+      <li>A man walked home in a downpour with no umbrella, no hat and no hood. His clothes got soaked, but not a single hair on his head got wet. How?
+        <details><summary>Show answer</summary>He's bald.</details></li>
+      <li>What comes once in a minute, twice in a moment, but never in a thousand years?
+        <details><summary>Show answer</summary>The letter M.</details></li>
+      <li>I'm tall when I'm young and short when I'm old. Every birthday party wants me, then blows me out. What am I?
+        <details><summary>Show answer</summary>A candle.</details></li>
+      <li>上下一体。（打一字）
+        <details><summary>看答案</summary>卡。"上"和"下"合在一起，就是"卡"。</details></li>
+      <li>歇后语：孔夫子搬家——？
+        <details><summary>看答案</summary>净是书（输）。孔子搬家，箱子里全是书；"书"和"输"同音，用来笑一个人老是输。</details></li>
+      <li>歇后语：小葱拌豆腐——？
+        <details><summary>看答案</summary>一清（青）二白。小葱是青色的，豆腐是白色的，比喻清清楚楚、明明白白，也常说一个人清白无辜。</details></li>
+    </ol>
   </section>
 
   <section class="week" aria-label="This week's line-up">
     <p class="week-note">Until 31 December: a short story in every edition.</p>
     <div><b>Mon</b>Comic strip</div>
     <div><b>Tue</b>Recipe &amp; word search</div>
-    <div class="today"><b>Wed · today</b>Science quiz &amp; riddles</div>
-    <div><b>Thu</b>Comic &amp; fun facts</div>
+    <div><b>Wed</b>Science quiz &amp; riddles</div>
+    <div class="today"><b>Thu · today</b>Comic &amp; fun facts</div>
     <div><b>Fri</b>Crossword</div>
-    <div><b>Sat</b>Weekend classic: short story</div>
+    <div><b>Sat</b>Weekend classic: The Yellow Wallpaper</div>
     <div><b>Sun</b>Weekend classic &amp; surprise</div>
   </section>
 
@@ -599,32 +697,14 @@ p{margin:0 0 .8em;hyphens:auto}
     <div class="box-label">往期 · Past editions</div>
     <ul>
 <!--ARCHIVE-->
-      <li><a href="editions/2026-11-25.html" aria-current="page">Wed 25 Nov 2026</a></li>
+      <li><a href="editions/2026-11-26.html" aria-current="page">Thu 26 Nov 2026</a></li>
+      <li><a href="editions/2026-11-25.html">Wed 25 Nov 2026</a></li>
       <li><a href="editions/2026-11-24.html">Tue 24 Nov 2026</a></li>
 <!--/ARCHIVE-->
     </ul>
   </nav>
 
-  <div class="colophon">The Little Lion Daily · Printed with pixels in Singapore · News stories belong to CNA and Lianhe Zaobao</div>
+  <div class="colophon">The Little Lion Daily · Printed with pixels in Singapore · News stories belong to The Straits Times and Lianhe Zaobao</div>
 </article>
-
-<script>
-(function(){
-  var quiz=document.getElementById("quiz"), out=document.getElementById("quiz-score");
-  var boxes=quiz.querySelectorAll('input[type="checkbox"]');
-  function verdict(n){
-    if(n===10) return "Perfect. Are you sure you didn't use your phone?";
-    if(n>=8) return "Excellent. Quiz-night material.";
-    if(n>=5) return "Solid. Read tomorrow's paper and come back stronger.";
-    if(n>=1) return "Every answer you opened is one you'll remember now.";
-    return "";
-  }
-  function update(){
-    var n=0; boxes.forEach(function(b){if(b.checked)n++;});
-    out.textContent="Score: "+n+" / "+boxes.length+(n?" · "+verdict(n):"");
-  }
-  quiz.addEventListener("change",update);
-})();
-</script>
 </body>
 </html>
