@@ -1,0 +1,945 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#a8262e">
+<meta name="apple-mobile-web-app-title" content="小狮日报">
+<link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32.png?v=2">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png?v=2">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta name="edition" content="2026-11-28">
+<script>(function(){var me="2026-11-28",busy=0;function c(){if(document.visibilityState!=="visible"||busy)return;busy=1;fetch("../index.html",{cache:"no-store"}).then(function(r){return r.text();}).then(function(t){var m=t.match(/name="edition" content="([^"]+)"/);if(m&&m[1]>me&&location.pathname.indexOf("/editions/")<0)location.reload();}).catch(function(){}).then(function(){busy=0;});}document.addEventListener("visibilitychange",c);addEventListener("pageshow",c);addEventListener("focus",c);})();</script>
+<style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body>
+<title>The Little Lion Daily</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Libre+Caslon+Display&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Noto+Serif+SC:wght@400;700&family=IBM+Plex+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: printed sheets (A1, A2, A3…) stacked; multi-column newsprint inside, one column on phones */
+:root{
+  --paper:#eeebe3;
+  --sheet:#f7f5ef;
+  --ink:#1c1b18;
+  --ink-soft:#4d4a42;
+  --rule:#1c1b18;
+  --hair:#c9c4b6;
+  --spot:#a8262e;
+  --found:#e9d98c;
+  --f-mast:"UnifrakturMaguntia","Old English Text MT",serif;
+  --f-head:"Libre Caslon Display","Didot","Bodoni 72",Georgia,serif;
+  --f-body:"Source Serif 4","Iowan Old Style",Georgia,serif;
+  --f-zh:"Noto Serif SC","Songti SC","STSong",serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --paper:#111214; --sheet:#1b1c1f; --ink:#e7e3d8; --ink-soft:#b2ad9f;
+    --rule:#e7e3d8; --hair:#3d3d40; --spot:#e4706f; --found:#5c5222;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --paper:#111214; --sheet:#1b1c1f; --ink:#e7e3d8; --ink-soft:#b2ad9f;
+  --rule:#e7e3d8; --hair:#3d3d40; --spot:#e4706f; --found:#5c5222;
+}
+
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--f-body);font-size:17px;line-height:1.55;padding-inline:16px;padding-block:28px 60px}
+.sheet{max-width:1120px;margin:0 auto 36px;background:var(--sheet);padding:28px clamp(16px,4vw,44px) 36px;box-shadow:0 1px 0 var(--hair),0 10px 30px -18px rgba(0,0,0,.35);position:relative}
+.folio{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-family:var(--f-mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft);border-bottom:1px solid var(--rule);padding-bottom:6px;margin-bottom:18px}
+
+/* Masthead */
+.mast{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:16px}
+.ear{border:1px solid var(--rule);padding:8px 10px;font-family:var(--f-mono);font-size:11.5px;line-height:1.45;text-transform:uppercase;letter-spacing:.05em;max-width:200px}
+.ear.r{justify-self:end;text-align:right}
+.ear b{display:block;font-size:13px;color:var(--spot)}
+.title{text-align:center}
+.title h1{font-family:var(--f-mast);font-weight:400;font-size:clamp(44px,8vw,92px);line-height:.95;margin:0;letter-spacing:.01em}
+.title .zh{font-family:var(--f-zh);font-size:15px;letter-spacing:.5em;margin-top:6px;color:var(--ink-soft)}
+.dateline{display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px 18px;border-top:3px double var(--rule);border-bottom:1px solid var(--rule);margin-top:14px;padding:6px 0;font-family:var(--f-mono);font-size:12.5px;text-transform:uppercase;letter-spacing:.06em}
+
+h2,h3{font-family:var(--f-head);font-weight:400;text-wrap:balance;margin:0}
+.kicker{font-family:var(--f-mono);font-size:11.5px;text-transform:uppercase;letter-spacing:.12em;color:var(--spot);margin-bottom:6px}
+.byline{font-family:var(--f-mono);font-size:12px;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.05em;margin:8px 0 12px}
+p{margin:0 0 .8em;hyphens:auto}
+.dropcap::first-letter{font-family:var(--f-head);float:left;font-size:4.1em;line-height:.8;padding:6px 8px 0 0;color:var(--spot)}
+.rule-sec{border:0;border-top:1px solid var(--rule);margin:26px 0 18px}
+
+/* Pictures */
+.fig{margin:14px 0 16px;break-inside:avoid}
+.fig img{display:block;width:100%;max-width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;filter:grayscale(.2) contrast(1.04) sepia(.08);border:1px solid var(--hair)}
+.fig figcaption{font-size:14px;line-height:1.4;color:var(--ink-soft);margin-top:6px;font-style:italic}
+.fig .credit{display:block;font-style:normal;font-family:var(--f-mono);font-size:10.5px;letter-spacing:.04em;text-transform:uppercase;margin-top:3px}
+
+/* Front page: briefing */
+.brief{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:22px;border-bottom:1px solid var(--rule)}
+.story{padding:4px 22px 20px 0}
+.story + .story{padding:4px 0 20px 22px;border-left:1px solid var(--hair)}
+.story h2{font-size:clamp(26px,3vw,34px);line-height:1.08;margin-bottom:10px}
+.story h2.zh{font-family:var(--f-zh);font-weight:700;font-size:clamp(23px,2.6vw,29px);line-height:1.3}
+.story .src{font-family:var(--f-mono);font-size:12px;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.05em}
+.story p.why{font-size:16px;color:var(--ink-soft);margin-top:10px}
+.story .zh-body{font-family:var(--f-zh);font-size:16px;line-height:1.8}
+.readlink{display:inline-block;margin-top:6px;font-family:var(--f-mono);font-size:13px;font-weight:600;color:var(--ink);text-decoration:none;border:1px solid var(--rule);padding:7px 12px;letter-spacing:.04em}
+.readlink:hover{background:var(--ink);color:var(--sheet)}
+.readlink:focus-visible,button:focus-visible,.ws td:focus-visible,summary:focus-visible,.archive a:focus-visible{outline:2px solid var(--spot);outline-offset:2px}
+
+/* Feature with sidebar */
+.with-side{display:grid;grid-template-columns:2.2fr 1fr;gap:28px;margin-top:22px}
+.feature h2{font-size:clamp(32px,4.4vw,50px);line-height:1.02}
+.deck{font-family:var(--f-body);font-style:italic;font-size:19px;color:var(--ink-soft);margin:10px 0 6px;max-width:60ch}
+.cols{column-count:2;column-gap:26px;column-rule:1px solid var(--hair)}
+.fact{break-inside:avoid;border-top:2px solid var(--rule);border-bottom:1px solid var(--rule);padding:10px 0;margin:6px 0 14px;font-family:var(--f-head);font-size:22px;line-height:1.2;text-align:center}
+.fact small{display:block;font-family:var(--f-mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft);margin-top:4px}
+.side{border-left:1px solid var(--hair);padding-left:24px;display:flex;flex-direction:column;gap:24px}
+.box-label{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;border-bottom:1px solid var(--rule);padding-bottom:4px;margin-bottom:10px}
+.quote blockquote{margin:0;font-family:var(--f-head);font-size:27px;line-height:1.18}
+.quote cite{display:block;margin-top:10px;font-style:normal;font-family:var(--f-mono);font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-soft)}
+.quote p{font-size:15px;color:var(--ink-soft);margin-top:10px}
+.joke p{font-size:16px}
+.joke .punch{font-style:italic}
+.index ol{list-style:none;margin:0;padding:0;font-size:15px}
+.index li{display:flex;justify-content:space-between;gap:10px;border-bottom:1px dotted var(--hair);padding:5px 0}
+.index li span:last-child{font-family:var(--f-mono);font-variant-numeric:tabular-nums;color:var(--ink-soft)}
+
+/* Chinese corner */
+.zhbox{font-family:var(--f-zh)}
+.zhbox .idiom{font-size:38px;font-weight:700;letter-spacing:.2em;line-height:1.2}
+.zhbox .py{font-family:var(--f-mono);font-size:13px;color:var(--ink-soft);margin-bottom:8px}
+.zhbox p{font-size:16px;line-height:1.85}
+
+/* Recipe */
+.recipe{display:grid;grid-template-columns:1fr 1.4fr;gap:28px;align-items:start}
+.recipe h2{font-size:clamp(30px,4vw,44px);line-height:1.04}
+.recipe .meta{display:flex;flex-wrap:wrap;gap:6px 16px;font-family:var(--f-mono);font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-soft);margin:8px 0 14px}
+.recipe h3{font-family:var(--f-mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;border-bottom:1px solid var(--rule);padding-bottom:4px;margin:4px 0 10px}
+.recipe ul,.recipe ol{margin:0 0 14px;padding-left:1.2em;font-size:16px}
+.recipe li{margin-bottom:6px}
+.tip{border:1px solid var(--rule);padding:10px 14px;font-size:15px}
+.tip b{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--spot)}
+
+/* Fun page */
+.puzzles{display:grid;grid-template-columns:auto 1fr;gap:30px;align-items:start}
+.puzzles h2,.riddles h2{font-size:32px;line-height:1.05;margin-bottom:6px}
+.instr{font-size:15px;color:var(--ink-soft);max-width:46ch}
+.ws-wrap{overflow-x:auto}
+.ws{border-collapse:collapse;font-family:var(--f-mono);font-weight:600;user-select:none;margin-top:8px}
+.ws td{width:32px;height:32px;text-align:center;border:1px solid var(--hair);font-size:16px;cursor:pointer;padding:0}
+.ws td.sel{background:var(--ink);color:var(--sheet)}
+.ws td.hit{background:var(--found)}
+.wordlist{display:flex;flex-wrap:wrap;gap:6px 14px;list-style:none;padding:0;margin:12px 0 0;font-family:var(--f-mono);font-size:13.5px;max-width:420px}
+.wordlist li.done{text-decoration:line-through;color:var(--ink-soft)}
+.ws-status{font-family:var(--f-mono);font-size:13px;margin-top:8px;color:var(--spot);min-height:1.4em}
+.riddles ol{margin:0;padding-left:1.4em;display:flex;flex-direction:column;gap:12px}
+.riddles li{font-size:16.5px}
+.riddles details summary{cursor:pointer;font-family:var(--f-mono);font-size:12.5px;color:var(--spot);letter-spacing:.04em;margin-top:2px}
+.riddles details[open] summary{margin-bottom:2px}
+.week-note{grid-column:1/-1;margin:0 0 8px;font-family:var(--f-mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--spot)}
+.week{margin-top:26px;border-top:3px double var(--rule);padding-top:12px;display:grid;grid-template-columns:repeat(7,1fr);gap:0}
+.week div{padding:4px 10px;border-left:1px solid var(--hair);font-size:14px}
+.week div:first-child{border-left:0}
+.week b{display:block;font-family:var(--f-mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase}
+.week .today{background:var(--ink);color:var(--sheet)}
+.archive{margin-top:22px}
+.archive ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.archive a{display:inline-block;font-family:var(--f-mono);font-size:13px;color:var(--ink);text-decoration:none;border:1px solid var(--hair);padding:6px 10px}
+.archive a:hover{border-color:var(--rule)}
+.archive a[aria-current]{background:var(--ink);color:var(--sheet);border-color:var(--ink)}
+.colophon{text-align:center;font-family:var(--f-mono);font-size:11.5px;color:var(--ink-soft);margin-top:18px;letter-spacing:.05em}
+
+@page{size:A4;margin:12mm}
+@media print{
+  :root,:root[data-theme="dark"]{color-scheme:light;--paper:#fff;--sheet:#fff;--ink:#111;--ink-soft:#444;--rule:#111;--hair:#bbb;--spot:#a8262e;--found:#e9d98c}
+  body{padding:0;font-size:11pt;background:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .sheet{max-width:none;margin:0;padding:0;box-shadow:none;break-after:page}
+  .sheet:last-of-type{break-after:auto}
+  .fig,.fact,.book,.tip,.zhbox,.recipe>div,.riddles li,.ws-wrap{break-inside:avoid}
+  .readlink{border:0;padding:0;text-decoration:underline}
+  .readlink::after{content:" " attr(href);font-weight:400;font-size:9pt;word-break:break-all}
+  .ws-status,.archive{display:none}
+  .riddles details>*:not(summary){display:none}
+}
+@media (max-width:860px){
+  .with-side,.puzzles,.recipe{grid-template-columns:1fr}
+  .side{border-left:0;padding-left:0;border-top:1px solid var(--rule);padding-top:18px}
+  .week{grid-template-columns:repeat(4,1fr);row-gap:10px}
+  .week div:nth-child(5){border-left:0}
+}
+@media (max-width:640px){
+  body{font-size:16.5px}
+  .mast{grid-template-columns:1fr}
+  .ear{display:none}
+  .brief{grid-template-columns:1fr}
+  .story{padding-right:0}
+  .story + .story{padding-left:0;border-left:0;border-top:1px solid var(--hair);padding-top:16px}
+  .cols{column-count:1}
+  .ws td{width:26px;height:26px;font-size:14px}
+  .week{grid-template-columns:repeat(2,1fr)}
+  .week div:nth-child(odd){border-left:0}
+}
+/* Print keeps the desktop column layout on A4 */
+@media print{
+  .with-side{grid-template-columns:2.2fr 1fr;gap:20px}
+  .side{border-left:1px solid var(--hair);padding-left:16px;border-top:0;padding-top:0}
+  .recipe{grid-template-columns:1fr 1.4fr}
+  .puzzles{grid-template-columns:auto 1fr}
+  .week{grid-template-columns:repeat(7,1fr)}
+  .week div{border-left:1px solid var(--hair)}
+  .week div:first-child{border-left:0}
+  .ear{max-width:150px}
+}
+/* Highlights-style boxes */
+.timeline{font-size:16px;line-height:1.7;border-left:3px solid var(--spot);padding-left:12px}
+.timeline b{font-family:var(--f-mono);font-size:13px;letter-spacing:.04em;display:inline-block;min-width:68px}
+.sfx{font-family:var(--f-head);font-size:22px;color:var(--spot);letter-spacing:.04em}
+.weird,.tryit{break-inside:avoid;margin:8px 0 16px;padding:12px 14px;font-size:15.5px}
+.weird{background:var(--found)}
+.weird ul{margin:0;padding-left:1.1em;display:flex;flex-direction:column;gap:8px}
+.weird .box-label,.tryit .box-label{margin-bottom:8px}
+.tryit{border:2px dashed var(--rule)}
+.tryit p{margin-bottom:.5em}
+.small{font-size:14px;color:var(--ink-soft)}
+/* Future You */
+.future-head h2{font-size:clamp(28px,3.6vw,40px);line-height:1.05}
+.future-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:14px}
+.future-grid>div{padding:0 18px;border-left:1px solid var(--hair);font-size:15.5px}
+.future-grid>div:first-child{padding-left:0;border-left:0}
+.future-grid>div:last-child{padding-right:0}
+@media (max-width:860px){.future-grid{grid-template-columns:1fr;gap:16px}.future-grid>div{padding:0;border-left:0}}
+@media print{.future-grid{grid-template-columns:repeat(3,1fr)}.future-grid>div{padding:0 12px;border-left:1px solid var(--hair)}.future-grid>div:first-child{padding-left:0;border-left:0}}
+/* Wednesday: quiz + riddles side by side, case-file boxes */
+.duo{display:grid;grid-template-columns:1.15fr 1fr;gap:30px;align-items:start}
+.duo h2{font-size:32px;line-height:1.05;margin-bottom:6px}
+.got{display:inline-flex;align-items:center;gap:6px;font-family:var(--f-mono);font-size:12px;color:var(--ink-soft);margin-left:10px;cursor:pointer}
+.quiz-score{font-family:var(--f-mono);font-size:13.5px;margin-top:14px;color:var(--spot);min-height:1.4em}
+.exhibit{break-inside:avoid;border:1px solid var(--rule);padding:10px 14px;margin:8px 0 14px;font-size:15.5px}
+.exhibit .box-label{color:var(--spot)}
+.exhibit ol{margin:0;padding-left:1.2em;display:flex;flex-direction:column;gap:6px}
+.tryit details summary,.exhibit details summary,.future details summary{cursor:pointer;font-family:var(--f-mono);font-size:12.5px;color:var(--spot);letter-spacing:.04em}
+.fig.diagram img{aspect-ratio:auto;object-fit:contain;filter:none;background:#fff}
+.fig.tall img{aspect-ratio:auto}
+@media (max-width:860px){.duo{grid-template-columns:1fr}}
+@media print{.duo{grid-template-columns:1.15fr 1fr}.got,.quiz-score{display:none}.exhibit details>*:not(summary),.tryit details>*:not(summary),.future details>*:not(summary){display:none}}
+/* Daily story */
+.tale h2{font-size:clamp(34px,4.8vw,54px);line-height:1.02}
+.tale-intro{border-top:2px solid var(--rule);border-bottom:1px solid var(--rule);padding:12px 0 4px;margin:6px 0 18px;font-size:16px;column-count:2;column-gap:26px}
+.tale .cols{column-count:2}
+.tale .end{font-family:var(--f-mono);font-size:12px;color:var(--spot);text-align:center}
+.tale-extras{display:grid;grid-template-columns:1fr 1.3fr;gap:28px;margin-top:20px;border-top:1px solid var(--rule);padding-top:14px;font-size:15.5px}
+.tale-extras dl{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;margin:0}
+.tale-extras dt{font-weight:600}
+.tale-extras dd{margin:0;color:var(--ink-soft)}
+.tale-extras ol{margin:0;padding-left:1.2em;display:flex;flex-direction:column;gap:8px}
+@media (max-width:640px){.tale-intro,.tale .cols{column-count:1}.tale-extras{grid-template-columns:1fr}}
+@media print{.tale-extras{grid-template-columns:1fr 1.3fr}}
+</style>
+<style>
+/* Thursday: comic strip + fun facts */
+.comic{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:12px}
+.comic svg{display:block;width:100%;height:auto;border:2px solid var(--rule);background:var(--sheet);color:var(--ink)}
+.comic .bub{fill:var(--sheet);stroke:currentColor;stroke-width:1.5}
+.comic text{fill:currentColor;font-family:var(--f-body);font-size:12.5px}
+.comic text.sfx-t{font-family:var(--f-head);font-size:22px;fill:var(--spot)}
+.comic text.cap{font-family:var(--f-mono);font-size:10px;letter-spacing:.06em}
+.comic .ln{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.comic .solid{fill:currentColor}
+.comic .stain{fill:#9a6a3a;opacity:.75}
+.facts-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:12px;border-top:2px solid var(--rule)}
+.facts-grid>div{padding:12px 14px;border-left:1px solid var(--hair);border-bottom:1px solid var(--hair);font-size:15px}
+.facts-grid>div:nth-child(4n+1){border-left:0;padding-left:0}
+.facts-grid b.n{display:block;font-family:var(--f-head);font-size:30px;line-height:1;color:var(--spot);margin-bottom:4px}
+.poem{font-size:24px;line-height:1.9;letter-spacing:.12em;text-align:center;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:8px 0;margin:8px 0 12px}
+.voice{break-inside:avoid;border-left:3px solid var(--spot);padding:6px 0 6px 12px;margin:0 0 14px;font-size:15.5px;font-style:italic}
+.voice b{font-style:normal;font-family:var(--f-mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;display:block;color:var(--spot)}
+.count{font-family:var(--f-head);font-size:40px;line-height:1;color:var(--spot);float:left;margin:0 10px 0 0}
+@media (max-width:860px){.comic{grid-template-columns:repeat(2,1fr)}.facts-grid{grid-template-columns:1fr 1fr}.facts-grid>div:nth-child(4n+1){border-left:1px solid var(--hair);padding-left:14px}.facts-grid>div:nth-child(2n+1){border-left:0;padding-left:0}}
+@media (max-width:480px){.comic{grid-template-columns:1fr}.facts-grid{grid-template-columns:1fr}.facts-grid>div{border-left:0!important;padding-left:0!important}}
+@media print{.comic{grid-template-columns:repeat(4,1fr)}.facts-grid{grid-template-columns:repeat(4,1fr)}}
+</style>
+
+
+<!-- ==================== PAGE A1 ==================== -->
+<article class="sheet" aria-label="Front page">
+  <div class="folio"><span>Vol. I · No. 5</span><span>Page A1</span><span>Singapore edition · Weekend</span></div>
+
+  <header class="mast">
+    <div class="ear"><b>Read time</b>25 minutes, plus 2 news links and a 30-minute weekend classic</div>
+    <div class="title">
+      <h1>The Little Lion Daily</h1>
+      <div class="zh">小狮日报</div>
+    </div>
+    <div class="ear r"><b>Weekend special</b>The wallpaper edition · Story on Page A3</div>
+  </header>
+  <div class="dateline">
+    <span>Saturday, 28 November 2026</span>
+    <span>星期六 · 十一月二十八日</span>
+    <span>Price: free for curious minds</span>
+  </div>
+
+  <!-- Today's news: links only -->
+  <section class="brief" aria-label="Today's news">
+    <div class="story">
+      <div class="kicker">Today's news · Energy &amp; the region</div>
+      <h2>Plugging in: How electrification can help South-east Asia's energy transition</h2>
+      <div class="src">The Straits Times · Environment · 28 Nov 2026</div>
+      <p class="why">Why read it: "Electrification" means switching things that burn fuel (cars, cooking stoves, factory machines) over to running on electricity. The piece's summary says it could also help tackle "energy poverty" in our region, meaning people who still can't count on clean, affordable power at home. As you read, look for two things: what the energy transition actually involves, and why the same idea can be a climate plan <i>and</i> a fairness plan at the same time.</p>
+      <a class="readlink" href="https://www.straitstimes.com/singapore/environment/plugging-in-how-electrification-can-help-south-east-asias-energy-transition" target="_blank" rel="noopener">Read on The Straits Times →</a>
+    </div>
+    <div class="story">
+      <div class="kicker">今日中文新闻 · 联合早报《红蚂蚁》</div>
+      <h2 class="zh">【红蚂蚁】AI好玩吗？加强培养"AI素养"因应时代变化</h2>
+      <div class="src">联合早报 · 新加坡 · 2026年11月27日</div>
+      <p class="zh-body why">为什么值得读：《红蚂蚁》是早报写给年轻读者的版面。这篇文章从一张照片说起：今年8月，一名客工在班丹蓄水池工作时拍下水面，说自己看见了鳄鱼，消息一报上去就惊动了很多人。标题点出的关键词是"AI素养"。读的时候想一想：照片里到底有什么？在AI时代，我们怎样判断"眼见"是不是"为实"？这正好和今天A1版的"脸"专题互相呼应。</p>
+      <a class="readlink" href="https://www.zaobao.com.sg/news/singapore/story20261127-10068758" target="_blank" rel="noopener">在联合早报阅读 →</a>
+    </div>
+  </section>
+
+  <div class="with-side">
+    <section class="feature">
+      <div class="kicker">Brain science · Case file · 7 min read + 1 challenge</div>
+      <h2>Why is that power socket staring at you?</h2>
+      <p class="deck">Faces on Mars, faces in toast, faces in potatoes. Your brain is a face-finding machine, and it would rather be wrong than miss one.</p>
+      <div class="byline">By the Little Lion mind desk</div>
+      <div class="cols">
+        <p class="dropcap">Look at the nearest power socket. Two little slots on top, one below. Two eyes and a mouth, looking shocked. (Sorry. It is a socket.)</p>
+        <p>Now look around your HDB flat. The washing machine has a round, surprised face. The front of a car on the road outside is grinning, or scowling, depending on the headlights. The kettle looks smug. Your schoolbag, unzipped, is yawning.</p>
+        <p>None of these things has a face. Your brain gives them one anyway. Scientists call this <b>pareidolia</b> (say it "pa-rye-DOH-lee-ah"), from two Greek words: <i>para</i>, "beside" or "instead of", and <i>eidolon</i>, "image". Seeing an image that isn't really there.</p>
+        <p>Let's open the case files.</p>
+
+        <p class="timeline"><b>File 1</b> <b>The Face on Mars</b></p>
+        <p>25 July 1976. NASA's <b>Viking 1</b> orbiter is photographing a region of Mars called Cydonia, looking for a safe landing site for its partner probe. One blurry black-and-white frame shows a rocky hill about 2 km across, and on it, unmistakably, <i>a human face</i>: two eye sockets, a nose, a mouth, staring straight up into space.</p>
+        <p>NASA itself mentioned the funny "head" in a press release, putting it down to shadows. But the picture escaped into books, films and late-night radio. Was it a giant monument? Built by Martians? Hidden by NASA?</p>
+        <p>Later spacecraft settled it. Sharper photos taken by Mars Global Surveyor from 1998, and then by the Mars Reconnaissance Orbiter, showed an ordinary eroded hill, a <b>mesa</b>. The "eyes" and "mouth" were shadows from a low sun, smudged by a low-resolution camera. Better camera, no face.</p>
+
+        <figure class="fig diagram">
+          <img src="../img/face-on-mars-hirise.jpg" alt="Grey satellite photo of a lumpy flat-topped hill on Mars. In the bottom right corner, a small inset shows the old blurry version, where shadows make the same hill look like a face" width="960" height="678">
+          <figcaption>The "Face on Mars", photographed in 2007 by the Mars Reconnaissance Orbiter's HiRISE camera, which can pick out objects about 90 cm across. Inset (bottom right): the famous blurry Viking 1 view.<span class="credit">Photo: NASA / JPL / University of Arizona / Wikimedia Commons, Public domain</span></figcaption>
+        </figure>
+
+        <p class="timeline"><b>File 2</b> <b>The $28,000 sandwich</b></p>
+        <p>In 2004, a woman in Florida put a ten-year-old grilled cheese sandwich up for sale on eBay. Why would anyone buy a stale, decade-old sandwich? Because she, and plenty of other people, saw the face of the Virgin Mary in the toasty brown marks. An online casino bought it for <b>US$28,000</b>.</p>
+        <p>Toast, clouds, wood grain, the Moon: around the world, people have been finding faces in them for as long as there have been people. In Europe, it's the "Man in the Moon". Look again at a full moon here, and the same dark patches can become the <b>Moon rabbit (玉兔)</b> pounding medicine beside Chang'e. Same patches, different brain, different picture.</p>
+
+        <p class="timeline"><b>File 3</b> <b>The 0.17-second detective</b></p>
+        <p>So what's going on inside your head? On the underside of your brain, towards the back, is a patch called the <b>fusiform face area</b>. It fires up strongly when you look at faces, far more than for houses or cars or hands.</p>
+        <p>Brain-scanning studies suggest that this area also reacts to face-like objects, and fast: in one experiment, the brain's response to "faces" in everyday objects showed up in well under a fifth of a second, about as quickly as for real faces. You see the face first. You realise "wait, that's a socket" a moment later.</p>
+        <p>Why would evolution build such a jumpy face detector? Think about it like a guard at a gate. Mistaking a bush for a face costs you nothing: a little jump, a laugh. Mistaking a real face (a predator, an enemy, your angry mother) for a bush could cost you a lot. So the brain sets the alarm to "sensitive". A few false alarms are the price of never missing the real thing.</p>
+        <p>And it starts early. Newborn babies, only hours old, will turn their eyes and heads further to follow a simple pattern of two blobs above one blob than the same blobs arranged upside down. Nobody taught them that. They arrive ready to find faces.</p>
+
+        <figure class="fig tall">
+          <img src="../img/potato-pareidolia.jpg" alt="A pale potato lying on a cork board. Two dark spots and a curved scratch make it look like a smiling face" width="960" height="1280">
+          <figcaption>Exhibit A: a perfectly ordinary potato, apparently having a lovely day. Two "eyes" and a "smile" are all your brain needs.<span class="credit">Photo: Andy Mabbett / Wikimedia Commons, CC BY-SA 4.0</span></figcaption>
+        </figure>
+
+        <p class="timeline"><b>File 4</b> <b>The artist's trick</b></p>
+        <p>Some people use pareidolia on purpose. Leonardo da Vinci wrote in his notebooks that a painter looking for ideas should stare at walls stained with damp or made of mixed stones, where he would start to see landscapes, battles and strange faces. In 1921, the Swiss psychiatrist <b>Hermann Rorschach</b> published his famous <b>inkblot test</b>, which asks people what they see in symmetrical ink splodges. (Psychologists still argue about how useful it is.)</p>
+        <p>And in today's weekend story on A3, a woman locked away in a room with ugly yellow wallpaper begins to see something in the pattern: "a broken neck and two bulbous eyes". Is it pareidolia, or something worse? Read it and decide.</p>
+
+        <div class="weird">
+          <div class="box-label">Weird but true</div>
+          <ul>
+            <li><b>Monkeys see them too.</b> In a 2017 study, rhesus macaques spent longer looking at face-like objects, such as a fruit or a bag that seemed to have a face, than at similar objects without one.</li>
+            <li><b>Imaginary faces tend to be "boys".</b> In a 2022 study, volunteers shown faces in objects judged far more of them to look male than female, even though objects have no gender at all.</li>
+            <li><b>Your brain hears things too.</b> Pareidolia isn't only visual. Hearing hidden words in a song played backwards, or your name in the hiss of a shower, is the same trick with sound.</li>
+            <li><b>Car designers know it.</b> Many cars are styled so the headlights and grille look like a face. A "friendly" car and an "angry" car can be almost the same shape.</li>
+          </ul>
+        </div>
+        <div class="tryit">
+          <div class="box-label">Try this · The face hunt (10 minutes)</div>
+          <p><b>1.</b> Walk around your home (or the void deck, or the canteen) and photograph <b>five</b> objects with faces. Bonus points for a face that looks surprised, smug, or sleepy.</p>
+          <p><b>2.</b> On a piece of paper, draw just two dots and a curved line under them. Turn it upside down. Is it still a face? Now turn it sideways. When does the face disappear?</p>
+          <p><b>3.</b> Show your photos to a family member without saying anything. Do they see the faces too, straight away?</p>
+          <details><summary>What's going on?</summary><p class="small">Most people spot the faces within a second, because your brain is hunting for the "two eyes above a mouth" layout. Upside-down and sideways faces are much harder to recognise. Psychologists have studied this for decades, and it suggests the brain handles faces as a whole pattern, not as a list of parts.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <aside class="side">
+      <div class="quote">
+        <div class="box-label">Quote of the day</div>
+        <blockquote>"All things are poison, and nothing is without poison; only the dose makes a thing not a poison."</blockquote>
+        <cite>Paracelsus, Swiss physician (1538, translated)</cite>
+        <p>Usually shortened to "the dose makes the poison". Water, salt and even oxygen can harm you in big enough amounts, and some poisons are used as medicines in tiny ones. Keep it in mind for the green wallpaper on A2.</p>
+      </div>
+      <div class="joke">
+        <div class="box-label">Laugh line</div>
+        <p>I told my friend she'd drawn her eyebrows too high.</p>
+        <p class="punch">She looked surprised.</p>
+      </div>
+      <div class="joke">
+        <div class="box-label">And another</div>
+        <p>I stayed up all night wondering where the sun had gone.</p>
+        <p class="punch">Then it dawned on me.</p>
+      </div>
+      <nav class="index" aria-label="Inside this edition">
+        <div class="box-label">Inside</div>
+        <ol>
+          <li><span>Today's news (2 links)</span><span>A1</span></li>
+          <li><span>Why is that socket staring at you?</span><span>A1</span></li>
+          <li><span>The wallpaper that could kill you</span><span>A2</span></li>
+          <li><span>成语故事 · 杯弓蛇影</span><span>A2</span></li>
+          <li><span>Daily story: The Yellow Wallpaper</span><span>A3</span></li>
+          <li><span>Saturday colour quiz</span><span>A4</span></li>
+          <li><span>Word search &amp; riddles</span><span>A4</span></li>
+        </ol>
+      </nav>
+    </aside>
+  </div>
+</article>
+
+<!-- ==================== PAGE A2 ==================== -->
+<article class="sheet" aria-label="Page A2">
+  <div class="folio"><span>The Little Lion Daily</span><span>Page A2</span><span>Saturday, 28 November 2026</span></div>
+
+  <div class="with-side" style="margin-top:0">
+    <section class="feature">
+      <div class="kicker">History mystery · Myth vs fact · 6 min read</div>
+      <h2>The wallpaper that could kill you</h2>
+      <p class="deck">The most fashionable colour of the 1800s was a gorgeous, glowing green. It was also made with arsenic.</p>
+      <div class="byline">By the Little Lion history desk</div>
+      <div class="cols">
+        <p class="dropcap">London, the 1860s. You've just moved into a smart new house. The parlour walls are covered in the latest wallpaper: ferns and leaves in a green so bright it almost glows. Your visitors are jealous.</p>
+        <p>But something is wrong. The children keep getting headaches and stomach aches. On damp days the room smells faintly of garlic. Someone in the family is always ill, and gets better on holiday, and gets ill again the moment they come home.</p>
+        <p>The culprit might be on the walls.</p>
+
+        <p class="timeline"><b>1775</b> Swedish chemist <b>Carl Wilhelm Scheele</b> invents a new bright green pigment made from copper and arsenic. It's cheap, vivid and easy to make. People call it <b>Scheele's green</b>.<br><b>1814</b> An even richer, longer-lasting version appears, made from copper and arsenic too. It goes by names like <b>emerald green</b> and <b>Paris green</b>.<br><b>1800s</b> Green goes wild: wallpaper, dresses, artificial flowers, paint, children's toys, even some sweets and cake decorations.</p>
+
+        <p>Before these pigments, a really bright green was hard to get. Natural green dyes faded, and painters often had to mix blue and yellow. So when cheap, dazzling greens arrived, Victorian Britain fell in love. Wallpaper, newly affordable thanks to machine printing, carried the green into ordinary homes.</p>
+        <p>The problem? <b>Arsenic</b> is a poison. Swallowed or breathed in as dust, it can cause vomiting, stomach pain, and, over time, damage to the skin, nerves and organs.</p>
+
+        <div class="fact">"The dose makes the poison."<small>A little arsenic on a wall is not the same as a mouthful. But flaking, dusty, damp walls added up.</small></div>
+
+        <p><b>The victims.</b> The people most at risk weren't the ones living with the wallpaper. They were the workers who made the green things. In 1861, a 19-year-old London artificial-flower maker named <b>Matilda Scheurer</b> died after months of dusting fake leaves with green arsenic powder. Her death made the newspapers, and so did the danger.</p>
+        <p>The next year, the magazine cartoonists joined in. Look at the picture below: two skeletons in their best clothes, waltzing. She wears a fashionable dress and a wreath of leaves. The title? <i>The Arsenic Waltz</i>.</p>
+
+        <figure class="fig diagram">
+          <img src="../img/arsenic-waltz-1862.png" alt="Old black-and-white etching of two skeletons dancing a waltz, one dressed as a gentleman in a tailcoat and one as a lady in a full skirt and headdress" width="960" height="716">
+          <figcaption>"The Arsenic Waltz: The new Dance of Death. (Dedicated to the Green Wreath and Dress-Mongers.)" A satirical etching from 1862 that blamed the fashion for arsenic greens.<span class="credit">Image: Wellcome Collection / Wikimedia Commons, CC BY 4.0</span></figcaption>
+        </figure>
+
+        <p><b>The garlic clue.</b> In the 1890s, an Italian doctor, <b>Bartolomeo Gosio</b>, found that certain moulds growing on arsenic-containing material could turn it into a gas that smelled of garlic. People nicknamed it "Gosio gas". Decades later, chemists worked out what it was. Damp houses plus mould plus green wallpaper suddenly sounded like a recipe for poisoned air. (Modern scientists think the gas itself was probably less dangerous than people feared, and that dust and flakes from the paper were the likelier problem. The mystery isn't completely closed.)</p>
+        <p><b>The designer in denial.</b> The most famous wallpaper designer of the age, <b>William Morris</b>, had an awkward secret: much of his family's money came from a mine in Devon that became one of the world's biggest producers of arsenic. In a letter in the 1880s, Morris scoffed at the arsenic scare, comparing the doctors to people caught up in a witch hunt. His own firm eventually moved to arsenic-free colours anyway.</p>
+        <p><b>How it ended.</b> No single law swept the poison off Britain's walls. Instead, fear did the job. Newspapers, doctors and cartoons kept up the pressure, and by the late 1800s manufacturers were proudly advertising their papers as "free from arsenic". Bad news travels fast. So does a bad reputation.</p>
+
+        <div class="exhibit">
+          <div class="box-label">Myth or fact? You be the judge</div>
+          <ol>
+            <li>"Napoleon was killed by his green wallpaper." <details><summary>Verdict</summary><p class="small">Probably a myth. Napoleon died in exile on St Helena in 1821. In 1980, a scrap of wallpaper said to be from his house there was found to contain an arsenic green pigment, and the theory went viral. Most historians and doctors still think stomach cancer killed him. The wallpaper might have made his damp house unhealthier, but it's not the main suspect.</p></details></li>
+            <li>"Arsenic greens were only used on wallpaper." <details><summary>Verdict</summary><p class="small">Myth. They turned up in dresses, gloves, artificial flowers, paints, toys and even some food colouring.</p></details></li>
+            <li>"Bright green is still a tricky colour to make safely." <details><summary>Verdict</summary><p class="small">Fact, in a way. Many pigments, old and new, need careful handling. That's why modern paints and toys have safety rules and labels. A cheaper, brighter colour isn't automatically a safer one.</p></details></li>
+          </ol>
+        </div>
+        <div class="tryit">
+          <div class="box-label">Try this · Spot the warning labels (5 minutes)</div>
+          <p>Go on a label hunt at home: cleaning sprays, bleach, insect spray, art supplies. Find three products with a hazard warning. For each one, write down <b>what</b> the danger is (swallowing? breathing it in? skin contact?) and <b>what the label tells you to do</b>. Then ask: who would have warned a Victorian family about their wallpaper?</p>
+          <p class="small">Just read; don't open or sniff anything. The point is to notice how much safety information we now take for granted.</p>
+        </div>
+      </div>
+    </section>
+
+    <aside class="side">
+      <section class="zhbox">
+        <div class="box-label">成语故事</div>
+        <div class="idiom">杯弓蛇影</div>
+        <div class="py">bēi gōng shé yǐng</div>
+        <p><b>故事：</b>《晋书·乐广传》记载，乐广请一位朋友来家里喝酒。朋友端起酒杯，忽然看见杯中好像有一条小蛇。他心里害怕，又不好意思不喝，只好硬着头皮喝了下去。回家以后，他就病倒了。</p>
+        <p>乐广听说以后，回到原来喝酒的地方仔细一看：墙上挂着一张弓，弓上画着蛇的图案，倒影正好落在酒杯里！他又请朋友坐在同一个位置，倒了一杯酒，让朋友自己看。朋友这才恍然大悟，病一下子就好了。</p>
+        <p><b>意思：</b>比喻因为疑神疑鬼而自相惊扰。例句：手机响一下就以为是坏消息，真是杯弓蛇影。</p>
+        <p><b>和今天有什么关系？</b>A1版的"幻想性错觉"让我们在插座上看见脸；A3版小说里的女主角，在墙纸上看见了眼睛。东汉应劭的《风俗通义》里也有一个相似的故事，只是主角不同。看来，被墙上的东西吓到，古今中外都一样！</p>
+        <p><b>小考考：</b>"杯弓蛇影"和下面哪个成语意思最接近？<br>A. 草木皆兵　B. 画蛇添足　C. 杯水车薪</p>
+        <details><summary>看答案</summary><p>A. 草木皆兵。出自前秦苻坚的故事：他兵败时，把山上的草木都看成了敌人的士兵，形容人极度惊慌、疑神疑鬼。"画蛇添足"是多此一举，"杯水车薪"是力量太小，解决不了问题。</p></details>
+      </section>
+    </aside>
+  </div>
+</article>
+
+<!-- ==================== STORY PAGE ==================== -->
+<article class="sheet" aria-label="Page A3 story">
+  <div class="folio"><span>The Little Lion Daily</span><span>Page A3 · Weekend classic</span><span>Saturday, 28 November 2026</span></div>
+
+  <section class="tale">
+    <div class="kicker">Daily story · weekend classic · about 30 minutes</div>
+    <h2>The Yellow Wallpaper</h2>
+    <div class="byline">By Charlotte Perkins Gilman · first published 1892</div>
+    <div class="tale-intro">
+      <p><b>Before you read.</b> Charlotte Perkins Gilman (1860–1935) was an American writer, lecturer and campaigner for women's rights. This story appeared in <i>The New England Magazine</i> in January 1892. It grew out of her own life: after her daughter was born she fell into a deep depression, and a famous doctor prescribed a "rest cure" of lying still and doing as little thinking, reading and writing as possible. She later said the treatment nearly drove her mad, and that she wrote this story to show what it could do. (The narrator even mentions that same doctor, Weir Mitchell, by name.)</p>
+      <p>The story is told as a secret diary, and the narrator is not always reliable: she sees some things very clearly and others not at all. Watch how her descriptions of the wallpaper change, and how kind, sensible John's "care" works out. It's a famous psychological horror story: eerie and disturbing, not gory. If it gets heavy, take a break and come back.</p>
+    </div>
+    <div class="cols">
+      <p class="dropcap">It is very seldom that mere ordinary people like John and myself secure ancestral halls for the summer.</p>
+      <p>A colonial mansion, a hereditary estate, I would say a haunted house, and reach the height of romantic felicity—but that would be asking too much of fate!</p>
+      <p>Still I will proudly declare that there is something queer about it.</p>
+      <p>Else, why should it be let so cheaply? And why have stood so long untenanted?</p>
+      <p>John laughs at me, of course, but one expects that in marriage.</p>
+      <p>John is practical in the extreme. He has no patience with faith, an intense horror of superstition, and he scoffs openly at any talk of things not to be felt and seen and put down in figures.</p>
+      <p>John is a physician, and perhaps—(I would not say it to a living soul, of course, but this is dead paper and a great relief to my mind)—perhaps that is one reason I do not get well faster.</p>
+      <p>You see, he does not believe I am sick!</p>
+      <p>And what can one do?</p>
+      <p>If a physician of high standing, and one’s own husband, assures friends and relatives that there is really nothing the matter with one but temporary nervous depression—a slight hysterical tendency—what is one to do?</p>
+      <p>My brother is also a physician, and also of high standing, and he says the same thing.</p>
+      <p>So I take phosphates or phosphites—whichever it is, and tonics, and journeys, and air, and exercise, and am absolutely forbidden to “work” until I am well again.</p>
+      <p>Personally, I disagree with their ideas.</p>
+      <p>Personally, I believe that congenial work, with excitement and change, would do me good.</p>
+      <p>But what is one to do?</p>
+      <p>I did write for a while in spite of them; but it does exhaust me a good deal—having to be so sly about it, or else meet with heavy opposition.</p>
+      <p>I sometimes fancy that in my condition if I had less opposition and more society and stimulus—but John says the very worst thing I can do is to think about my condition, and I confess it always makes me feel bad.</p>
+      <p>So I will let it alone and talk about the house.</p>
+      <p>The most beautiful place! It is quite alone, standing well back from the road, quite three miles from the village. It makes me think of English places that you read about, for there are hedges and walls and gates that lock, and lots of separate little houses for the gardeners and people.</p>
+      <p>There is a delicious garden! I never saw such a garden—large and shady, full of box-bordered paths, and lined with long grape-covered arbors with seats under them.</p>
+      <p>There were greenhouses, too, but they are all broken now.</p>
+      <p>There was some legal trouble, I believe, something about the heirs and co-heirs; anyhow, the place has been empty for years.</p>
+      <p>That spoils my ghostliness, I am afraid; but I don’t care—there is something strange about the house—I can feel it.</p>
+      <p>I even said so to John one moonlight evening, but he said what I felt was a draught, and shut the window.</p>
+      <p>I get unreasonably angry with John sometimes. I’m sure I never used to be so sensitive. I think it is due to this nervous condition.</p>
+      <p>But John says if I feel so I shall neglect proper self-control; so I take pains to control myself,—before him, at least,—and that makes me very tired.</p>
+      <p>I don’t like our room a bit. I wanted one downstairs that opened on the piazza and had roses all over the window, and such pretty old-fashioned chintz hangings! but John would not hear of it.</p>
+      <p>He said there was only one window and not room for two beds, and no near room for him if he took another.</p>
+      <p>He is very careful and loving, and hardly lets me stir without special direction.</p>
+      <p>I have a schedule prescription for each hour in the day; he takes all care from me, and so I feel basely ungrateful not to value it more.</p>
+      <p>He said we came here solely on my account, that I was to have perfect rest and all the air I could get. “Your exercise depends on your strength, my dear,” said he, “and your food somewhat on your appetite; but air you can absorb all the time.” So we took the nursery, at the top of the house.</p>
+      <p>It is a big, airy room, the whole floor nearly, with windows that look all ways, and air and sunshine galore. It was nursery first and then playground and gymnasium, I should judge; for the windows are barred for little children, and there are rings and things in the walls.</p>
+      <p>The paint and paper look as if a boys’ school had used it. It is stripped off—the paper—in great patches all around the head of my bed, about as far as I can reach, and in a great place on the other side of the room low down. I never saw a worse paper in my life.</p>
+      <p>One of those sprawling flamboyant patterns committing every artistic sin.</p>
+      <p>It is dull enough to confuse the eye in following, pronounced enough to constantly irritate, and provoke study, and when you follow the lame, uncertain curves for a little distance they suddenly commit suicide—plunge off at outrageous angles, destroy themselves in unheard-of contradictions.</p>
+      <p>The color is repellant, almost revolting; a smouldering, unclean yellow, strangely faded by the slow-turning sunlight.</p>
+      <p>It is a dull yet lurid orange in some places, a sickly sulphur tint in others.</p>
+      <p>No wonder the children hated it! I should hate it myself if I had to live in this room long.</p>
+      <p>There comes John, and I must put this away,—he hates to have me write a word.</p>
+      <p>We have been here two weeks, and I haven’t felt like writing before, since that first day.</p>
+      <p>I am sitting by the window now, up in this atrocious nursery, and there is nothing to hinder my writing as much as I please, save lack of strength.</p>
+      <p>John is away all day, and even some nights when his cases are serious.</p>
+      <p>I am glad my case is not serious!</p>
+      <p>But these nervous troubles are dreadfully depressing.</p>
+      <p>John does not know how much I really suffer. He knows there is no reason to suffer, and that satisfies him.</p>
+      <p>Of course it is only nervousness. It does weigh on me so not to do my duty in any way!</p>
+      <p>I meant to be such a help to John, such a real rest and comfort, and here I am a comparative burden already!</p>
+      <p>Nobody would believe what an effort it is to do what little I am able—to dress and entertain, and order things.</p>
+      <p>It is fortunate Mary is so good with the baby. Such a dear baby!</p>
+      <p>And yet I cannot be with him, it makes me so nervous.</p>
+      <p>I suppose John never was nervous in his life. He laughs at me so about this wallpaper!</p>
+      <p>At first he meant to repaper the room, but afterwards he said that I was letting it get the better of me, and that nothing was worse for a nervous patient than to give way to such fancies.</p>
+      <p>He said that after the wallpaper was changed it would be the heavy bedstead, and then the barred windows, and then that gate at the head of the stairs, and so on.</p>
+      <p>“You know the place is doing you good,” he said, “and really, dear, I don’t care to renovate the house just for a three months’ rental.”</p>
+      <p>“Then do let us go downstairs,” I said, “there are such pretty rooms there.”</p>
+      <p>Then he took me in his arms and called me a blessed little goose, and said he would go down cellar if I wished, and have it whitewashed into the bargain.</p>
+      <p>But he is right enough about the beds and windows and things.</p>
+      <p>It is as airy and comfortable a room as any one need wish, and, of course, I would not be so silly as to make him uncomfortable just for a whim.</p>
+      <p>I’m really getting quite fond of the big room, all but that horrid paper.</p>
+      <p>Out of one window I can see the garden, those mysterious deep-shaded arbors, the riotous old-fashioned flowers, and bushes and gnarly trees.</p>
+      <p>Out of another I get a lovely view of the bay and a little private wharf belonging to the estate. There is a beautiful shaded lane that runs down there from the house. I always fancy I see people walking in these numerous paths and arbors, but John has cautioned me not to give way to fancy in the least. He says that with my imaginative power and habit of story-making a nervous weakness like mine is sure to lead to all manner of excited fancies, and that I ought to use my will and good sense to check the tendency. So I try.</p>
+      <p>I think sometimes that if I were only well enough to write a little it would relieve the press of ideas and rest me.</p>
+      <p>But I find I get pretty tired when I try.</p>
+      <p>It is so discouraging not to have any advice and companionship about my work. When I get really well John says we will ask Cousin Henry and Julia down for a long visit; but he says he would as soon put fire-works in my pillow-case as to let me have those stimulating people about now.</p>
+      <p>I wish I could get well faster.</p>
+      <p>But I must not think about that. This paper looks to me as if it knew what a vicious influence it had!</p>
+      <p>There is a recurrent spot where the pattern lolls like a broken neck and two bulbous eyes stare at you upside-down.</p>
+      <p>I get positively angry with the impertinence of it and the everlastingness. Up and down and sideways they crawl, and those absurd, unblinking eyes are everywhere. There is one place where two breadths didn’t match, and the eyes go all up and down the line, one a little higher than the other.</p>
+      <p>I never saw so much expression in an inanimate thing before, and we all know how much expression they have! I used to lie awake as a child and get more entertainment and terror out of blank walls and plain furniture than most children could find in a toy-store.</p>
+      <p>I remember what a kindly wink the knobs of our big old bureau used to have, and there was one chair that always seemed like a strong friend.</p>
+      <p>I used to feel that if any of the other things looked too fierce I could always hop into that chair and be safe.</p>
+      <p>The furniture in this room is no worse than inharmonious, however, for we had to bring it all from downstairs. I suppose when this was used as a playroom they had to take the nursery things out, and no wonder! I never saw such ravages as the children have made here.</p>
+      <p>The wallpaper, as I said before, is torn off in spots, and it sticketh closer than a brother—they must have had perseverance as well as hatred.</p>
+      <p>Then the floor is scratched and gouged and splintered, the plaster itself is dug out here and there, and this great heavy bed, which is all we found in the room, looks as if it had been through the wars.</p>
+      <p>But I don’t mind it a bit—only the paper.</p>
+      <p>There comes John’s sister. Such a dear girl as she is, and so careful of me! I must not let her find me writing.</p>
+      <p>She is a perfect, and enthusiastic housekeeper, and hopes for no better profession. I verily believe she thinks it is the writing which made me sick!</p>
+      <p>But I can write when she is out, and see her a long way off from these windows.</p>
+      <p>There is one that commands the road, a lovely, shaded, winding road, and one that just looks off over the country. A lovely country, too, full of great elms and velvet meadows.</p>
+      <p>This wallpaper has a kind of sub-pattern in a different shade, a particularly irritating one, for you can only see it in certain lights, and not clearly then.</p>
+      <p>But in the places where it isn’t faded, and where the sun is just so, I can see a strange, provoking, formless sort of figure, that seems to sulk about behind that silly and conspicuous front design.</p>
+      <p>There’s sister on the stairs!</p>
+      <p>Well, the Fourth of July is over! The people are gone and I am tired out. John thought it might do me good to see a little company, so we just had mother and Nellie and the children down for a week.</p>
+      <p>Of course I didn’t do a thing. Jennie sees to everything now.</p>
+      <p>But it tired me all the same.</p>
+      <p>John says if I don’t pick up faster he shall send me to Weir Mitchell in the fall.</p>
+      <p>But I don’t want to go there at all. I had a friend who was in his hands once, and she says he is just like John and my brother, only more so!</p>
+      <p>Besides, it is such an undertaking to go so far.</p>
+      <p>I don’t feel as if it was worth while to turn my hand over for anything, and I’m getting dreadfully fretful and querulous.</p>
+      <p>I cry at nothing, and cry most of the time.</p>
+      <p>Of course I don’t when John is here, or anybody else, but when I am alone.</p>
+      <p>And I am alone a good deal just now. John is kept in town very often by serious cases, and Jennie is good and lets me alone when I want her to.</p>
+      <p>So I walk a little in the garden or down that lovely lane, sit on the porch under the roses, and lie down up here a good deal.</p>
+      <p>I’m getting really fond of the room in spite of the wallpaper. Perhaps because of the wallpaper.</p>
+      <p>It dwells in my mind so!</p>
+      <p>I lie here on this great immovable bed—it is nailed down, I believe—and follow that pattern about by the hour. It is as good as gymnastics, I assure you. I start, we’ll say, at the bottom, down in the corner over there where it has not been touched, and I determine for the thousandth time that I will follow that pointless pattern to some sort of a conclusion.</p>
+      <p>I know a little of the principle of design, and I know this thing was not arranged on any laws of radiation, or alternation, or repetition, or symmetry, or anything else that I ever heard of.</p>
+      <p>It is repeated, of course, by the breadths, but not otherwise.</p>
+      <p>Looked at in one way each breadth stands alone, the bloated curves and flourishes—a kind of “debased Romanesque” with delirium tremens—go waddling up and down in isolated columns of fatuity.</p>
+      <p>But, on the other hand, they connect diagonally, and the sprawling outlines run off in great slanting waves of optic horror, like a lot of wallowing seaweeds in full chase.</p>
+      <p>The whole thing goes horizontally, too, at least it seems so, and I exhaust myself in trying to distinguish the order of its going in that direction.</p>
+      <p>They have used a horizontal breadth for a frieze, and that adds wonderfully to the confusion.</p>
+      <p>There is one end of the room where it is almost intact, and there, when the cross-lights fade and the low sun shines directly upon it, I can almost fancy radiation after all,—the interminable grotesques seem to form around a common centre and rush off in headlong plunges of equal distraction.</p>
+      <p>It makes me tired to follow it. I will take a nap, I guess.</p>
+      <p>I don’t know why I should write this.</p>
+      <p>I don’t want to.</p>
+      <p>I don’t feel able.</p>
+      <p>And I know John would think it absurd. But I must say what I feel and think in some way—it is such a relief!</p>
+      <p>But the effort is getting to be greater than the relief.</p>
+      <p>Half the time now I am awfully lazy, and lie down ever so much.</p>
+      <p>John says I mustn’t lose my strength, and has me take cod-liver oil and lots of tonics and things, to say nothing of ale and wine and rare meat.</p>
+      <p>Dear John! He loves me very dearly, and hates to have me sick. I tried to have a real earnest reasonable talk with him the other day, and tell him how I wish he would let me go and make a visit to Cousin Henry and Julia.</p>
+      <p>But he said I wasn’t able to go, nor able to stand it after I got there; and I did not make out a very good case for myself, for I was crying before I had finished.</p>
+      <p>It is getting to be a great effort for me to think straight. Just this nervous weakness, I suppose.</p>
+      <p>And dear John gathered me up in his arms, and just carried me upstairs and laid me on the bed, and sat by me and read to me till it tired my head.</p>
+      <p>He said I was his darling and his comfort and all he had, and that I must take care of myself for his sake, and keep well.</p>
+      <p>He says no one but myself can help me out of it, that I must use my will and self-control and not let any silly fancies run away with me.</p>
+      <p>There’s one comfort, the baby is well and happy, and does not have to occupy this nursery with the horrid wallpaper.</p>
+      <p>If we had not used it that blessed child would have! What a fortunate escape! Why, I wouldn’t have a child of mine, an impressionable little thing, live in such a room for worlds.</p>
+      <p>I never thought of it before, but it is lucky that John kept me here after all. I can stand it so much easier than a baby, you see.</p>
+      <p>Of course I never mention it to them any more,—I am too wise,—but I keep watch of it all the same.</p>
+      <p>There are things in that paper that nobody knows but me, or ever will.</p>
+      <p>Behind that outside pattern the dim shapes get clearer every day.</p>
+      <p>It is always the same shape, only very numerous.</p>
+      <p>And it is like a woman stooping down and creeping about behind that pattern. I don’t like it a bit. I wonder—I begin to think—I wish John would take me away from here!</p>
+      <p>It is so hard to talk with John about my case, because he is so wise, and because he loves me so.</p>
+      <p>But I tried it last night.</p>
+      <p>It was moonlight. The moon shines in all around, just as the sun does.</p>
+      <p>I hate to see it sometimes, it creeps so slowly, and always comes in by one window or another.</p>
+      <p>John was asleep and I hated to waken him, so I kept still and watched the moonlight on that undulating wallpaper till I felt creepy.</p>
+      <p>The faint figure behind seemed to shake the pattern, just as if she wanted to get out.</p>
+      <p>I got up softly and went to feel and see if the paper did move, and when I came back John was awake.</p>
+      <p>“What is it, little girl?” he said. “Don’t go walking about like that—you’ll get cold.”</p>
+      <p>I thought it was a good time to talk, so I told him that I really was not gaining here, and that I wished he would take me away.</p>
+      <p>“Why darling!” said he, “our lease will be up in three weeks, and I can’t see how to leave before.</p>
+      <p>“The repairs are not done at home, and I cannot possibly leave town just now. Of course if you were in any danger I could and would, but you really are better, dear, whether you can see it or not. I am a doctor, dear, and I know. You are gaining flesh and color, your appetite is better. I feel really much easier about you.”</p>
+      <p>“I don’t weigh a bit more,” said I, “nor as much; and my appetite may be better in the evening, when you are here, but it is worse in the morning when you are away.”</p>
+      <p>“Bless her little heart!” said he with a big hug; “she shall be as sick as she pleases! But now let’s improve the shining hours by going to sleep, and talk about it in the morning!”</p>
+      <p>“And you won’t go away?” I asked gloomily.</p>
+      <p>“Why, how can I, dear? It is only three weeks more and then we will take a nice little trip of a few days while Jennie is getting the house ready. Really, dear, you are better!”</p>
+      <p>“Better in body perhaps”—I began, and stopped short, for he sat up straight and looked at me with such a stern, reproachful look that I could not say another word.</p>
+      <p>“My darling,” said he, “I beg of you, for my sake and for our child’s sake, as well as for your own, that you will never for one instant let that idea enter your mind! There is nothing so dangerous, so fascinating, to a temperament like yours. It is a false and foolish fancy. Can you not trust me as a physician when I tell you so?”</p>
+      <p>So of course I said no more on that score, and we went to sleep before long. He thought I was asleep first, but I wasn’t,—I lay there for hours trying to decide whether that front pattern and the back pattern really did move together or separately.</p>
+      <p>On a pattern like this, by daylight, there is a lack of sequence, a defiance of law, that is a constant irritant to a normal mind.</p>
+      <p>The color is hideous enough, and unreliable enough, and infuriating enough, but the pattern is torturing.</p>
+      <p>You think you have mastered it, but just as you get well under way in following, it turns a back somersault and there you are. It slaps you in the face, knocks you down, and tramples upon you. It is like a bad dream.</p>
+      <p>The outside pattern is a florid arabesque, reminding one of a fungus. If you can imagine a toadstool in joints, an interminable string of toadstools, budding and sprouting in endless convolutions,—why, that is something like it.</p>
+      <p>That is, sometimes!</p>
+      <p>There is one marked peculiarity about this paper, a thing nobody seems to notice but myself, and that is that it changes as the light changes.</p>
+      <p>When the sun shoots in through the east window—I always watch for that first long, straight ray—it changes so quickly that I never can quite believe it.</p>
+      <p>That is why I watch it always.</p>
+      <p>By moonlight—the moon shines in all night when there is a moon—I wouldn’t know it was the same paper.</p>
+      <p>At night in any kind of light, in twilight, candlelight, lamplight, and worst of all by moonlight, it becomes bars! The outside pattern I mean, and the woman behind it is as plain as can be.</p>
+      <p>I didn’t realize for a long time what the thing was that showed behind,—that dim sub-pattern,—but now I am quite sure it is a woman.</p>
+      <p>By daylight she is subdued, quiet. I fancy it is the pattern that keeps her so still. It is so puzzling. It keeps me quiet by the hour.</p>
+      <p>I lie down ever so much now. John says it is good for me, and to sleep all I can.</p>
+      <p>Indeed, he started the habit by making me lie down for an hour after each meal.</p>
+      <p>It is a very bad habit, I am convinced, for, you see, I don’t sleep.</p>
+      <p>And that cultivates deceit, for I don’t tell them I’m awake,—oh, no!</p>
+      <p>The fact is, I am getting a little afraid of John.</p>
+      <p>He seems very queer sometimes, and even Jennie has an inexplicable look.</p>
+      <p>It strikes me occasionally, just as a scientific hypothesis, that perhaps it is the paper!</p>
+      <p>I have watched John when he did not know I was looking, and come into the room suddenly on the most innocent excuses, and I’ve caught him several times looking at the paper! And Jennie too. I caught Jennie with her hand on it once.</p>
+      <p>She didn’t know I was in the room, and when I asked her in a quiet, a very quiet voice, with the most restrained manner possible, what she was doing with the paper she turned around as if she had been caught stealing, and looked quite angry—asked me why I should frighten her so!</p>
+      <p>Then she said that the paper stained everything it touched, that she had found yellow smooches on all my clothes and John’s, and she wished we would be more careful!</p>
+      <p>Did not that sound innocent? But I know she was studying that pattern, and I am determined that nobody shall find it out but myself!</p>
+      <p>Life is very much more exciting now than it used to be. You see I have something more to expect, to look forward to, to watch. I really do eat better, and am more quiet than I was.</p>
+      <p>John is so pleased to see me improve! He laughed a little the other day, and said I seemed to be flourishing in spite of my wallpaper.</p>
+      <p>I turned it off with a laugh. I had no intention of telling him it was because of the wallpaper—he would make fun of me. He might even want to take me away.</p>
+      <p>I don’t want to leave now until I have found it out. There is a week more, and I think that will be enough.</p>
+      <p>I’m feeling ever so much better! I don’t sleep much at night, for it is so interesting to watch developments; but I sleep a good deal in the daytime.</p>
+      <p>In the daytime it is tiresome and perplexing.</p>
+      <p>There are always new shoots on the fungus, and new shades of yellow all over it. I cannot keep count of them, though I have tried conscientiously.</p>
+      <p>It is the strangest yellow, that wallpaper! It makes me think of all the yellow things I ever saw—not beautiful ones like buttercups, but old foul, bad yellow things.</p>
+      <p>But there is something else about that paper—the smell! I noticed it the moment we came into the room, but with so much air and sun it was not bad. Now we have had a week of fog and rain, and whether the windows are open or not, the smell is here.</p>
+      <p>It creeps all over the house.</p>
+      <p>I find it hovering in the dining-room, skulking in the parlor, hiding in the hall, lying in wait for me on the stairs.</p>
+      <p>It gets into my hair.</p>
+      <p>Even when I go to ride, if I turn my head suddenly and surprise it—there is that smell!</p>
+      <p>Such a peculiar odor, too! I have spent hours in trying to analyze it, to find what it smelled like.</p>
+      <p>It is not bad—at first, and very gentle, but quite the subtlest, most enduring odor I ever met.</p>
+      <p>In this damp weather it is awful. I wake up in the night and find it hanging over me.</p>
+      <p>It used to disturb me at first. I thought seriously of burning the house—to reach the smell.</p>
+      <p>But now I am used to it. The only thing I can think of that it is like is the color of the paper! A yellow smell.</p>
+      <p>There is a very funny mark on this wall, low down, near the mopboard. A streak that runs round the room. It goes behind every piece of furniture, except the bed, a long, straight, even smooch, as if it had been rubbed over and over.</p>
+      <p>I wonder how it was done and who did it, and what they did it for. Round and round and round—round and round and round—it makes me dizzy!</p>
+      <p>I really have discovered something at last.</p>
+      <p>Through watching so much at night, when it changes so, I have finally found out.</p>
+      <p>The front pattern does move—and no wonder! The woman behind shakes it!</p>
+      <p>Sometimes I think there are a great many women behind, and sometimes only one, and she crawls around fast, and her crawling shakes it all over.</p>
+      <p>Then in the very bright spots she keeps still, and in the very shady spots she just takes hold of the bars and shakes them hard.</p>
+      <p>And she is all the time trying to climb through. But nobody could climb through that pattern—it strangles so; I think that is why it has so many heads.</p>
+      <p>They get through, and then the pattern strangles them off and turns them upside-down, and makes their eyes white!</p>
+      <p>If those heads were covered or taken off it would not be half so bad.</p>
+      <p>I think that woman gets out in the daytime!</p>
+      <p>And I’ll tell you why—privately—I’ve seen her!</p>
+      <p>I can see her out of every one of my windows!</p>
+      <p>It is the same woman, I know, for she is always creeping, and most women do not creep by daylight.</p>
+      <p>I see her on that long shaded lane, creeping up and down. I see her in those dark grape arbors, creeping all around the garden.</p>
+      <p>I see her on that long road under the trees, creeping along, and when a carriage comes she hides under the blackberry vines.</p>
+      <p>I don’t blame her a bit. It must be very humiliating to be caught creeping by daylight!</p>
+      <p>I always lock the door when I creep by daylight. I can’t do it at night, for I know John would suspect something at once.</p>
+      <p>And John is so queer now, that I don’t want to irritate him. I wish he would take another room! Besides, I don’t want anybody to get that woman out at night but myself.</p>
+      <p>I often wonder if I could see her out of all the windows at once.</p>
+      <p>But, turn as fast as I can, I can only see out of one at one time.</p>
+      <p>And though I always see her she may be able to creep faster than I can turn!</p>
+      <p>I have watched her sometimes away off in the open country, creeping as fast as a cloud shadow in a high wind.</p>
+      <p>If only that top pattern could be gotten off from the under one! I mean to try it, little by little.</p>
+      <p>I have found out another funny thing, but I shan’t tell it this time! It does not do to trust people too much.</p>
+      <p>There are only two more days to get this paper off, and I believe John is beginning to notice. I don’t like the look in his eyes.</p>
+      <p>And I heard him ask Jennie a lot of professional questions about me. She had a very good report to give.</p>
+      <p>She said I slept a good deal in the daytime.</p>
+      <p>John knows I don’t sleep very well at night, for all I’m so quiet!</p>
+      <p>He asked me all sorts of questions, too, and pretended to be very loving and kind.</p>
+      <p>As if I couldn’t see through him!</p>
+      <p>Still, I don’t wonder he acts so, sleeping under this paper for three months.</p>
+      <p>It only interests me, but I feel sure John and Jennie are secretly affected by it.</p>
+      <p>Hurrah! This is the last day, but it is enough. John is to stay in town over night, and won’t be out until this evening.</p>
+      <p>Jennie wanted to sleep with me—the sly thing! but I told her I should undoubtedly rest better for a night all alone.</p>
+      <p>That was clever, for really I wasn’t alone a bit! As soon as it was moonlight, and that poor thing began to crawl and shake the pattern, I got up and ran to help her.</p>
+      <p>I pulled and she shook, I shook and she pulled, and before morning we had peeled off yards of that paper.</p>
+      <p>A strip about as high as my head and half around the room.</p>
+      <p>And then when the sun came and that awful pattern began to laugh at me I declared I would finish it to-day!</p>
+      <p>We go away to-morrow, and they are moving all my furniture down again to leave things as they were before.</p>
+      <p>Jennie looked at the wall in amazement, but I told her merrily that I did it out of pure spite at the vicious thing.</p>
+      <p>She laughed and said she wouldn’t mind doing it herself, but I must not get tired.</p>
+      <p>How she betrayed herself that time!</p>
+      <p>But I am here, and no person touches this paper but me—not alive!</p>
+      <p>She tried to get me out of the room—it was too patent! But I said it was so quiet and empty and clean now that I believed I would lie down again and sleep all I could; and not to wake me even for dinner—I would call when I woke.</p>
+      <p>So now she is gone, and the servants are gone, and the things are gone, and there is nothing left but that great bedstead nailed down, with the canvas mattress we found on it.</p>
+      <p>We shall sleep downstairs to-night, and take the boat home to-morrow.</p>
+      <p>I quite enjoy the room, now it is bare again.</p>
+      <p>How those children did tear about here!</p>
+      <p>This bedstead is fairly gnawed!</p>
+      <p>But I must get to work.</p>
+      <p>I have locked the door and thrown the key down into the front path.</p>
+      <p>I don’t want to go out, and I don’t want to have anybody come in, till John comes.</p>
+      <p>I want to astonish him.</p>
+      <p>I’ve got a rope up here that even Jennie did not find. If that woman does get out, and tries to get away, I can tie her!</p>
+      <p>But I forgot I could not reach far without anything to stand on!</p>
+      <p>This bed will not move!</p>
+      <p>I tried to lift and push it until I was lame, and then I got so angry I bit off a little piece at one corner—but it hurt my teeth.</p>
+      <p>Then I peeled off all the paper I could reach standing on the floor. It sticks horribly and the pattern just enjoys it! All those strangled heads and bulbous eyes and waddling fungus growths just shriek with derision!</p>
+      <p>I am getting angry enough to do something desperate. To jump out of the window would be admirable exercise, but the bars are too strong even to try.</p>
+      <p>Besides I wouldn’t do it. Of course not. I know well enough that a step like that is improper and might be misconstrued.</p>
+      <p>I don’t like to look out of the windows even—there are so many of those creeping women, and they creep so fast.</p>
+      <p>I wonder if they all come out of that wallpaper as I did?</p>
+      <p>But I am securely fastened now by my well-hidden rope—you don’t get me out in the road there!</p>
+      <p>I suppose I shall have to get back behind the pattern when it comes night, and that is hard!</p>
+      <p>It is so pleasant to be out in this great room and creep around as I please!</p>
+      <p>I don’t want to go outside. I won’t, even if Jennie asks me to.</p>
+      <p>For outside you have to creep on the ground, and everything is green instead of yellow.</p>
+      <p>But here I can creep smoothly on the floor, and my shoulder just fits in that long smooch around the wall, so I cannot lose my way.</p>
+      <p>Why, there’s John at the door!</p>
+      <p>It is no use, young man, you can’t open it!</p>
+      <p>How he does call and pound!</p>
+      <p>Now he’s crying for an axe.</p>
+      <p>It would be a shame to break down that beautiful door!</p>
+      <p>“John dear!” said I in the gentlest voice, “the key is down by the front steps, under a plantain leaf!”</p>
+      <p>That silenced him for a few moments.</p>
+      <p>Then he said—very quietly indeed, “Open the door, my darling!”</p>
+      <p>“I can’t,” said I. “The key is down by the front door under a plantain leaf!”</p>
+      <p>And then I said it again, several times, very gently and slowly, and said it so often that he had to go and see, and he got it, of course, and came in. He stopped short by the door.</p>
+      <p>“What is the matter?” he cried. “For God’s sake, what are you doing!”</p>
+      <p>I kept on creeping just the same, but I looked at him over my shoulder.</p>
+      <p>“I’ve got out at last,” said I, “in spite of you and Jane! And I’ve pulled off most of the paper, so you can’t put me back!”</p>
+      <p>Now why should that man have fainted? But he did, and right across my path by the wall, so that I had to creep over him every time!</p>
+      <p class="end">— THE END —</p>
+      <figure class="fig tall">
+        <img src="../img/yellow-wallpaper-hatfield.png" alt="Old pen-and-ink illustration of a woman in a long dress sitting in a room, with patterned wallpaper behind her" width="960" height="1141">
+        <figcaption>One of Joseph Henry Hatfield's illustrations for the story's first appearance in <i>The New England Magazine</i>, 1892.<span class="credit">Illustration: Joseph Henry Hatfield / Wikimedia Commons, Public domain</span></figcaption>
+      </figure>
+    </div>
+    <div class="tale-extras">
+      <div>
+        <div class="box-label">Glossary</div>
+        <dl>
+          <dt>hereditary estate</dt><dd>a big property passed down through a family</dd>
+          <dt>phosphates</dt><dd>mineral salts, given as "tonics" by doctors of the time</dd>
+          <dt>congenial</dt><dd>pleasant and friendly; suited to you</dd>
+          <dt>lurid</dt><dd>unpleasantly bright and glaring in colour</dd>
+          <dt>impertinence</dt><dd>rudeness; behaving without proper respect</dd>
+          <dt>arabesque</dt><dd>a decorative pattern of curling, interwoven lines</dd>
+          <dt>delirium tremens</dt><dd>shaking and hallucinations, here used as a joke about a "drunken" pattern</dd>
+          <dt>derision</dt><dd>mocking scorn</dd>
+        </dl>
+      </div>
+      <div>
+        <div class="box-label">Talk about it</div>
+        <ol>
+          <li>John is a doctor and clearly believes he's helping. Find two moments where his "care" makes things worse. Is he a villain, or something more complicated?</li>
+          <li>Trace the wallpaper: how does the narrator describe it near the start, in the middle, and at the end? What do you think the woman "behind" the pattern stands for?</li>
+          <li>Gilman wrote this to change how doctors treated women like her. Can a story change minds more than a medical article? Think of a modern story, film or game that has done the same.</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+</article>
+
+<!-- ==================== PAGE A4 ==================== -->
+<article class="sheet" aria-label="Page A4">
+  <div class="folio"><span>The Little Lion Daily</span><span>Page A4 · Weekend fun &amp; games</span><span>Saturday, 28 November 2026</span></div>
+
+  <section class="duo" aria-label="Colour quiz and riddles">
+    <div>
+      <div class="kicker">Saturday surprise · Colour quiz</div>
+      <h2>Ten questions in full colour</h2>
+      <p class="instr">Answer out loud, then peek. Tick the ones you got right.</p>
+      <ol id="quiz" class="riddles" style="margin:0;padding-left:1.4em;display:flex;flex-direction:column;gap:12px">
+        <li>Shine red, green and blue light onto the same white wall, all equally bright. What colour do you see where they overlap?
+          <details><summary>Show answer</summary>White. Light colours add together. That's how every pixel on your phone screen works: tiny red, green and blue dots.</details><label class="got"><input type="checkbox"> I got it</label></li>
+        <li>Which pigment makes leaves green?
+          <details><summary>Show answer</summary>Chlorophyll. It soaks up red and blue light for photosynthesis and bounces back the green.</details><label class="got"><input type="checkbox"> I got it</label></li>
+        <li>A polar bear's fur looks white. What colour is its skin?
+          <details><summary>Show answer</summary>Black. The fur hairs are actually see-through and scatter light, which makes them look white.</details><label class="got"><input type="checkbox"> I got it</label></li>
+        <li>Flamingos are born grey. What turns them pink?
+          <details><summary>Show answer</summary>Their food. Algae and tiny shrimps contain pink-orange pigments called carotenoids (the same family as the colour in carrots).</details><label class="got"><input type="checkbox"> I got it</label></li>
+        <li>Why is the daytime sky blue?
+          <details><summary>Show answer</summary>Sunlight hits the gas molecules in the air, and shorter, bluer wavelengths get scattered around the sky far more than red ones. Scientists call it Rayleigh scattering.</details><label class="got"><input type="checkbox"> I got it</label></li>
+        <li>An aeroplane's "black box" flight recorder is actually painted which colour, and why?
+          <details><summary>Show answer</summary>Bright orange, so search teams can spot it in wreckage or water.</details><label class="got"><input type="checkbox"> I got it</label></li>
+        <li>Ancient "Tyrian purple", worn by Roman emperors, was made from what?
+          <details><summary>Show answer</summary>Sea snails. Thousands of them were needed for a tiny amount of dye, which is why purple became the colour of royalty.</details><label class="got"><input type="checkbox"> I got it</label></li>
+        <li>About how many men have some form of red-green colour blindness: 1 in 12, 1 in 100, or 1 in 1,000?
+          <details><summary>Show answer</summary>About 1 in 12 men, but only about 1 in 200 women. The genes involved sit on the X chromosome, and boys have only one X.</details><label class="got"><input type="checkbox"> I got it</label></li>
+        <li>On Singapore's flag, what does the red stand for?
+          <details><summary>Show answer</summary>Universal brotherhood and equality of man. The white stands for pervading and everlasting purity and virtue.</details><label class="got"><input type="checkbox"> I got it</label></li>
+        <li>Mix yellow and blue <i>paint</i> and you get green. Mix yellow and blue <i>light</i> and you get…?
+          <details><summary>Show answer</summary>(Close to) white! Paint works by <i>removing</i> colours from light; light works by <i>adding</i> them. That's why question 1 and question 10 give such different answers.</details><label class="got"><input type="checkbox"> I got it</label></li>
+      </ol>
+      <div class="quiz-score" id="quiz-score" aria-live="polite">Score: 0 / 10</div>
+    </div>
+    <div class="riddles">
+      <div class="kicker">Brain teasers</div>
+      <h2>Seven riddles for a lazy Saturday</h2>
+      <ol>
+        <li>I have a face and two hands, but no arms, no legs, and no head. What am I?
+          <details><summary>Show answer</summary>A clock. (Pareidolia, the riddle edition.)</details></li>
+        <li>A man points at a portrait and says: "Brothers and sisters I have none, but that man's father is my father's son." Who is in the portrait?
+          <details><summary>Show answer</summary>His son. "My father's son", with no brothers, can only be the speaker himself. So the man in the portrait's father is the speaker.</details></li>
+        <li>What has one eye but can't see? (There are two good answers: one lives in a sewing kit, the other over the sea.)
+          <details><summary>Show answer</summary>A needle, and a typhoon (or hurricane).</details></li>
+        <li>A woman shoots her husband. Then she holds him under water for five minutes. Finally, she hangs him up. Half an hour later, they go out for dinner together. How?
+          <details><summary>Show answer</summary>She's a photographer. She shot a photo of him, developed it in a tray of chemicals, and hung it up to dry. (This is how film photos were made before digital cameras.)</details></li>
+        <li>I'm lighter than a feather, yet the strongest person in the world can't hold me for more than a few minutes. What am I?
+          <details><summary>Show answer</summary>Your breath.</details></li>
+        <li>字谜：有心走不快，见水装不完，长草难收拾，遇食就可餐。（打一字）
+          <details><summary>看答案</summary>曼。加"忄"是"慢"，加"氵"是"漫"，加"艹"是"蔓"，加"饣"是"馒"。</details></li>
+        <li>歇后语：丈二和尚——？
+          <details><summary>看答案</summary>摸不着头脑。和尚有一丈二尺那么高，别人伸手也摸不到他的头。比喻弄不清是怎么回事。读完今天A3版的小说，你可能也会有这种感觉！</details></li>
+      </ol>
+    </div>
+  </section>
+
+  <hr class="rule-sec">
+
+  <section class="puzzles" aria-label="Word search">
+    <div>
+      <div class="kicker">Word search · every word is in today's paper</div>
+      <h2>Find the ten hidden words</h2>
+      <p class="instr">Words can run across, down, diagonally, or backwards. Click the first letter, then the last letter.</p>
+      <div class="ws-wrap"><table class="ws" id="ws" aria-label="Word search grid"></table></div>
+      <div class="ws-status" id="ws-status" aria-live="polite"></div>
+      <ul class="wordlist" id="wordlist" aria-label="Words to find"></ul>
+    </div>
+    <div>
+      <div class="tryit">
+        <div class="box-label">Weekend challenge · Make your own pareidolia gallery</div>
+        <p>Collect your five face photos from A1. Give each one a name and a one-line personality ("Mr Kettle: thinks he's better than the toaster"). Send the best one to a friend and see if they spot the face without a hint.</p>
+        <p class="small">Extra credit: find a face in a cloud, then watch it change as the wind moves it. How long does it last?</p>
+      </div>
+      <div class="exhibit">
+        <div class="box-label">Story corner · what's coming</div>
+        <p>Every edition until 31 December has a story. Next week: more classics, and another episode of <b>Juni of the Desert</b>, our own series about a 14-year-old scientist-detective in Tucson, Arizona.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="week" aria-label="This week's line-up">
+    <p class="week-note">Until 31 December: a short story in every edition.</p>
+    <div><b>Mon</b>Comic strip</div>
+    <div><b>Tue</b>Recipe &amp; word search</div>
+    <div><b>Wed</b>Science quiz &amp; riddles</div>
+    <div><b>Thu</b>Comic &amp; fun facts</div>
+    <div><b>Fri</b>Crossword &amp; logic puzzles</div>
+    <div class="today"><b>Sat · today</b>Weekend classic: The Yellow Wallpaper</div>
+    <div><b>Sun</b>Weekend classic &amp; surprise</div>
+  </section>
+
+  <nav class="archive" aria-label="Past editions">
+    <div class="box-label">往期 · Past editions</div>
+    <ul>
+<!--ARCHIVE-->
+      <li><a href="2026-11-28.html" aria-current="page">Sat 28 Nov 2026</a></li>
+      <li><a href="2026-11-27.html">Fri 27 Nov 2026</a></li>
+      <li><a href="2026-11-26.html">Thu 26 Nov 2026</a></li>
+      <li><a href="2026-11-25.html">Wed 25 Nov 2026</a></li>
+      <li><a href="2026-11-24.html">Tue 24 Nov 2026</a></li>
+<!--/ARCHIVE-->
+    </ul>
+  </nav>
+
+  <div class="colophon">The Little Lion Daily · Printed with pixels in Singapore · News stories belong to The Straits Times and Lianhe Zaobao</div>
+</article>
+
+<script>
+(function(){
+  var WORDS=["WALLPAPER","YELLOW","ARSENIC","PAREIDOLIA","MARS","POTATO","GREEN","PATTERN","POISON","MOON"];
+  var N=12, grid=[], placed=[];
+  // Seeded random so the puzzle is the same for everyone today
+  var seed=20261128;
+  function rnd(){seed=(seed*1103515245+12345)%2147483648;return seed/2147483648;}
+  var DIRS=[[0,1],[1,0],[1,1],[-1,1],[0,-1],[-1,0],[-1,-1],[1,-1]];
+  for(var r=0;r<N;r++){grid.push(new Array(N).fill(""));}
+  WORDS.slice().sort(function(a,b){return b.length-a.length;}).forEach(function(w){
+    for(var tries=0;tries<500;tries++){
+      var d=DIRS[Math.floor(rnd()*DIRS.length)];
+      var r0=Math.floor(rnd()*N), c0=Math.floor(rnd()*N);
+      var rEnd=r0+d[0]*(w.length-1), cEnd=c0+d[1]*(w.length-1);
+      if(rEnd<0||rEnd>=N||cEnd<0||cEnd>=N) continue;
+      var ok=true;
+      for(var i=0;i<w.length;i++){var ch=grid[r0+d[0]*i][c0+d[1]*i];if(ch&&ch!==w[i]){ok=false;break;}}
+      if(!ok) continue;
+      for(i=0;i<w.length;i++) grid[r0+d[0]*i][c0+d[1]*i]=w[i];
+      placed.push(w); return;
+    }
+  });
+  var A="ABCDEFGHIJKLMNOPRSTUVWY";
+  for(r=0;r<N;r++)for(var c=0;c<N;c++) if(!grid[r][c]) grid[r][c]=A[Math.floor(rnd()*A.length)];
+
+  var table=document.getElementById("ws"), list=document.getElementById("wordlist"), status=document.getElementById("ws-status");
+  var cells=[];
+  for(r=0;r<N;r++){
+    var tr=document.createElement("tr"), row=[];
+    for(c=0;c<N;c++){
+      var td=document.createElement("td");
+      td.textContent=grid[r][c]; td.tabIndex=0; td.dataset.r=r; td.dataset.c=c;
+      tr.appendChild(td); row.push(td);
+    }
+    table.appendChild(tr); cells.push(row);
+  }
+  placed.sort().forEach(function(w){var li=document.createElement("li");li.textContent=w;li.id="w-"+w;list.appendChild(li);});
+
+  var start=null, found=0;
+  function pick(td){
+    var r=+td.dataset.r, c=+td.dataset.c;
+    if(!start){start=[r,c];td.classList.add("sel");status.textContent="Now click the last letter.";return;}
+    var r0=start[0], c0=start[1];
+    cells[r0][c0].classList.remove("sel"); start=null;
+    var dr=Math.sign(r-r0), dc=Math.sign(c-c0), len=Math.max(Math.abs(r-r0),Math.abs(c-c0))+1;
+    if(!(r-r0===0||c-c0===0||Math.abs(r-r0)===Math.abs(c-c0))||len<2){status.textContent="Pick letters in a straight line.";return;}
+    var s="", path=[];
+    for(var i=0;i<len;i++){var rr=r0+dr*i, cc=c0+dc*i;s+=grid[rr][cc];path.push(cells[rr][cc]);}
+    var rev=s.split("").reverse().join(""), w=placed.indexOf(s)>-1?s:(placed.indexOf(rev)>-1?rev:null);
+    var li=w&&document.getElementById("w-"+w);
+    if(li&&!li.classList.contains("done")){
+      li.classList.add("done"); path.forEach(function(t){t.classList.add("hit");}); found++;
+      status.textContent=found===placed.length?"All "+found+" found. Well done!":"Found "+w+"! "+(placed.length-found)+" to go.";
+    } else status.textContent="Not a word on the list. Try again.";
+  }
+  table.addEventListener("click",function(e){var td=e.target.closest("td");if(td)pick(td);});
+  table.addEventListener("keydown",function(e){if((e.key==="Enter"||e.key===" ")&&e.target.tagName==="TD"){e.preventDefault();pick(e.target);}});
+})();
+(function(){
+  var quiz=document.getElementById("quiz"), out=document.getElementById("quiz-score");
+  quiz.addEventListener("change",function(){
+    var n=quiz.querySelectorAll(".got input:checked").length;
+    out.textContent="Score: "+n+" / 10"+(n===10?" · Full marks, you colourful genius!":"");
+  });
+})();
+</script>
+</body>
+</html>

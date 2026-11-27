@@ -8,8 +8,8 @@
 <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png?v=2">
 <link rel="apple-touch-icon" href="img/apple-touch-icon.png?v=2">
 <link rel="manifest" href="manifest.webmanifest">
-<meta name="edition" content="2026-11-27">
-<script>(function(){var me="2026-11-27",busy=0;function c(){if(document.visibilityState!=="visible"||busy)return;busy=1;fetch("index.html",{cache:"no-store"}).then(function(r){return r.text();}).then(function(t){var m=t.match(/name="edition" content="([^"]+)"/);if(m&&m[1]>me&&location.pathname.indexOf("/editions/")<0)location.reload();}).catch(function(){}).then(function(){busy=0;});}document.addEventListener("visibilitychange",c);addEventListener("pageshow",c);addEventListener("focus",c);})();</script>
+<meta name="edition" content="2026-11-28">
+<script>(function(){var me="2026-11-28",busy=0;function c(){if(document.visibilityState!=="visible"||busy)return;busy=1;fetch("index.html",{cache:"no-store"}).then(function(r){return r.text();}).then(function(t){var m=t.match(/name="edition" content="([^"]+)"/);if(m&&m[1]>me&&location.pathname.indexOf("/editions/")<0)location.reload();}).catch(function(){}).then(function(){busy=0;});}document.addEventListener("visibilitychange",c);addEventListener("pageshow",c);addEventListener("focus",c);})();</script>
 <style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 </head>
 <body>
@@ -261,118 +261,99 @@ p{margin:0 0 .8em;hyphens:auto}
 @media print{.comic{grid-template-columns:repeat(4,1fr)}.facts-grid{grid-template-columns:repeat(4,1fr)}}
 </style>
 
-<style>
-/* Friday: interactive crossword */
-.xw-layout{display:grid;grid-template-columns:auto 1fr;gap:30px;align-items:start}
-.xw-wrap{overflow-x:auto}
-.xw{border-collapse:collapse;margin-top:8px}
-.xw td{width:34px;height:34px;padding:0;border:1px solid var(--rule);position:relative;background:var(--sheet)}
-.xw td.xb{background:transparent;border-color:transparent}
-.xw .xn{position:absolute;top:1px;left:2px;font-family:var(--f-mono);font-size:9px;line-height:1;color:var(--ink-soft);pointer-events:none}
-.xw input{width:100%;height:100%;border:0;background:transparent;text-align:center;font-family:var(--f-mono);font-weight:600;font-size:17px;text-transform:uppercase;color:var(--ink);padding:6px 0 0;caret-color:var(--spot)}
-.xw input:focus{outline:2px solid var(--spot);outline-offset:-2px;background:var(--found)}
-.xw input.ok{color:#2e7d32}
-.xw input.bad{color:var(--spot);text-decoration:line-through}
-.xw-btns{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
-.xw-btns button{font-family:var(--f-mono);font-size:12.5px;background:transparent;color:var(--ink);border:1px solid var(--rule);padding:6px 10px;cursor:pointer}
-.xw-btns button:hover{background:var(--ink);color:var(--sheet)}
-.xw-clues ol{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px;font-size:15.5px}
-.xw-clues b{font-family:var(--f-mono);display:inline-block;min-width:24px;color:var(--spot)}
-@media (max-width:860px){.xw-layout{grid-template-columns:1fr}}
-@media (max-width:480px){.xw td{width:27px;height:27px}.xw input{font-size:14px}}
-@media print{.xw-layout{grid-template-columns:auto 1fr}.xw-btns,#xw-status{display:none}.xw input{color:transparent}}
-</style>
 
 <!-- ==================== PAGE A1 ==================== -->
 <article class="sheet" aria-label="Front page">
-  <div class="folio"><span>Vol. I · No. 4</span><span>Page A1</span><span>Singapore edition</span></div>
+  <div class="folio"><span>Vol. I · No. 5</span><span>Page A1</span><span>Singapore edition · Weekend</span></div>
 
   <header class="mast">
-    <div class="ear"><b>Read time</b>15 minutes, plus 2 news links and a 13-minute story</div>
+    <div class="ear"><b>Read time</b>25 minutes, plus 2 news links and a 30-minute weekend classic</div>
     <div class="title">
       <h1>The Little Lion Daily</h1>
       <div class="zh">小狮日报</div>
     </div>
-    <div class="ear r"><b>Friday crossword</b>Fill it in on screen · Page A4</div>
+    <div class="ear r"><b>Weekend special</b>The wallpaper edition · Story on Page A3</div>
   </header>
   <div class="dateline">
-    <span>Friday, 27 November 2026</span>
-    <span>星期五 · 十一月二十七日</span>
+    <span>Saturday, 28 November 2026</span>
+    <span>星期六 · 十一月二十八日</span>
     <span>Price: free for curious minds</span>
   </div>
 
   <!-- Today's news: links only -->
   <section class="brief" aria-label="Today's news">
     <div class="story">
-      <div class="kicker">Today's news · Your rights as a shopper</div>
-      <h2>Cooling-off period for prepaid packages, stronger influencer ad oversight among recommendations to better protect consumers</h2>
-      <div class="src">CNA · Singapore · 27 Nov 2026</div>
-      <p class="why">Why read it: Singapore's Consumer Protection Review Panel has released seven recommendations, covering things like losing money on prepaid packages and pressure selling, plus closer oversight of influencer advertising. You are a consumer every time you buy bubble tea, top up a game or sign up for a class, and you scroll past influencer ads every day. Notice which ideas would change how shops can sell to you. (It also pairs nicely with today's Future You · Business column on A2.)</p>
-      <a class="readlink" href="https://www.channelnewsasia.com/singapore/consumer-protection-case-influencer-scalping-prepaid-packages-6586471" target="_blank" rel="noopener">Read on CNA →</a>
+      <div class="kicker">Today's news · Energy &amp; the region</div>
+      <h2>Plugging in: How electrification can help South-east Asia's energy transition</h2>
+      <div class="src">The Straits Times · Environment · 28 Nov 2026</div>
+      <p class="why">Why read it: "Electrification" means switching things that burn fuel (cars, cooking stoves, factory machines) over to running on electricity. The piece's summary says it could also help tackle "energy poverty" in our region, meaning people who still can't count on clean, affordable power at home. As you read, look for two things: what the energy transition actually involves, and why the same idea can be a climate plan <i>and</i> a fairness plan at the same time.</p>
+      <a class="readlink" href="https://www.straitstimes.com/singapore/environment/plugging-in-how-electrification-can-help-south-east-asias-energy-transition" target="_blank" rel="noopener">Read on The Straits Times →</a>
     </div>
     <div class="story">
-      <div class="kicker">今日中文新闻 · 联合早报</div>
-      <h2 class="zh">就业居民名义收入中位数今年首破6000元　劳动参与率连跌五年</h2>
+      <div class="kicker">今日中文新闻 · 联合早报《红蚂蚁》</div>
+      <h2 class="zh">【红蚂蚁】AI好玩吗？加强培养"AI素养"因应时代变化</h2>
       <div class="src">联合早报 · 新加坡 · 2026年11月27日</div>
-      <p class="zh-body why">为什么值得读：全职就业居民的每月收入中位数第一次超过6000元，听起来是好消息。可是报道也说，企业加薪越来越谨慎，通货膨胀又走高，所以"实际收入"的增长明显放慢了。读的时候请抓住两个关键词："名义收入"是工资单上的数字，"实际收入"是扣除物价上涨以后，这笔钱真正能买到多少东西。为什么两者会不一样？</p>
-      <a class="readlink" href="https://www.zaobao.com.sg/news/singapore/story20261127-10063528" target="_blank" rel="noopener">在联合早报阅读 →</a>
+      <p class="zh-body why">为什么值得读：《红蚂蚁》是早报写给年轻读者的版面。这篇文章从一张照片说起：今年8月，一名客工在班丹蓄水池工作时拍下水面，说自己看见了鳄鱼，消息一报上去就惊动了很多人。标题点出的关键词是"AI素养"。读的时候想一想：照片里到底有什么？在AI时代，我们怎样判断"眼见"是不是"为实"？这正好和今天A1版的"脸"专题互相呼应。</p>
+      <a class="readlink" href="https://www.zaobao.com.sg/news/singapore/story20261127-10068758" target="_blank" rel="noopener">在联合早报阅读 →</a>
     </div>
   </section>
 
   <div class="with-side">
     <section class="feature">
-      <div class="kicker">Maths mystery · You be the judge · 6 min read + 1 game</div>
-      <h2>Three doors, one car, and the puzzle that made professors furious</h2>
-      <p class="deck">A game show question so sneaky that it fooled mathematicians with PhDs. A flock of pigeons, meanwhile, got it right.</p>
-      <div class="byline">By the Little Lion puzzles desk</div>
+      <div class="kicker">Brain science · Case file · 7 min read + 1 challenge</div>
+      <h2>Why is that power socket staring at you?</h2>
+      <p class="deck">Faces on Mars, faces in toast, faces in potatoes. Your brain is a face-finding machine, and it would rather be wrong than miss one.</p>
+      <div class="byline">By the Little Lion mind desk</div>
       <div class="cols">
-        <p class="dropcap">Lights. Music. A studio audience screaming. You are standing on a TV stage in front of three closed doors, labelled 1, 2 and 3.</p>
-        <p>Behind one door is a shiny new car. Behind each of the other two is a goat. (A real one. It is chewing something. You don't want a goat.)</p>
-        <p class="timeline"><b>Step 1</b> You point at Door 1.<br><b>Step 2</b> The host, who <i>knows</i> where the car is, walks over to Door 3 and flings it open. <span class="sfx">MEHHH.</span> A goat.<br><b>Step 3</b> He smiles. "Do you want to stick with Door 1… or switch to Door 2?"</p>
-        <p>Stop. Before you read on, decide. Stick or switch? Does it even matter?</p>
-        <p>If you said "It doesn't matter, it's 50–50 now, two doors left," congratulations: you're in excellent company. You're also wrong. <b>You should switch.</b> Switching wins the car <b>two times out of three</b>.</p>
+        <p class="dropcap">Look at the nearest power socket. Two little slots on top, one below. Two eyes and a mouth, looking shocked. (Sorry. It is a socket.)</p>
+        <p>Now look around your HDB flat. The washing machine has a round, surprised face. The front of a car on the road outside is grinning, or scowling, depending on the headlights. The kettle looks smug. Your schoolbag, unzipped, is yawning.</p>
+        <p>None of these things has a face. Your brain gives them one anyway. Scientists call this <b>pareidolia</b> (say it "pa-rye-DOH-lee-ah"), from two Greek words: <i>para</i>, "beside" or "instead of", and <i>eidolon</i>, "image". Seeing an image that isn't really there.</p>
+        <p>Let's open the case files.</p>
 
-        <div class="fact">Stick: wins 1 in 3<br>Switch: wins 2 in 3<small>As long as the host knows where the car is, always opens a goat door, and always offers the swap</small></div>
-
-        <p><b>Case file: where it came from.</b> The puzzle is named after <b>Monty Hall</b>, the Canadian-born host of the American TV game show <i>Let's Make a Deal</i>, which began in 1963. Contestants on the show really did choose between doors, and the booby prizes even had a name: "zonks". In 1975, a statistician called <b>Steve Selvin</b> wrote up a version of the three-door puzzle in a letter to the journal <i>The American Statistician</i>.</p>
-        <p>It stayed a quiet nerd riddle until <b>1990</b>, when a reader sent it to <b>Marilyn vos Savant</b>, who wrote a popular question-and-answer column in <i>Parade</i> magazine. She replied: switch. Her mailbag exploded. She received thousands of letters, and nearly a thousand of them were from people with PhDs, many telling her, sometimes rudely, that she had made a basic mistake.</p>
-        <p>She hadn't. Even the legendary Hungarian mathematician <b>Paul Erdős</b>, who wrote more research papers than almost anyone in history, reportedly refused to believe it until a friend showed him a computer simulation.</p>
-
-        <figure class="fig tall">
-          <img src="img/lets-make-a-deal-1974.jpg" alt="Black-and-white publicity photo of three smiling people from the TV show Let's Make a Deal: a woman, Monty Hall in the middle, and a man in a suit" width="692" height="744">
-          <figcaption>The real Monty Hall (centre) with Carol Merrill and announcer Jay Stewart, in a publicity photo for <i>Let's Make a Deal</i>.<span class="credit">Photo: ABC Television / Wikimedia Commons, Public domain</span></figcaption>
-        </figure>
-
-        <p><b>So why does switching work?</b> Forget the goat drama and look at your first pick.</p>
-        <p>When you pointed at Door 1, you had a <b>1-in-3</b> chance of being right. That means there was a <b>2-in-3</b> chance the car was somewhere in "the other two doors".</p>
-        <p>Now the host opens one of those other two doors. But he isn't guessing. He <i>knows</i> where the car is and he will <i>always</i> show you a goat. So opening that door doesn't change the odds of your first pick at all. It just squeezes the whole 2-in-3 chance of "the other two" into the one door left standing.</p>
-        <p>Put another way: switching wins every time your first pick was a goat. And your first pick is a goat two times out of three.</p>
+        <p class="timeline"><b>File 1</b> <b>The Face on Mars</b></p>
+        <p>25 July 1976. NASA's <b>Viking 1</b> orbiter is photographing a region of Mars called Cydonia, looking for a safe landing site for its partner probe. One blurry black-and-white frame shows a rocky hill about 2 km across, and on it, unmistakably, <i>a human face</i>: two eye sockets, a nose, a mouth, staring straight up into space.</p>
+        <p>NASA itself mentioned the funny "head" in a press release, putting it down to shadows. But the picture escaped into books, films and late-night radio. Was it a giant monument? Built by Martians? Hidden by NASA?</p>
+        <p>Later spacecraft settled it. Sharper photos taken by Mars Global Surveyor from 1998, and then by the Mars Reconnaissance Orbiter, showed an ordinary eroded hill, a <b>mesa</b>. The "eyes" and "mouth" were shadows from a low sun, smudged by a low-resolution camera. Better camera, no face.</p>
 
         <figure class="fig diagram">
-          <img src="img/monty-hall-probabilities.png" alt="Diagram of the three possible games. In two of them the player's first pick hides a goat, and switching wins the car. In one, the first pick hides the car, and staying wins." width="960" height="960">
-          <figcaption>All three ways the game can go. You start with the yellow door. In two out of three, switching wins.<span class="credit">Diagram: Rick Block / Wikimedia Commons, Public domain</span></figcaption>
+          <img src="img/face-on-mars-hirise.jpg" alt="Grey satellite photo of a lumpy flat-topped hill on Mars. In the bottom right corner, a small inset shows the old blurry version, where shadows make the same hill look like a face" width="960" height="678">
+          <figcaption>The "Face on Mars", photographed in 2007 by the Mars Reconnaissance Orbiter's HiRISE camera, which can pick out objects about 90 cm across. Inset (bottom right): the famous blurry Viking 1 view.<span class="credit">Photo: NASA / JPL / University of Arizona / Wikimedia Commons, Public domain</span></figcaption>
         </figure>
 
-        <p><b>Still not convinced? Make it huge.</b> Imagine <b>100 doors</b>. You pick Door 1. The host, who knows everything, opens 98 other doors, all goats, leaving only your door and Door 74. Would you really stick? Your first pick had a 1-in-100 chance. Door 74 survived a host who was carefully avoiding the car. Switch!</p>
-        <p><b>The fine print.</b> The trick only works because the host knows and always opens a goat door. If he opened a door at random and it <i>happened</i> to show a goat, then it really would be 50–50. And in a 1991 interview with <i>The New York Times</i>, Monty Hall himself pointed out that on the real show he didn't have to offer a switch at all, so a sneaky host could use the offer to tempt you away from a winner. Maths only works when you know the rules of the game.</p>
+        <p class="timeline"><b>File 2</b> <b>The $28,000 sandwich</b></p>
+        <p>In 2004, a woman in Florida put a ten-year-old grilled cheese sandwich up for sale on eBay. Why would anyone buy a stale, decade-old sandwich? Because she, and plenty of other people, saw the face of the Virgin Mary in the toasty brown marks. An online casino bought it for <b>US$28,000</b>.</p>
+        <p>Toast, clouds, wood grain, the Moon: around the world, people have been finding faces in them for as long as there have been people. In Europe, it's the "Man in the Moon". Look again at a full moon here, and the same dark patches can become the <b>Moon rabbit (玉兔)</b> pounding medicine beside Chang'e. Same patches, different brain, different picture.</p>
+
+        <p class="timeline"><b>File 3</b> <b>The 0.17-second detective</b></p>
+        <p>So what's going on inside your head? On the underside of your brain, towards the back, is a patch called the <b>fusiform face area</b>. It fires up strongly when you look at faces, far more than for houses or cars or hands.</p>
+        <p>Brain-scanning studies suggest that this area also reacts to face-like objects, and fast: in one experiment, the brain's response to "faces" in everyday objects showed up in well under a fifth of a second, about as quickly as for real faces. You see the face first. You realise "wait, that's a socket" a moment later.</p>
+        <p>Why would evolution build such a jumpy face detector? Think about it like a guard at a gate. Mistaking a bush for a face costs you nothing: a little jump, a laugh. Mistaking a real face (a predator, an enemy, your angry mother) for a bush could cost you a lot. So the brain sets the alarm to "sensitive". A few false alarms are the price of never missing the real thing.</p>
+        <p>And it starts early. Newborn babies, only hours old, will turn their eyes and heads further to follow a simple pattern of two blobs above one blob than the same blobs arranged upside down. Nobody taught them that. They arrive ready to find faces.</p>
+
+        <figure class="fig tall">
+          <img src="img/potato-pareidolia.jpg" alt="A pale potato lying on a cork board. Two dark spots and a curved scratch make it look like a smiling face" width="960" height="1280">
+          <figcaption>Exhibit A: a perfectly ordinary potato, apparently having a lovely day. Two "eyes" and a "smile" are all your brain needs.<span class="credit">Photo: Andy Mabbett / Wikimedia Commons, CC BY-SA 4.0</span></figcaption>
+        </figure>
+
+        <p class="timeline"><b>File 4</b> <b>The artist's trick</b></p>
+        <p>Some people use pareidolia on purpose. Leonardo da Vinci wrote in his notebooks that a painter looking for ideas should stare at walls stained with damp or made of mixed stones, where he would start to see landscapes, battles and strange faces. In 1921, the Swiss psychiatrist <b>Hermann Rorschach</b> published his famous <b>inkblot test</b>, which asks people what they see in symmetrical ink splodges. (Psychologists still argue about how useful it is.)</p>
+        <p>And in today's weekend story on A3, a woman locked away in a room with ugly yellow wallpaper begins to see something in the pattern: "a broken neck and two bulbous eyes". Is it pareidolia, or something worse? Read it and decide.</p>
 
         <div class="weird">
           <div class="box-label">Weird but true</div>
           <ul>
-            <li>In a 2010 study, scientists Walter Herbranson and Julia Schroeder gave pigeons a Monty Hall–style game with lit-up keys. After lots of practice, the pigeons learned to switch almost every time. The human volunteers didn't get close.</li>
-            <li>Many people stick with their first door even after the maths is explained. One idea: we feel worse about losing after switching ("I had it and I gave it away!") than after sticking.</li>
-            <li>Hall was born in Winnipeg, Canada, in 1921 and hosted the show for decades. A probability puzzle is now his most famous legacy.</li>
+            <li><b>Monkeys see them too.</b> In a 2017 study, rhesus macaques spent longer looking at face-like objects, such as a fruit or a bag that seemed to have a face, than at similar objects without one.</li>
+            <li><b>Imaginary faces tend to be "boys".</b> In a 2022 study, volunteers shown faces in objects judged far more of them to look male than female, even though objects have no gender at all.</li>
+            <li><b>Your brain hears things too.</b> Pareidolia isn't only visual. Hearing hidden words in a song played backwards, or your name in the hiss of a shower, is the same trick with sound.</li>
+            <li><b>Car designers know it.</b> Many cars are styled so the headlights and grille look like a face. A "friendly" car and an "angry" car can be almost the same shape.</li>
           </ul>
         </div>
         <div class="tryit">
-          <div class="box-label">Try this · The three-cup game (5 minutes, 1 friend)</div>
-          <p>You need three cups and a coin. Your friend is the host: they hide the coin under one cup while you look away, and they must remember where it is.</p>
-          <p><b>1.</b> You point at a cup. <b>2.</b> The host lifts an <i>empty</i> cup from the other two. <b>3.</b> Play 15 rounds where you always <b>stick</b>, then 15 where you always <b>switch</b>. Tally the wins.</p>
-          <details><summary>What to expect</summary><p class="small">Over many rounds, sticking should win about a third of the time (around 5 of 15) and switching about two-thirds (around 10 of 15). With only 15 rounds, luck can wobble the numbers, so pool results with classmates. The more rounds you play, the closer you'll get to 1/3 and 2/3. That's the law of large numbers in action.</p></details>
-        </div>
-        <div class="exhibit">
-          <div class="box-label">You decide</div>
-          <p>In today's story on A3, a young man also faces doors: one hides a lady, the other a tiger. The princess knows the secret and signals him. But unlike Monty's rules, we don't know whose side she's on. Is knowing who the "host" is, and what they want, more important than any maths?</p>
+          <div class="box-label">Try this · The face hunt (10 minutes)</div>
+          <p><b>1.</b> Walk around your home (or the void deck, or the canteen) and photograph <b>five</b> objects with faces. Bonus points for a face that looks surprised, smug, or sleepy.</p>
+          <p><b>2.</b> On a piece of paper, draw just two dots and a curved line under them. Turn it upside down. Is it still a face? Now turn it sideways. When does the face disappear?</p>
+          <p><b>3.</b> Show your photos to a family member without saying anything. Do they see the faces too, straight away?</p>
+          <details><summary>What's going on?</summary><p class="small">Most people spot the faces within a second, because your brain is hunting for the "two eyes above a mouth" layout. Upside-down and sideways faces are much harder to recognise. Psychologists have studied this for decades, and it suggests the brain handles faces as a whole pattern, not as a list of parts.</p></details>
         </div>
       </div>
     </section>
@@ -380,32 +361,30 @@ p{margin:0 0 .8em;hyphens:auto}
     <aside class="side">
       <div class="quote">
         <div class="box-label">Quote of the day</div>
-        <blockquote>"Two roads diverged in a wood, and I— / I took the one less traveled by, / And that has made all the difference."</blockquote>
-        <cite>Robert Frost, "The Road Not Taken" (1916)</cite>
-        <p>Famous at graduations, but read the whole poem. Earlier, the speaker admits the two paths were worn "really about the same". It's a poem about how we tell the story of our choices afterwards. A good thought for a day full of doors.</p>
+        <blockquote>"All things are poison, and nothing is without poison; only the dose makes a thing not a poison."</blockquote>
+        <cite>Paracelsus, Swiss physician (1538, translated)</cite>
+        <p>Usually shortened to "the dose makes the poison". Water, salt and even oxygen can harm you in big enough amounts, and some poisons are used as medicines in tiny ones. Keep it in mind for the green wallpaper on A2.</p>
       </div>
       <div class="joke">
         <div class="box-label">Laugh line</div>
-        <p>I used to be indecisive.</p>
-        <p class="punch">Now I'm not so sure.</p>
+        <p>I told my friend she'd drawn her eyebrows too high.</p>
+        <p class="punch">She looked surprised.</p>
       </div>
       <div class="joke">
         <div class="box-label">And another</div>
-        <p>A statistician tried to cross a river that was, on average, one metre deep.</p>
-        <p class="punch">He drowned.</p>
-        <p class="small">(An average hides the deep bits. Always ask what the numbers leave out.)</p>
+        <p>I stayed up all night wondering where the sun had gone.</p>
+        <p class="punch">Then it dawned on me.</p>
       </div>
       <nav class="index" aria-label="Inside this edition">
         <div class="box-label">Inside</div>
         <ol>
           <li><span>Today's news (2 links)</span><span>A1</span></li>
-          <li><span>Three doors: the Monty Hall puzzle</span><span>A1</span></li>
-          <li><span>Myth or fact: too many choices?</span><span>A2</span></li>
-          <li><span>成语角 · 朝三暮四</span><span>A2</span></li>
-          <li><span>Future You · Business</span><span>A2</span></li>
-          <li><span>Daily story: The Lady, or the Tiger?</span><span>A3</span></li>
-          <li><span>Friday crossword</span><span>A4</span></li>
-          <li><span>Logic puzzles &amp; riddles</span><span>A4</span></li>
+          <li><span>Why is that socket staring at you?</span><span>A1</span></li>
+          <li><span>The wallpaper that could kill you</span><span>A2</span></li>
+          <li><span>成语故事 · 杯弓蛇影</span><span>A2</span></li>
+          <li><span>Daily story: The Yellow Wallpaper</span><span>A3</span></li>
+          <li><span>Saturday colour quiz</span><span>A4</span></li>
+          <li><span>Word search &amp; riddles</span><span>A4</span></li>
         </ol>
       </nav>
     </aside>
@@ -414,146 +393,376 @@ p{margin:0 0 .8em;hyphens:auto}
 
 <!-- ==================== PAGE A2 ==================== -->
 <article class="sheet" aria-label="Page A2">
-  <div class="folio"><span>The Little Lion Daily</span><span>Page A2</span><span>Friday, 27 November 2026</span></div>
+  <div class="folio"><span>The Little Lion Daily</span><span>Page A2</span><span>Saturday, 28 November 2026</span></div>
 
   <div class="with-side" style="margin-top:0">
     <section class="feature">
-      <div class="kicker">Psychology · Myth vs fact · 4 min read</div>
-      <h2>Can too many choices make you choose nothing?</h2>
-      <p class="deck">The bubble tea queue, the 40-item menu, and a famous experiment with jam.</p>
-      <div class="byline">By the Little Lion mind desk</div>
+      <div class="kicker">History mystery · Myth vs fact · 6 min read</div>
+      <h2>The wallpaper that could kill you</h2>
+      <p class="deck">The most fashionable colour of the 1800s was a gorgeous, glowing green. It was also made with arsenic.</p>
+      <div class="byline">By the Little Lion history desk</div>
       <div class="cols">
-        <p class="dropcap">You've reached the front of the bubble tea queue. Behind you, eleven people. In front of you, a menu board the size of an HDB void deck: milk teas, fruit teas, brown sugar, cheese foam, five sugar levels, four ice levels, nine toppings. Your brain goes <span class="sfx">bzzzt</span>. You say, "Er… same as last time."</p>
-        <p>Sound familiar? Psychologists have a name for that frozen feeling: <b>choice overload</b>. And it all started with jam.</p>
-        <p><b>The experiment.</b> In 2000, psychologists <b>Sheena Iyengar</b> and <b>Mark Lepper</b> published a study run at an upmarket supermarket in California. On some days, a tasting table offered <b>24</b> flavours of jam. On other days, just <b>6</b>.</p>
-        <p class="timeline"><b>24 jams</b> More shoppers stopped to look (about 60%). But only about <b>3%</b> of those who stopped bought a jar.<br><b>6 jams</b> Fewer shoppers stopped (about 40%). But about <b>30%</b> of them bought a jar.</p>
-        <p>More choice got people's attention, and then scared their wallets away. The study became hugely famous, and businesses started trimming their menus.</p>
-        <p><b>The twist.</b> Science doesn't end with one experiment. Other researchers tried to repeat the effect, sometimes finding it and sometimes not. A 2010 review that pooled dozens of choice experiments found that, on average, the effect was close to zero. Choice overload is real, but only in certain situations, for example when:</p>
-        <p class="timeline"><b>①</b> the options are hard to compare,<br><b>②</b> you don't already know what you like,<br><b>③</b> you're tired or rushed (hello, eleven people in the queue).</p>
+        <p class="dropcap">London, the 1860s. You've just moved into a smart new house. The parlour walls are covered in the latest wallpaper: ferns and leaves in a green so bright it almost glows. Your visitors are jealous.</p>
+        <p>But something is wrong. The children keep getting headaches and stomach aches. On damp days the room smells faintly of garlic. Someone in the family is always ill, and gets better on holiday, and gets ill again the moment they come home.</p>
+        <p>The culprit might be on the walls.</p>
+
+        <p class="timeline"><b>1775</b> Swedish chemist <b>Carl Wilhelm Scheele</b> invents a new bright green pigment made from copper and arsenic. It's cheap, vivid and easy to make. People call it <b>Scheele's green</b>.<br><b>1814</b> An even richer, longer-lasting version appears, made from copper and arsenic too. It goes by names like <b>emerald green</b> and <b>Paris green</b>.<br><b>1800s</b> Green goes wild: wallpaper, dresses, artificial flowers, paint, children's toys, even some sweets and cake decorations.</p>
+
+        <p>Before these pigments, a really bright green was hard to get. Natural green dyes faded, and painters often had to mix blue and yellow. So when cheap, dazzling greens arrived, Victorian Britain fell in love. Wallpaper, newly affordable thanks to machine printing, carried the green into ordinary homes.</p>
+        <p>The problem? <b>Arsenic</b> is a poison. Swallowed or breathed in as dust, it can cause vomiting, stomach pain, and, over time, damage to the skin, nerves and organs.</p>
+
+        <div class="fact">"The dose makes the poison."<small>A little arsenic on a wall is not the same as a mouthful. But flaking, dusty, damp walls added up.</small></div>
+
+        <p><b>The victims.</b> The people most at risk weren't the ones living with the wallpaper. They were the workers who made the green things. In 1861, a 19-year-old London artificial-flower maker named <b>Matilda Scheurer</b> died after months of dusting fake leaves with green arsenic powder. Her death made the newspapers, and so did the danger.</p>
+        <p>The next year, the magazine cartoonists joined in. Look at the picture below: two skeletons in their best clothes, waltzing. She wears a fashionable dress and a wreath of leaves. The title? <i>The Arsenic Waltz</i>.</p>
+
+        <figure class="fig diagram">
+          <img src="img/arsenic-waltz-1862.png" alt="Old black-and-white etching of two skeletons dancing a waltz, one dressed as a gentleman in a tailcoat and one as a lady in a full skirt and headdress" width="960" height="716">
+          <figcaption>"The Arsenic Waltz: The new Dance of Death. (Dedicated to the Green Wreath and Dress-Mongers.)" A satirical etching from 1862 that blamed the fashion for arsenic greens.<span class="credit">Image: Wellcome Collection / Wikimedia Commons, CC BY 4.0</span></figcaption>
+        </figure>
+
+        <p><b>The garlic clue.</b> In the 1890s, an Italian doctor, <b>Bartolomeo Gosio</b>, found that certain moulds growing on arsenic-containing material could turn it into a gas that smelled of garlic. People nicknamed it "Gosio gas". Decades later, chemists worked out what it was. Damp houses plus mould plus green wallpaper suddenly sounded like a recipe for poisoned air. (Modern scientists think the gas itself was probably less dangerous than people feared, and that dust and flakes from the paper were the likelier problem. The mystery isn't completely closed.)</p>
+        <p><b>The designer in denial.</b> The most famous wallpaper designer of the age, <b>William Morris</b>, had an awkward secret: much of his family's money came from a mine in Devon that became one of the world's biggest producers of arsenic. In a letter in the 1880s, Morris scoffed at the arsenic scare, comparing the doctors to people caught up in a witch hunt. His own firm eventually moved to arsenic-free colours anyway.</p>
+        <p><b>How it ended.</b> No single law swept the poison off Britain's walls. Instead, fear did the job. Newspapers, doctors and cartoons kept up the pressure, and by the late 1800s manufacturers were proudly advertising their papers as "free from arsenic". Bad news travels fast. So does a bad reputation.</p>
 
         <div class="exhibit">
-          <div class="box-label">You be the judge: myth or fact?</div>
+          <div class="box-label">Myth or fact? You be the judge</div>
           <ol>
-            <li>"More choice is always better." <details><summary>Verdict</summary><p class="small">Myth. Sometimes extra options just add effort and regret.</p></details></li>
-            <li>"Too much choice always makes people give up." <details><summary>Verdict</summary><p class="small">Also a myth. It depends on the situation. Experts with clear preferences often enjoy big menus.</p></details></li>
-            <li>"Deciding your rules in advance makes choosing easier." <details><summary>Verdict</summary><p class="small">Fact, and it's a trick you can use today (see below).</p></details></li>
+            <li>"Napoleon was killed by his green wallpaper." <details><summary>Verdict</summary><p class="small">Probably a myth. Napoleon died in exile on St Helena in 1821. In 1980, a scrap of wallpaper said to be from his house there was found to contain an arsenic green pigment, and the theory went viral. Most historians and doctors still think stomach cancer killed him. The wallpaper might have made his damp house unhealthier, but it's not the main suspect.</p></details></li>
+            <li>"Arsenic greens were only used on wallpaper." <details><summary>Verdict</summary><p class="small">Myth. They turned up in dresses, gloves, artificial flowers, paints, toys and even some food colouring.</p></details></li>
+            <li>"Bright green is still a tricky colour to make safely." <details><summary>Verdict</summary><p class="small">Fact, in a way. Many pigments, old and new, need careful handling. That's why modern paints and toys have safety rules and labels. A cheaper, brighter colour isn't automatically a safer one.</p></details></li>
           </ol>
         </div>
         <div class="tryit">
-          <div class="box-label">Try this · Be a "satisficer"</div>
-          <p>The economist Herbert Simon coined the word <b>satisficing</b> (satisfy + suffice): instead of hunting for the perfect option, you pick the first one that meets your standards. Next time you face a giant menu, set two rules <i>before</i> you look, e.g. "less sugar, under $4". Choose the first drink that passes. Then stop looking. Notice whether you enjoy it any less.</p>
+          <div class="box-label">Try this · Spot the warning labels (5 minutes)</div>
+          <p>Go on a label hunt at home: cleaning sprays, bleach, insect spray, art supplies. Find three products with a hazard warning. For each one, write down <b>what</b> the danger is (swallowing? breathing it in? skin contact?) and <b>what the label tells you to do</b>. Then ask: who would have warned a Victorian family about their wallpaper?</p>
+          <p class="small">Just read; don't open or sniff anything. The point is to notice how much safety information we now take for granted.</p>
         </div>
       </div>
     </section>
 
     <aside class="side">
       <section class="zhbox">
-        <div class="box-label">成语角</div>
-        <div class="idiom">朝三暮四</div>
-        <div class="py">zhāo sān mù sì</div>
-        <p><b>故事：</b>《庄子·齐物论》里有一位养猴子的老人，叫"狙公"。他给猴子分橡子（古文叫"芧"），说："早上三颗，晚上四颗。"猴子们全都生气了。老人改口说："那就早上四颗，晚上三颗。"猴子们全都高兴了。</p>
-        <p><b>想一想：</b>一天加起来，还是七颗呀！东西一点没变，只是换了个说法，猴子的心情就完全不同。（《列子》里也记载了这个故事。）</p>
-        <p><b>意思：</b>这个成语原来指用花招骗人，现在多用来形容一个人<b>主意变来变去、反复无常</b>。例句：做计划要坚持，不能朝三暮四，今天学吉他、明天学画画。</p>
-        <p><b>和今天有什么关系？</b>A1版的蒙提·霍尔问题告诉我们：人的直觉很容易被"说法"带着走。商店把价格写成$9.99而不是$10，也是同一个道理。你会不会也有当"猴子"的时候？</p>
-        <p><b>小考考：</b>"朝三暮四"的"朝"读什么？是什么意思？</p>
-        <details><summary>看答案</summary><p>读 zhāo，意思是"早晨"（和"朝阳"的"朝"一样）。不读 cháo（朝代、朝向）。</p></details>
+        <div class="box-label">成语故事</div>
+        <div class="idiom">杯弓蛇影</div>
+        <div class="py">bēi gōng shé yǐng</div>
+        <p><b>故事：</b>《晋书·乐广传》记载，乐广请一位朋友来家里喝酒。朋友端起酒杯，忽然看见杯中好像有一条小蛇。他心里害怕，又不好意思不喝，只好硬着头皮喝了下去。回家以后，他就病倒了。</p>
+        <p>乐广听说以后，回到原来喝酒的地方仔细一看：墙上挂着一张弓，弓上画着蛇的图案，倒影正好落在酒杯里！他又请朋友坐在同一个位置，倒了一杯酒，让朋友自己看。朋友这才恍然大悟，病一下子就好了。</p>
+        <p><b>意思：</b>比喻因为疑神疑鬼而自相惊扰。例句：手机响一下就以为是坏消息，真是杯弓蛇影。</p>
+        <p><b>和今天有什么关系？</b>A1版的"幻想性错觉"让我们在插座上看见脸；A3版小说里的女主角，在墙纸上看见了眼睛。东汉应劭的《风俗通义》里也有一个相似的故事，只是主角不同。看来，被墙上的东西吓到，古今中外都一样！</p>
+        <p><b>小考考：</b>"杯弓蛇影"和下面哪个成语意思最接近？<br>A. 草木皆兵　B. 画蛇添足　C. 杯水车薪</p>
+        <details><summary>看答案</summary><p>A. 草木皆兵。出自前秦苻坚的故事：他兵败时，把山上的草木都看成了敌人的士兵，形容人极度惊慌、疑神疑鬼。"画蛇添足"是多此一举，"杯水车薪"是力量太小，解决不了问题。</p></details>
       </section>
     </aside>
   </div>
-
-  <hr class="rule-sec">
-
-  <section class="future" aria-label="Future You">
-    <div class="future-head">
-      <div class="kicker">Future You · Business</div>
-      <h2>Unit economics: does each cup actually make money?</h2>
-    </div>
-    <div class="future-grid">
-      <div>
-        <div class="box-label">Know this</div>
-        <p><b>Unit economics</b> means looking at the money made or lost on <i>one</i> unit: one cup, one haircut, one app subscriber. It's the first question investors ask, because a business that loses money on every sale can't fix it by selling more.</p>
-        <p>Take an imaginary bubble tea shop. A cup sells for <b>$4.00</b>. Tea, milk, pearls, the cup, straw and sealing film cost <b>$1.40</b>. What's left, <b>$2.60</b>, is the <b>contribution margin</b>: what each cup contributes towards the <b>fixed costs</b> that don't change with sales, like rent and wages. If those are <b>$13,000</b> a month, the shop must sell 13,000 ÷ 2.60 = <b>5,000 cups</b> (about 167 a day) just to <b>break even</b>. Cup number 5,001 is the first real profit.</p>
-      </div>
-      <div>
-        <div class="box-label">Try this</div>
-        <p>Your CCA runs a brownie stall at a school carnival. One tray costs $12 and makes 24 brownies. The booth fee is $30. You plan to sell each brownie for $1.50.</p>
-        <p class="small"><b>1.</b> What does one brownie cost to make? <b>2.</b> What is the margin on each? <b>3.</b> How many must you sell to break even? <b>4.</b> A friend says, "Cut the price to $1, we'll sell loads!" How many do you need to sell now?</p>
-        <details><summary>Answers</summary><p class="small"><b>1.</b> $12 ÷ 24 = $0.50. <b>2.</b> $1.50 − $0.50 = $1.00. <b>3.</b> $30 ÷ $1.00 = 30 brownies. <b>4.</b> The margin halves to $0.50, so you need 60 brownies, double the sales just to break even. A small discount can take a big bite out of your margin.</p></details>
-      </div>
-      <div>
-        <div class="box-label">For your application</div>
-        <p>Singapore's three main undergraduate business schools are <b>NUS Business School</b>, <b>NTU's Nanyang Business School</b> and <b>SMU's Lee Kong Chian School of Business</b>. Many business programmes look beyond grades, and some use interviews or other assessments, so check each school's official site for the current process.</p>
-        <p>The best evidence is something you actually ran. If you do a fundraiser or a CCA stall, keep a <b>numbers log</b>: costs, price, units sold, margin, and one thing you'd change. "We sold 84 brownies, but cutting the price halved our margin" is far stronger than "I am interested in business". Practise by explaining one business news story a week in three sentences, starting with today's consumer protection story on A1.</p>
-      </div>
-    </div>
-  </section>
 </article>
 
 <!-- ==================== STORY PAGE ==================== -->
 <article class="sheet" aria-label="Page A3 story">
-  <div class="folio"><span>The Little Lion Daily</span><span>Page A3 · Daily story</span><span>Friday, 27 November 2026</span></div>
+  <div class="folio"><span>The Little Lion Daily</span><span>Page A3 · Weekend classic</span><span>Saturday, 28 November 2026</span></div>
 
   <section class="tale">
-    <div class="kicker">Daily story · a classic · about 13 minutes</div>
-    <h2>The Lady, or the Tiger?</h2>
-    <div class="byline">By Frank R. Stockton · first published 1882</div>
+    <div class="kicker">Daily story · weekend classic · about 30 minutes</div>
+    <h2>The Yellow Wallpaper</h2>
+    <div class="byline">By Charlotte Perkins Gilman · first published 1892</div>
     <div class="tale-intro">
-      <p><b>Before you read.</b> Frank R. Stockton (1834–1902) was an American writer, best known in his day for funny, fairy-tale-like stories for children and adults. This one first appeared in <i>The Century</i> magazine in November 1882 and made him famous overnight. Readers wrote to him for the rest of his life demanding the answer. He never gave one.</p>
-      <p>The language is old-fashioned and the sentences are long, so take your time; the narrator is being playful, especially with the word "semi-barbaric". Watch the princess closely: what does she know, what does she feel, and what might she choose? Then decide your answer before you reach the end, and see if you change your mind.</p>
+      <p><b>Before you read.</b> Charlotte Perkins Gilman (1860–1935) was an American writer, lecturer and campaigner for women's rights. This story appeared in <i>The New England Magazine</i> in January 1892. It grew out of her own life: after her daughter was born she fell into a deep depression, and a famous doctor prescribed a "rest cure" of lying still and doing as little thinking, reading and writing as possible. She later said the treatment nearly drove her mad, and that she wrote this story to show what it could do. (The narrator even mentions that same doctor, Weir Mitchell, by name.)</p>
+      <p>The story is told as a secret diary, and the narrator is not always reliable: she sees some things very clearly and others not at all. Watch how her descriptions of the wallpaper change, and how kind, sensible John's "care" works out. It's a famous psychological horror story: eerie and disturbing, not gory. If it gets heavy, take a break and come back.</p>
     </div>
     <div class="cols">
-      <p class="dropcap">In the very olden time, there lived a semi-barbaric king, whose ideas, though somewhat polished and sharpened by the progressiveness of distant Latin neighbors, were still large, florid, and untrammelled, as became the half of him which was barbaric. He was a man of exuberant fancy, and, withal, of an authority so irresistible that, at his will, he turned his varied fancies into facts. He was greatly given to self-communing; and, when he and himself agreed upon any thing, the thing was done. When every member of his domestic and political systems moved smoothly in its appointed course, his nature was bland and genial; but whenever there was a little hitch, and some of his orbs got out of their orbits, he was blander and more genial still, for nothing pleased him so much as to make the crooked straight, and crush down uneven places.</p>
-      <p>Among the borrowed notions by which his barbarism had become semified was that of the public arena, in which, by exhibitions of manly and beastly valor, the minds of his subjects were refined and cultured.</p>
-      <p>But even here the exuberant and barbaric fancy asserted itself. The arena of the king was built, not to give the people an opportunity of hearing the rhapsodies of dying gladiators, nor to enable them to view the inevitable conclusion of a conflict between religious opinions and hungry jaws, but for purposes far better adapted to widen and develop the mental energies of the people. This vast amphitheatre, with its encircling galleries, its mysterious vaults, and its unseen passages, was an agent of poetic justice, in which crime was punished, or virtue rewarded, by the decrees of an impartial and incorruptible chance.</p>
-      <p>When a subject was accused of a crime of sufficient importance to interest the king, public notice was given that on an appointed day the fate of the accused person would be decided in the king's arena,—a structure which well deserved its name; for, although its form and plan were borrowed from afar, its purpose emanated solely from the brain of this man, who, every barleycorn a king, knew no tradition to which he owed more allegiance than pleased his fancy, and who ingrafted on every adopted form of human thought and action the rich growth of his barbaric idealism.</p>
-      <p>When all the people had assembled in the galleries, and the king, surrounded by his court, sat high up on his throne of royal state on one side of the arena, he gave a signal, a door beneath him opened, and the accused subject stepped out into the amphitheatre. Directly opposite him, on the other side of the enclosed space, were two doors, exactly alike and side by side. It was the duty and the privilege of the person on trial, to walk directly to these doors and open one of them. He could open either door he pleased: he was subject to no guidance or influence but that of the aforementioned impartial and incorruptible chance. If he opened the one, there came out of it a hungry tiger, the fiercest and most cruel that could be procured, which immediately sprang upon him, and tore him to pieces, as a punishment for his guilt. The moment that the case of the criminal was thus decided, doleful iron bells were clanged, great wails went up from the hired mourners posted on the outer rim of the arena, and the vast audience, with bowed heads and downcast hearts, wended slowly their homeward way, mourning greatly that one so young and fair, or so old and respected, should have merited so dire a fate.</p>
-      <p>But, if the accused person opened the other door, there came forth from it a lady, the most suitable to his years and station that his majesty could select among his fair subjects; and to this lady he was immediately married, as a reward of his innocence. It mattered not that he might already possess a wife and family, or that his affections might be engaged upon an object of his own selection: the king allowed no such subordinate arrangements to interfere with his great scheme of retribution and reward. The exercises, as in the other instance, took place immediately, and in the arena. Another door opened beneath the king, and a priest, followed by a band of choristers, and dancing maidens blowing joyous airs on golden horns and treading an epithalamic measure, advanced to where the pair stood, side by side; and the wedding was promptly and cheerily solemnized. Then the gay brass bells rang forth their merry peals, the people shouted glad hurrahs, and the innocent man, preceded by children strewing flowers on his path, led his bride to his home.</p>
-      <p>This was the king's semi-barbaric method of administering justice. Its perfect fairness is obvious. The criminal could not know out of which door would come the lady: he opened either he pleased, without having the slightest idea whether, in the next instant, he was to be devoured or married. On some occasions the tiger came out of one door, and on some out of the other. The decisions of this tribunal were not only fair, they were positively determinate: the accused person was instantly punished if he found himself guilty; and, if innocent, he was rewarded on the spot, whether he liked it or not. There was no escape from the judgments of the king's arena.</p>
-      <p>The institution was a very popular one. When the people gathered together on one of the great trial days, they never knew whether they were to witness a bloody slaughter or a hilarious wedding. This element of uncertainty lent an interest to the occasion which it could not otherwise have attained. Thus, the masses were entertained and pleased, and the thinking part of the community could bring no charge of unfairness against this plan; for did not the accused person have the whole matter in his own hands?</p>
-      <p>This semi-barbaric king had a daughter as blooming as his most florid fancies, and with a soul as fervent and imperious as his own. As is usual in such cases, she was the apple of his eye, and was loved by him above all humanity. Among his courtiers was a young man of that fineness of blood and lowness of station common to the conventional heroes of romance who love royal maidens. This royal maiden was well satisfied with her lover, for he was handsome and brave to a degree unsurpassed in all this kingdom; and she loved him with an ardor that had enough of barbarism in it to make it exceedingly warm and strong. This love affair moved on happily for many months, until one day the king happened to discover its existence. He did not hesitate nor waver in regard to his duty in the premises. The youth was immediately cast into prison, and a day was appointed for his trial in the king's arena. This, of course, was an especially important occasion; and his majesty, as well as all the people, was greatly interested in the workings and development of this trial. Never before had such a case occurred; never before had a subject dared to love the daughter of a king. In after-years such things became commonplace enough; but then they were, in no slight degree, novel and startling.</p>
-      <p>The tiger-cages of the kingdom were searched for the most savage and relentless beasts, from which the fiercest monster might be selected for the arena; and the ranks of maiden youth and beauty throughout the land were carefully surveyed by competent judges, in order that the young man might have a fitting bride in case fate did not determine for him a different destiny. Of course, everybody knew that the deed with which the accused was charged had been done. He had loved the princess, and neither he, she, nor any one else thought of denying the fact; but the king would not think of allowing any fact of this kind to interfere with the workings of the tribunal, in which he took such great delight and satisfaction. No matter how the affair turned out, the youth would be disposed of; and the king would take an æsthetic pleasure in watching the course of events, which would determine whether or not the young man had done wrong in allowing himself to love the princess.</p>
-      <p>The appointed day arrived. From far and near the people gathered, and thronged the great galleries of the arena; and crowds, unable to gain admittance, massed themselves against its outside walls. The king and his court were in their places, opposite the twin doors,—those fateful portals, so terrible in their similarity.</p>
-      <p>All was ready. The signal was given. A door beneath the royal party opened, and the lover of the princess walked into the arena. Tall, beautiful, fair, his appearance was greeted with a low hum of admiration and anxiety. Half the audience had not known so grand a youth had lived among them. No wonder the princess loved him! What a terrible thing for him to be there!</p>
-      <p>As the youth advanced into the arena, he turned, as the custom was, to bow to the king: but he did not think at all of that royal personage; his eyes were fixed upon the princess, who sat to the right of her father. Had it not been for the moiety of barbarism in her nature, it is probable that lady would not have been there; but her intense and fervid soul would not allow her to be absent on an occasion in which she was so terribly interested. From the moment that the decree had gone forth, that her lover should decide his fate in the king's arena, she had thought of nothing, night or day, but this great event and the various subjects connected with it. Possessed of more power, influence, and force of character than any one who had ever before been interested in such a case, she had done what no other person had done,—she had possessed herself of the secret of the doors. She knew in which of the two rooms, that lay behind those doors, stood the cage of the tiger, with its open front, and in which waited the lady. Through these thick doors, heavily curtained with skins on the inside, it was impossible that any noise or suggestion should come from within to the person who should approach to raise the latch of one of them; but gold, and the power of a woman's will, had brought the secret to the princess.</p>
-      <p>And not only did she know in which room stood the lady ready to emerge, all blushing and radiant, should her door be opened, but she knew who the lady was. It was one of the fairest and loveliest of the damsels of the court who had been selected as the reward of the accused youth, should he be proved innocent of the crime of aspiring to one so far above him; and the princess hated her. Often had she seen, or imagined that she had seen, this fair creature throwing glances of admiration upon the person of her lover, and sometimes she thought these glances were perceived and even returned. Now and then she had seen them talking together; it was but for a moment or two, but much can be said in a brief space; it may have been on most unimportant topics, but how could she know that? The girl was lovely, but she had dared to raise her eyes to the loved one of the princess; and, with all the intensity of the savage blood transmitted to her through long lines of wholly barbaric ancestors, she hated the woman who blushed and trembled behind that silent door.</p>
-      <p>When her lover turned and looked at her, and his eye met hers as she sat there paler and whiter than any one in the vast ocean of anxious faces about her, he saw, by that power of quick perception which is given to those whose souls are one, that she knew behind which door crouched the tiger, and behind which stood the lady. He had expected her to know it. He understood her nature, and his soul was assured that she would never rest until she had made plain to herself this thing, hidden to all other lookers-on, even to the king. The only hope for the youth in which there was any element of certainty was based upon the success of the princess in discovering this mystery; and the moment he looked upon her, he saw she had succeeded, as in his soul he knew she would succeed.</p>
-      <p>Then it was that his quick and anxious glance asked the question: "Which?" It was as plain to her as if he shouted it from where he stood. There was not an instant to be lost. The question was asked in a flash; it must be answered in another.</p>
-      <p>Her right arm lay on the cushioned parapet before her. She raised her hand, and made a slight, quick movement toward the right. No one but her lover saw her. Every eye but his was fixed on the man in the arena.</p>
-      <p>He turned, and with a firm and rapid step he walked across the empty space. Every heart stopped beating, every breath was held, every eye was fixed immovably upon that man. Without the slightest hesitation, he went to the door on the right, and opened it.</p>
-      <p>Now, the point of the story is this: Did the tiger come out of that door, or did the lady?</p>
-      <p>The more we reflect upon this question, the harder it is to answer. It involves a study of the human heart which leads us through devious mazes of passion, out of which it is difficult to find our way. Think of it, fair reader, not as if the decision of the question depended upon yourself, but upon that hot-blooded, semi-barbaric princess, her soul at a white heat beneath the combined fires of despair and jealousy. She had lost him, but who should have him?</p>
-      <p>How often, in her waking hours and in her dreams, had she started in wild horror, and covered her face with her hands as she thought of her lover opening the door on the other side of which waited the cruel fangs of the tiger!</p>
-      <p>But how much oftener had she seen him at the other door! How in her grievous reveries had she gnashed her teeth, and torn her hair, when she saw his start of rapturous delight as he opened the door of the lady! How her soul had burned in agony when she had seen him rush to meet that woman, with her flushing cheek and sparkling eye of triumph; when she had seen him lead her forth, his whole frame kindled with the joy of recovered life; when she had heard the glad shouts from the multitude, and the wild ringing of the happy bells; when she had seen the priest, with his joyous followers, advance to the couple, and make them man and wife before her very eyes; and when she had seen them walk away together upon their path of flowers, followed by the tremendous shouts of the hilarious multitude, in which her one despairing shriek was lost and drowned!</p>
-      <p>Would it not be better for him to die at once, and go to wait for her in the blessed regions of semi-barbaric futurity?</p>
-      <p>And yet, that awful tiger, those shrieks, that blood!</p>
-      <p>Her decision had been indicated in an instant, but it had been made after days and nights of anguished deliberation. She had known she would be asked, she had decided what she would answer, and, without the slightest hesitation, she had moved her hand to the right.</p>
-      <p>The question of her decision is one not to be lightly considered, and it is not for me to presume to set myself up as the one person able to answer it. And so I leave it with all of you: Which came out of the opened door,—the lady, or the tiger?</p>
+      <p class="dropcap">It is very seldom that mere ordinary people like John and myself secure ancestral halls for the summer.</p>
+      <p>A colonial mansion, a hereditary estate, I would say a haunted house, and reach the height of romantic felicity—but that would be asking too much of fate!</p>
+      <p>Still I will proudly declare that there is something queer about it.</p>
+      <p>Else, why should it be let so cheaply? And why have stood so long untenanted?</p>
+      <p>John laughs at me, of course, but one expects that in marriage.</p>
+      <p>John is practical in the extreme. He has no patience with faith, an intense horror of superstition, and he scoffs openly at any talk of things not to be felt and seen and put down in figures.</p>
+      <p>John is a physician, and perhaps—(I would not say it to a living soul, of course, but this is dead paper and a great relief to my mind)—perhaps that is one reason I do not get well faster.</p>
+      <p>You see, he does not believe I am sick!</p>
+      <p>And what can one do?</p>
+      <p>If a physician of high standing, and one’s own husband, assures friends and relatives that there is really nothing the matter with one but temporary nervous depression—a slight hysterical tendency—what is one to do?</p>
+      <p>My brother is also a physician, and also of high standing, and he says the same thing.</p>
+      <p>So I take phosphates or phosphites—whichever it is, and tonics, and journeys, and air, and exercise, and am absolutely forbidden to “work” until I am well again.</p>
+      <p>Personally, I disagree with their ideas.</p>
+      <p>Personally, I believe that congenial work, with excitement and change, would do me good.</p>
+      <p>But what is one to do?</p>
+      <p>I did write for a while in spite of them; but it does exhaust me a good deal—having to be so sly about it, or else meet with heavy opposition.</p>
+      <p>I sometimes fancy that in my condition if I had less opposition and more society and stimulus—but John says the very worst thing I can do is to think about my condition, and I confess it always makes me feel bad.</p>
+      <p>So I will let it alone and talk about the house.</p>
+      <p>The most beautiful place! It is quite alone, standing well back from the road, quite three miles from the village. It makes me think of English places that you read about, for there are hedges and walls and gates that lock, and lots of separate little houses for the gardeners and people.</p>
+      <p>There is a delicious garden! I never saw such a garden—large and shady, full of box-bordered paths, and lined with long grape-covered arbors with seats under them.</p>
+      <p>There were greenhouses, too, but they are all broken now.</p>
+      <p>There was some legal trouble, I believe, something about the heirs and co-heirs; anyhow, the place has been empty for years.</p>
+      <p>That spoils my ghostliness, I am afraid; but I don’t care—there is something strange about the house—I can feel it.</p>
+      <p>I even said so to John one moonlight evening, but he said what I felt was a draught, and shut the window.</p>
+      <p>I get unreasonably angry with John sometimes. I’m sure I never used to be so sensitive. I think it is due to this nervous condition.</p>
+      <p>But John says if I feel so I shall neglect proper self-control; so I take pains to control myself,—before him, at least,—and that makes me very tired.</p>
+      <p>I don’t like our room a bit. I wanted one downstairs that opened on the piazza and had roses all over the window, and such pretty old-fashioned chintz hangings! but John would not hear of it.</p>
+      <p>He said there was only one window and not room for two beds, and no near room for him if he took another.</p>
+      <p>He is very careful and loving, and hardly lets me stir without special direction.</p>
+      <p>I have a schedule prescription for each hour in the day; he takes all care from me, and so I feel basely ungrateful not to value it more.</p>
+      <p>He said we came here solely on my account, that I was to have perfect rest and all the air I could get. “Your exercise depends on your strength, my dear,” said he, “and your food somewhat on your appetite; but air you can absorb all the time.” So we took the nursery, at the top of the house.</p>
+      <p>It is a big, airy room, the whole floor nearly, with windows that look all ways, and air and sunshine galore. It was nursery first and then playground and gymnasium, I should judge; for the windows are barred for little children, and there are rings and things in the walls.</p>
+      <p>The paint and paper look as if a boys’ school had used it. It is stripped off—the paper—in great patches all around the head of my bed, about as far as I can reach, and in a great place on the other side of the room low down. I never saw a worse paper in my life.</p>
+      <p>One of those sprawling flamboyant patterns committing every artistic sin.</p>
+      <p>It is dull enough to confuse the eye in following, pronounced enough to constantly irritate, and provoke study, and when you follow the lame, uncertain curves for a little distance they suddenly commit suicide—plunge off at outrageous angles, destroy themselves in unheard-of contradictions.</p>
+      <p>The color is repellant, almost revolting; a smouldering, unclean yellow, strangely faded by the slow-turning sunlight.</p>
+      <p>It is a dull yet lurid orange in some places, a sickly sulphur tint in others.</p>
+      <p>No wonder the children hated it! I should hate it myself if I had to live in this room long.</p>
+      <p>There comes John, and I must put this away,—he hates to have me write a word.</p>
+      <p>We have been here two weeks, and I haven’t felt like writing before, since that first day.</p>
+      <p>I am sitting by the window now, up in this atrocious nursery, and there is nothing to hinder my writing as much as I please, save lack of strength.</p>
+      <p>John is away all day, and even some nights when his cases are serious.</p>
+      <p>I am glad my case is not serious!</p>
+      <p>But these nervous troubles are dreadfully depressing.</p>
+      <p>John does not know how much I really suffer. He knows there is no reason to suffer, and that satisfies him.</p>
+      <p>Of course it is only nervousness. It does weigh on me so not to do my duty in any way!</p>
+      <p>I meant to be such a help to John, such a real rest and comfort, and here I am a comparative burden already!</p>
+      <p>Nobody would believe what an effort it is to do what little I am able—to dress and entertain, and order things.</p>
+      <p>It is fortunate Mary is so good with the baby. Such a dear baby!</p>
+      <p>And yet I cannot be with him, it makes me so nervous.</p>
+      <p>I suppose John never was nervous in his life. He laughs at me so about this wallpaper!</p>
+      <p>At first he meant to repaper the room, but afterwards he said that I was letting it get the better of me, and that nothing was worse for a nervous patient than to give way to such fancies.</p>
+      <p>He said that after the wallpaper was changed it would be the heavy bedstead, and then the barred windows, and then that gate at the head of the stairs, and so on.</p>
+      <p>“You know the place is doing you good,” he said, “and really, dear, I don’t care to renovate the house just for a three months’ rental.”</p>
+      <p>“Then do let us go downstairs,” I said, “there are such pretty rooms there.”</p>
+      <p>Then he took me in his arms and called me a blessed little goose, and said he would go down cellar if I wished, and have it whitewashed into the bargain.</p>
+      <p>But he is right enough about the beds and windows and things.</p>
+      <p>It is as airy and comfortable a room as any one need wish, and, of course, I would not be so silly as to make him uncomfortable just for a whim.</p>
+      <p>I’m really getting quite fond of the big room, all but that horrid paper.</p>
+      <p>Out of one window I can see the garden, those mysterious deep-shaded arbors, the riotous old-fashioned flowers, and bushes and gnarly trees.</p>
+      <p>Out of another I get a lovely view of the bay and a little private wharf belonging to the estate. There is a beautiful shaded lane that runs down there from the house. I always fancy I see people walking in these numerous paths and arbors, but John has cautioned me not to give way to fancy in the least. He says that with my imaginative power and habit of story-making a nervous weakness like mine is sure to lead to all manner of excited fancies, and that I ought to use my will and good sense to check the tendency. So I try.</p>
+      <p>I think sometimes that if I were only well enough to write a little it would relieve the press of ideas and rest me.</p>
+      <p>But I find I get pretty tired when I try.</p>
+      <p>It is so discouraging not to have any advice and companionship about my work. When I get really well John says we will ask Cousin Henry and Julia down for a long visit; but he says he would as soon put fire-works in my pillow-case as to let me have those stimulating people about now.</p>
+      <p>I wish I could get well faster.</p>
+      <p>But I must not think about that. This paper looks to me as if it knew what a vicious influence it had!</p>
+      <p>There is a recurrent spot where the pattern lolls like a broken neck and two bulbous eyes stare at you upside-down.</p>
+      <p>I get positively angry with the impertinence of it and the everlastingness. Up and down and sideways they crawl, and those absurd, unblinking eyes are everywhere. There is one place where two breadths didn’t match, and the eyes go all up and down the line, one a little higher than the other.</p>
+      <p>I never saw so much expression in an inanimate thing before, and we all know how much expression they have! I used to lie awake as a child and get more entertainment and terror out of blank walls and plain furniture than most children could find in a toy-store.</p>
+      <p>I remember what a kindly wink the knobs of our big old bureau used to have, and there was one chair that always seemed like a strong friend.</p>
+      <p>I used to feel that if any of the other things looked too fierce I could always hop into that chair and be safe.</p>
+      <p>The furniture in this room is no worse than inharmonious, however, for we had to bring it all from downstairs. I suppose when this was used as a playroom they had to take the nursery things out, and no wonder! I never saw such ravages as the children have made here.</p>
+      <p>The wallpaper, as I said before, is torn off in spots, and it sticketh closer than a brother—they must have had perseverance as well as hatred.</p>
+      <p>Then the floor is scratched and gouged and splintered, the plaster itself is dug out here and there, and this great heavy bed, which is all we found in the room, looks as if it had been through the wars.</p>
+      <p>But I don’t mind it a bit—only the paper.</p>
+      <p>There comes John’s sister. Such a dear girl as she is, and so careful of me! I must not let her find me writing.</p>
+      <p>She is a perfect, and enthusiastic housekeeper, and hopes for no better profession. I verily believe she thinks it is the writing which made me sick!</p>
+      <p>But I can write when she is out, and see her a long way off from these windows.</p>
+      <p>There is one that commands the road, a lovely, shaded, winding road, and one that just looks off over the country. A lovely country, too, full of great elms and velvet meadows.</p>
+      <p>This wallpaper has a kind of sub-pattern in a different shade, a particularly irritating one, for you can only see it in certain lights, and not clearly then.</p>
+      <p>But in the places where it isn’t faded, and where the sun is just so, I can see a strange, provoking, formless sort of figure, that seems to sulk about behind that silly and conspicuous front design.</p>
+      <p>There’s sister on the stairs!</p>
+      <p>Well, the Fourth of July is over! The people are gone and I am tired out. John thought it might do me good to see a little company, so we just had mother and Nellie and the children down for a week.</p>
+      <p>Of course I didn’t do a thing. Jennie sees to everything now.</p>
+      <p>But it tired me all the same.</p>
+      <p>John says if I don’t pick up faster he shall send me to Weir Mitchell in the fall.</p>
+      <p>But I don’t want to go there at all. I had a friend who was in his hands once, and she says he is just like John and my brother, only more so!</p>
+      <p>Besides, it is such an undertaking to go so far.</p>
+      <p>I don’t feel as if it was worth while to turn my hand over for anything, and I’m getting dreadfully fretful and querulous.</p>
+      <p>I cry at nothing, and cry most of the time.</p>
+      <p>Of course I don’t when John is here, or anybody else, but when I am alone.</p>
+      <p>And I am alone a good deal just now. John is kept in town very often by serious cases, and Jennie is good and lets me alone when I want her to.</p>
+      <p>So I walk a little in the garden or down that lovely lane, sit on the porch under the roses, and lie down up here a good deal.</p>
+      <p>I’m getting really fond of the room in spite of the wallpaper. Perhaps because of the wallpaper.</p>
+      <p>It dwells in my mind so!</p>
+      <p>I lie here on this great immovable bed—it is nailed down, I believe—and follow that pattern about by the hour. It is as good as gymnastics, I assure you. I start, we’ll say, at the bottom, down in the corner over there where it has not been touched, and I determine for the thousandth time that I will follow that pointless pattern to some sort of a conclusion.</p>
+      <p>I know a little of the principle of design, and I know this thing was not arranged on any laws of radiation, or alternation, or repetition, or symmetry, or anything else that I ever heard of.</p>
+      <p>It is repeated, of course, by the breadths, but not otherwise.</p>
+      <p>Looked at in one way each breadth stands alone, the bloated curves and flourishes—a kind of “debased Romanesque” with delirium tremens—go waddling up and down in isolated columns of fatuity.</p>
+      <p>But, on the other hand, they connect diagonally, and the sprawling outlines run off in great slanting waves of optic horror, like a lot of wallowing seaweeds in full chase.</p>
+      <p>The whole thing goes horizontally, too, at least it seems so, and I exhaust myself in trying to distinguish the order of its going in that direction.</p>
+      <p>They have used a horizontal breadth for a frieze, and that adds wonderfully to the confusion.</p>
+      <p>There is one end of the room where it is almost intact, and there, when the cross-lights fade and the low sun shines directly upon it, I can almost fancy radiation after all,—the interminable grotesques seem to form around a common centre and rush off in headlong plunges of equal distraction.</p>
+      <p>It makes me tired to follow it. I will take a nap, I guess.</p>
+      <p>I don’t know why I should write this.</p>
+      <p>I don’t want to.</p>
+      <p>I don’t feel able.</p>
+      <p>And I know John would think it absurd. But I must say what I feel and think in some way—it is such a relief!</p>
+      <p>But the effort is getting to be greater than the relief.</p>
+      <p>Half the time now I am awfully lazy, and lie down ever so much.</p>
+      <p>John says I mustn’t lose my strength, and has me take cod-liver oil and lots of tonics and things, to say nothing of ale and wine and rare meat.</p>
+      <p>Dear John! He loves me very dearly, and hates to have me sick. I tried to have a real earnest reasonable talk with him the other day, and tell him how I wish he would let me go and make a visit to Cousin Henry and Julia.</p>
+      <p>But he said I wasn’t able to go, nor able to stand it after I got there; and I did not make out a very good case for myself, for I was crying before I had finished.</p>
+      <p>It is getting to be a great effort for me to think straight. Just this nervous weakness, I suppose.</p>
+      <p>And dear John gathered me up in his arms, and just carried me upstairs and laid me on the bed, and sat by me and read to me till it tired my head.</p>
+      <p>He said I was his darling and his comfort and all he had, and that I must take care of myself for his sake, and keep well.</p>
+      <p>He says no one but myself can help me out of it, that I must use my will and self-control and not let any silly fancies run away with me.</p>
+      <p>There’s one comfort, the baby is well and happy, and does not have to occupy this nursery with the horrid wallpaper.</p>
+      <p>If we had not used it that blessed child would have! What a fortunate escape! Why, I wouldn’t have a child of mine, an impressionable little thing, live in such a room for worlds.</p>
+      <p>I never thought of it before, but it is lucky that John kept me here after all. I can stand it so much easier than a baby, you see.</p>
+      <p>Of course I never mention it to them any more,—I am too wise,—but I keep watch of it all the same.</p>
+      <p>There are things in that paper that nobody knows but me, or ever will.</p>
+      <p>Behind that outside pattern the dim shapes get clearer every day.</p>
+      <p>It is always the same shape, only very numerous.</p>
+      <p>And it is like a woman stooping down and creeping about behind that pattern. I don’t like it a bit. I wonder—I begin to think—I wish John would take me away from here!</p>
+      <p>It is so hard to talk with John about my case, because he is so wise, and because he loves me so.</p>
+      <p>But I tried it last night.</p>
+      <p>It was moonlight. The moon shines in all around, just as the sun does.</p>
+      <p>I hate to see it sometimes, it creeps so slowly, and always comes in by one window or another.</p>
+      <p>John was asleep and I hated to waken him, so I kept still and watched the moonlight on that undulating wallpaper till I felt creepy.</p>
+      <p>The faint figure behind seemed to shake the pattern, just as if she wanted to get out.</p>
+      <p>I got up softly and went to feel and see if the paper did move, and when I came back John was awake.</p>
+      <p>“What is it, little girl?” he said. “Don’t go walking about like that—you’ll get cold.”</p>
+      <p>I thought it was a good time to talk, so I told him that I really was not gaining here, and that I wished he would take me away.</p>
+      <p>“Why darling!” said he, “our lease will be up in three weeks, and I can’t see how to leave before.</p>
+      <p>“The repairs are not done at home, and I cannot possibly leave town just now. Of course if you were in any danger I could and would, but you really are better, dear, whether you can see it or not. I am a doctor, dear, and I know. You are gaining flesh and color, your appetite is better. I feel really much easier about you.”</p>
+      <p>“I don’t weigh a bit more,” said I, “nor as much; and my appetite may be better in the evening, when you are here, but it is worse in the morning when you are away.”</p>
+      <p>“Bless her little heart!” said he with a big hug; “she shall be as sick as she pleases! But now let’s improve the shining hours by going to sleep, and talk about it in the morning!”</p>
+      <p>“And you won’t go away?” I asked gloomily.</p>
+      <p>“Why, how can I, dear? It is only three weeks more and then we will take a nice little trip of a few days while Jennie is getting the house ready. Really, dear, you are better!”</p>
+      <p>“Better in body perhaps”—I began, and stopped short, for he sat up straight and looked at me with such a stern, reproachful look that I could not say another word.</p>
+      <p>“My darling,” said he, “I beg of you, for my sake and for our child’s sake, as well as for your own, that you will never for one instant let that idea enter your mind! There is nothing so dangerous, so fascinating, to a temperament like yours. It is a false and foolish fancy. Can you not trust me as a physician when I tell you so?”</p>
+      <p>So of course I said no more on that score, and we went to sleep before long. He thought I was asleep first, but I wasn’t,—I lay there for hours trying to decide whether that front pattern and the back pattern really did move together or separately.</p>
+      <p>On a pattern like this, by daylight, there is a lack of sequence, a defiance of law, that is a constant irritant to a normal mind.</p>
+      <p>The color is hideous enough, and unreliable enough, and infuriating enough, but the pattern is torturing.</p>
+      <p>You think you have mastered it, but just as you get well under way in following, it turns a back somersault and there you are. It slaps you in the face, knocks you down, and tramples upon you. It is like a bad dream.</p>
+      <p>The outside pattern is a florid arabesque, reminding one of a fungus. If you can imagine a toadstool in joints, an interminable string of toadstools, budding and sprouting in endless convolutions,—why, that is something like it.</p>
+      <p>That is, sometimes!</p>
+      <p>There is one marked peculiarity about this paper, a thing nobody seems to notice but myself, and that is that it changes as the light changes.</p>
+      <p>When the sun shoots in through the east window—I always watch for that first long, straight ray—it changes so quickly that I never can quite believe it.</p>
+      <p>That is why I watch it always.</p>
+      <p>By moonlight—the moon shines in all night when there is a moon—I wouldn’t know it was the same paper.</p>
+      <p>At night in any kind of light, in twilight, candlelight, lamplight, and worst of all by moonlight, it becomes bars! The outside pattern I mean, and the woman behind it is as plain as can be.</p>
+      <p>I didn’t realize for a long time what the thing was that showed behind,—that dim sub-pattern,—but now I am quite sure it is a woman.</p>
+      <p>By daylight she is subdued, quiet. I fancy it is the pattern that keeps her so still. It is so puzzling. It keeps me quiet by the hour.</p>
+      <p>I lie down ever so much now. John says it is good for me, and to sleep all I can.</p>
+      <p>Indeed, he started the habit by making me lie down for an hour after each meal.</p>
+      <p>It is a very bad habit, I am convinced, for, you see, I don’t sleep.</p>
+      <p>And that cultivates deceit, for I don’t tell them I’m awake,—oh, no!</p>
+      <p>The fact is, I am getting a little afraid of John.</p>
+      <p>He seems very queer sometimes, and even Jennie has an inexplicable look.</p>
+      <p>It strikes me occasionally, just as a scientific hypothesis, that perhaps it is the paper!</p>
+      <p>I have watched John when he did not know I was looking, and come into the room suddenly on the most innocent excuses, and I’ve caught him several times looking at the paper! And Jennie too. I caught Jennie with her hand on it once.</p>
+      <p>She didn’t know I was in the room, and when I asked her in a quiet, a very quiet voice, with the most restrained manner possible, what she was doing with the paper she turned around as if she had been caught stealing, and looked quite angry—asked me why I should frighten her so!</p>
+      <p>Then she said that the paper stained everything it touched, that she had found yellow smooches on all my clothes and John’s, and she wished we would be more careful!</p>
+      <p>Did not that sound innocent? But I know she was studying that pattern, and I am determined that nobody shall find it out but myself!</p>
+      <p>Life is very much more exciting now than it used to be. You see I have something more to expect, to look forward to, to watch. I really do eat better, and am more quiet than I was.</p>
+      <p>John is so pleased to see me improve! He laughed a little the other day, and said I seemed to be flourishing in spite of my wallpaper.</p>
+      <p>I turned it off with a laugh. I had no intention of telling him it was because of the wallpaper—he would make fun of me. He might even want to take me away.</p>
+      <p>I don’t want to leave now until I have found it out. There is a week more, and I think that will be enough.</p>
+      <p>I’m feeling ever so much better! I don’t sleep much at night, for it is so interesting to watch developments; but I sleep a good deal in the daytime.</p>
+      <p>In the daytime it is tiresome and perplexing.</p>
+      <p>There are always new shoots on the fungus, and new shades of yellow all over it. I cannot keep count of them, though I have tried conscientiously.</p>
+      <p>It is the strangest yellow, that wallpaper! It makes me think of all the yellow things I ever saw—not beautiful ones like buttercups, but old foul, bad yellow things.</p>
+      <p>But there is something else about that paper—the smell! I noticed it the moment we came into the room, but with so much air and sun it was not bad. Now we have had a week of fog and rain, and whether the windows are open or not, the smell is here.</p>
+      <p>It creeps all over the house.</p>
+      <p>I find it hovering in the dining-room, skulking in the parlor, hiding in the hall, lying in wait for me on the stairs.</p>
+      <p>It gets into my hair.</p>
+      <p>Even when I go to ride, if I turn my head suddenly and surprise it—there is that smell!</p>
+      <p>Such a peculiar odor, too! I have spent hours in trying to analyze it, to find what it smelled like.</p>
+      <p>It is not bad—at first, and very gentle, but quite the subtlest, most enduring odor I ever met.</p>
+      <p>In this damp weather it is awful. I wake up in the night and find it hanging over me.</p>
+      <p>It used to disturb me at first. I thought seriously of burning the house—to reach the smell.</p>
+      <p>But now I am used to it. The only thing I can think of that it is like is the color of the paper! A yellow smell.</p>
+      <p>There is a very funny mark on this wall, low down, near the mopboard. A streak that runs round the room. It goes behind every piece of furniture, except the bed, a long, straight, even smooch, as if it had been rubbed over and over.</p>
+      <p>I wonder how it was done and who did it, and what they did it for. Round and round and round—round and round and round—it makes me dizzy!</p>
+      <p>I really have discovered something at last.</p>
+      <p>Through watching so much at night, when it changes so, I have finally found out.</p>
+      <p>The front pattern does move—and no wonder! The woman behind shakes it!</p>
+      <p>Sometimes I think there are a great many women behind, and sometimes only one, and she crawls around fast, and her crawling shakes it all over.</p>
+      <p>Then in the very bright spots she keeps still, and in the very shady spots she just takes hold of the bars and shakes them hard.</p>
+      <p>And she is all the time trying to climb through. But nobody could climb through that pattern—it strangles so; I think that is why it has so many heads.</p>
+      <p>They get through, and then the pattern strangles them off and turns them upside-down, and makes their eyes white!</p>
+      <p>If those heads were covered or taken off it would not be half so bad.</p>
+      <p>I think that woman gets out in the daytime!</p>
+      <p>And I’ll tell you why—privately—I’ve seen her!</p>
+      <p>I can see her out of every one of my windows!</p>
+      <p>It is the same woman, I know, for she is always creeping, and most women do not creep by daylight.</p>
+      <p>I see her on that long shaded lane, creeping up and down. I see her in those dark grape arbors, creeping all around the garden.</p>
+      <p>I see her on that long road under the trees, creeping along, and when a carriage comes she hides under the blackberry vines.</p>
+      <p>I don’t blame her a bit. It must be very humiliating to be caught creeping by daylight!</p>
+      <p>I always lock the door when I creep by daylight. I can’t do it at night, for I know John would suspect something at once.</p>
+      <p>And John is so queer now, that I don’t want to irritate him. I wish he would take another room! Besides, I don’t want anybody to get that woman out at night but myself.</p>
+      <p>I often wonder if I could see her out of all the windows at once.</p>
+      <p>But, turn as fast as I can, I can only see out of one at one time.</p>
+      <p>And though I always see her she may be able to creep faster than I can turn!</p>
+      <p>I have watched her sometimes away off in the open country, creeping as fast as a cloud shadow in a high wind.</p>
+      <p>If only that top pattern could be gotten off from the under one! I mean to try it, little by little.</p>
+      <p>I have found out another funny thing, but I shan’t tell it this time! It does not do to trust people too much.</p>
+      <p>There are only two more days to get this paper off, and I believe John is beginning to notice. I don’t like the look in his eyes.</p>
+      <p>And I heard him ask Jennie a lot of professional questions about me. She had a very good report to give.</p>
+      <p>She said I slept a good deal in the daytime.</p>
+      <p>John knows I don’t sleep very well at night, for all I’m so quiet!</p>
+      <p>He asked me all sorts of questions, too, and pretended to be very loving and kind.</p>
+      <p>As if I couldn’t see through him!</p>
+      <p>Still, I don’t wonder he acts so, sleeping under this paper for three months.</p>
+      <p>It only interests me, but I feel sure John and Jennie are secretly affected by it.</p>
+      <p>Hurrah! This is the last day, but it is enough. John is to stay in town over night, and won’t be out until this evening.</p>
+      <p>Jennie wanted to sleep with me—the sly thing! but I told her I should undoubtedly rest better for a night all alone.</p>
+      <p>That was clever, for really I wasn’t alone a bit! As soon as it was moonlight, and that poor thing began to crawl and shake the pattern, I got up and ran to help her.</p>
+      <p>I pulled and she shook, I shook and she pulled, and before morning we had peeled off yards of that paper.</p>
+      <p>A strip about as high as my head and half around the room.</p>
+      <p>And then when the sun came and that awful pattern began to laugh at me I declared I would finish it to-day!</p>
+      <p>We go away to-morrow, and they are moving all my furniture down again to leave things as they were before.</p>
+      <p>Jennie looked at the wall in amazement, but I told her merrily that I did it out of pure spite at the vicious thing.</p>
+      <p>She laughed and said she wouldn’t mind doing it herself, but I must not get tired.</p>
+      <p>How she betrayed herself that time!</p>
+      <p>But I am here, and no person touches this paper but me—not alive!</p>
+      <p>She tried to get me out of the room—it was too patent! But I said it was so quiet and empty and clean now that I believed I would lie down again and sleep all I could; and not to wake me even for dinner—I would call when I woke.</p>
+      <p>So now she is gone, and the servants are gone, and the things are gone, and there is nothing left but that great bedstead nailed down, with the canvas mattress we found on it.</p>
+      <p>We shall sleep downstairs to-night, and take the boat home to-morrow.</p>
+      <p>I quite enjoy the room, now it is bare again.</p>
+      <p>How those children did tear about here!</p>
+      <p>This bedstead is fairly gnawed!</p>
+      <p>But I must get to work.</p>
+      <p>I have locked the door and thrown the key down into the front path.</p>
+      <p>I don’t want to go out, and I don’t want to have anybody come in, till John comes.</p>
+      <p>I want to astonish him.</p>
+      <p>I’ve got a rope up here that even Jennie did not find. If that woman does get out, and tries to get away, I can tie her!</p>
+      <p>But I forgot I could not reach far without anything to stand on!</p>
+      <p>This bed will not move!</p>
+      <p>I tried to lift and push it until I was lame, and then I got so angry I bit off a little piece at one corner—but it hurt my teeth.</p>
+      <p>Then I peeled off all the paper I could reach standing on the floor. It sticks horribly and the pattern just enjoys it! All those strangled heads and bulbous eyes and waddling fungus growths just shriek with derision!</p>
+      <p>I am getting angry enough to do something desperate. To jump out of the window would be admirable exercise, but the bars are too strong even to try.</p>
+      <p>Besides I wouldn’t do it. Of course not. I know well enough that a step like that is improper and might be misconstrued.</p>
+      <p>I don’t like to look out of the windows even—there are so many of those creeping women, and they creep so fast.</p>
+      <p>I wonder if they all come out of that wallpaper as I did?</p>
+      <p>But I am securely fastened now by my well-hidden rope—you don’t get me out in the road there!</p>
+      <p>I suppose I shall have to get back behind the pattern when it comes night, and that is hard!</p>
+      <p>It is so pleasant to be out in this great room and creep around as I please!</p>
+      <p>I don’t want to go outside. I won’t, even if Jennie asks me to.</p>
+      <p>For outside you have to creep on the ground, and everything is green instead of yellow.</p>
+      <p>But here I can creep smoothly on the floor, and my shoulder just fits in that long smooch around the wall, so I cannot lose my way.</p>
+      <p>Why, there’s John at the door!</p>
+      <p>It is no use, young man, you can’t open it!</p>
+      <p>How he does call and pound!</p>
+      <p>Now he’s crying for an axe.</p>
+      <p>It would be a shame to break down that beautiful door!</p>
+      <p>“John dear!” said I in the gentlest voice, “the key is down by the front steps, under a plantain leaf!”</p>
+      <p>That silenced him for a few moments.</p>
+      <p>Then he said—very quietly indeed, “Open the door, my darling!”</p>
+      <p>“I can’t,” said I. “The key is down by the front door under a plantain leaf!”</p>
+      <p>And then I said it again, several times, very gently and slowly, and said it so often that he had to go and see, and he got it, of course, and came in. He stopped short by the door.</p>
+      <p>“What is the matter?” he cried. “For God’s sake, what are you doing!”</p>
+      <p>I kept on creeping just the same, but I looked at him over my shoulder.</p>
+      <p>“I’ve got out at last,” said I, “in spite of you and Jane! And I’ve pulled off most of the paper, so you can’t put me back!”</p>
+      <p>Now why should that man have fainted? But he did, and right across my path by the wall, so that I had to creep over him every time!</p>
       <p class="end">— THE END —</p>
       <figure class="fig tall">
-        <img src="img/frank-stockton.jpg" alt="Black-and-white portrait of Frank R. Stockton, a man with a moustache wearing a dark jacket" width="960" height="1313">
-        <figcaption>Frank R. Stockton. He later wrote a follow-up story, "The Discourager of Hesitancy" (1885), which still refuses to say which door opened.<span class="credit">Photo: Unknown author / Wikimedia Commons, Public domain</span></figcaption>
+        <img src="img/yellow-wallpaper-hatfield.png" alt="Old pen-and-ink illustration of a woman in a long dress sitting in a room, with patterned wallpaper behind her" width="960" height="1141">
+        <figcaption>One of Joseph Henry Hatfield's illustrations for the story's first appearance in <i>The New England Magazine</i>, 1892.<span class="credit">Illustration: Joseph Henry Hatfield / Wikimedia Commons, Public domain</span></figcaption>
       </figure>
     </div>
     <div class="tale-extras">
       <div>
         <div class="box-label">Glossary</div>
         <dl>
-          <dt>semi-barbaric</dt><dd>half-civilised, half-savage (Stockton's running joke)</dd>
-          <dt>florid</dt><dd>very showy and over-decorated</dd>
-          <dt>exuberant</dt><dd>full of energy and excitement; overflowing</dd>
-          <dt>amphitheatre</dt><dd>a round open-air arena with rising rows of seats</dd>
-          <dt>retribution</dt><dd>punishment given as payback</dd>
-          <dt>imperious</dt><dd>proud and commanding, expecting to be obeyed</dd>
-          <dt>fervid</dt><dd>burning with strong feeling</dd>
-          <dt>parapet</dt><dd>a low wall along the edge of a balcony</dd>
+          <dt>hereditary estate</dt><dd>a big property passed down through a family</dd>
+          <dt>phosphates</dt><dd>mineral salts, given as "tonics" by doctors of the time</dd>
+          <dt>congenial</dt><dd>pleasant and friendly; suited to you</dd>
+          <dt>lurid</dt><dd>unpleasantly bright and glaring in colour</dd>
+          <dt>impertinence</dt><dd>rudeness; behaving without proper respect</dd>
+          <dt>arabesque</dt><dd>a decorative pattern of curling, interwoven lines</dd>
+          <dt>delirium tremens</dt><dd>shaking and hallucinations, here used as a joke about a "drunken" pattern</dd>
+          <dt>derision</dt><dd>mocking scorn</dd>
         </dl>
       </div>
       <div>
         <div class="box-label">Talk about it</div>
         <ol>
-          <li>Lady or tiger? Give your answer, then find two clues in the story that support it, and one that argues against it.</li>
-          <li>The king calls his arena a place of "impartial and incorruptible chance". Is it really fair? What does the princess's secret do to that idea?</li>
-          <li>Stockton refused to give an ending for the rest of his life. Was that a clever move or a cheat? Why do you think the story is still taught today?</li>
+          <li>John is a doctor and clearly believes he's helping. Find two moments where his "care" makes things worse. Is he a villain, or something more complicated?</li>
+          <li>Trace the wallpaper: how does the narrator describe it near the start, in the middle, and at the end? What do you think the woman "behind" the pattern stands for?</li>
+          <li>Gilman wrote this to change how doctors treated women like her. Can a story change minds more than a medical article? Think of a modern story, film or game that has done the same.</li>
         </ol>
       </div>
     </div>
@@ -562,77 +771,81 @@ p{margin:0 0 .8em;hyphens:auto}
 
 <!-- ==================== PAGE A4 ==================== -->
 <article class="sheet" aria-label="Page A4">
-  <div class="folio"><span>The Little Lion Daily</span><span>Page A4 · Fun &amp; games</span><span>Friday, 27 November 2026</span></div>
+  <div class="folio"><span>The Little Lion Daily</span><span>Page A4 · Weekend fun &amp; games</span><span>Saturday, 28 November 2026</span></div>
 
-  <section aria-label="Crossword">
-    <div class="kicker">Friday crossword · every answer is hiding in today's paper</div>
-    <h2 style="font-size:32px;line-height:1.05">Doors, odds and tigers</h2>
-    <p class="instr">Tap a square and type. Use the page numbers in brackets if you're stuck. Press <b>Check</b> to see which letters are right.</p>
-    <div class="xw-layout">
+  <section class="duo" aria-label="Colour quiz and riddles">
     <div>
-      <div class="xw-wrap"><table class="xw" id="xw">
-        <tr><td><span class="xn">1</span><input maxlength="1" data-a="G" data-r="0" data-c="0" aria-label="row 1 column 1" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td class="xb"></td><td><span class="xn">2</span><input maxlength="1" data-a="K" data-r="0" data-c="2" aria-label="row 1 column 3" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td class="xb"></td><td class="xb"></td><td class="xb"></td><td><span class="xn">3</span><input maxlength="1" data-a="G" data-r="0" data-c="6" aria-label="row 1 column 7" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td class="xb"></td><td class="xb"></td><td class="xb"></td><td class="xb"></td></tr>
-        <tr><td><input maxlength="1" data-a="O" data-r="1" data-c="0" aria-label="row 2 column 1" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td class="xb"></td><td><input maxlength="1" data-a="I" data-r="1" data-c="2" aria-label="row 2 column 3" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td class="xb"></td><td class="xb"></td><td class="xb"></td><td><input maxlength="1" data-a="U" data-r="1" data-c="6" aria-label="row 2 column 7" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td class="xb"></td><td class="xb"></td><td class="xb"></td><td class="xb"></td></tr>
-        <tr><td><input maxlength="1" data-a="A" data-r="2" data-c="0" aria-label="row 3 column 1" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td class="xb"></td><td><input maxlength="1" data-a="N" data-r="2" data-c="2" aria-label="row 3 column 3" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td class="xb"></td><td><span class="xn">4</span><input maxlength="1" data-a="P" data-r="2" data-c="4" aria-label="row 3 column 5" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td class="xb"></td><td><span class="xn">5</span><input maxlength="1" data-a="A" data-r="2" data-c="6" aria-label="row 3 column 7" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td><input maxlength="1" data-a="R" data-r="2" data-c="7" aria-label="row 3 column 8" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td><input maxlength="1" data-a="E" data-r="2" data-c="8" aria-label="row 3 column 9" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td><input maxlength="1" data-a="N" data-r="2" data-c="9" aria-label="row 3 column 10" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td><input maxlength="1" data-a="A" data-r="2" data-c="10" aria-label="row 3 column 11" autocomplete="off" autocapitalize="characters" spellcheck="false"></td></tr>
-        <tr><td><span class="xn">6</span><input maxlength="1" data-a="T" data-r="3" data-c="0" aria-label="row 4 column 1" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td><input maxlength="1" data-a="I" data-r="3" data-c="1" aria-label="row 4 column 2" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td><input maxlength="1" data-a="G" data-r="3" data-c="2" aria-label="row 4 column 3" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td><input maxlength="1" data-a="E" data-r="3" data-c="3" aria-label="row 4 column 4" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td><input maxlength="1" data-a="R" data-r="3" data-c="4" aria-label="row 4 column 5" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td class="xb"></td><td><input maxlength="1" data-a="R" data-r="3" data-c="6" aria-label="row 4 column 7" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td class="xb"></td><td class="xb"></td><td class="xb"></td><td class="xb"></td></tr>
-        <tr><td class="xb"></td><td class="xb"></td><td class="xb"></td><td class="xb"></td><td><span class="xn">7</span><input maxlength="1" data-a="O" data-r="4" data-c="4" aria-label="row 5 column 5" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td><input maxlength="1" data-a="D" data-r="4" data-c="5" aria-label="row 5 column 6" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td><input maxlength="1" data-a="D" data-r="4" data-c="6" aria-label="row 5 column 7" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td><input maxlength="1" data-a="S" data-r="4" data-c="7" aria-label="row 5 column 8" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td class="xb"></td><td class="xb"></td><td class="xb"></td></tr>
-        <tr><td class="xb"></td><td class="xb"></td><td class="xb"></td><td class="xb"></td><td><input maxlength="1" data-a="F" data-r="5" data-c="4" aria-label="row 6 column 5" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td class="xb"></td><td class="xb"></td><td class="xb"></td><td class="xb"></td><td class="xb"></td><td class="xb"></td></tr>
-        <tr><td class="xb"></td><td class="xb"></td><td><span class="xn">8</span><input maxlength="1" data-a="P" data-r="6" data-c="2" aria-label="row 7 column 3" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td><input maxlength="1" data-a="R" data-r="6" data-c="3" aria-label="row 7 column 4" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td><input maxlength="1" data-a="I" data-r="6" data-c="4" aria-label="row 7 column 5" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td><input maxlength="1" data-a="N" data-r="6" data-c="5" aria-label="row 7 column 6" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td><span class="xn">9</span><input maxlength="1" data-a="C" data-r="6" data-c="6" aria-label="row 7 column 7" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td><input maxlength="1" data-a="E" data-r="6" data-c="7" aria-label="row 7 column 8" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td><input maxlength="1" data-a="S" data-r="6" data-c="8" aria-label="row 7 column 9" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td><span class="xn">10</span><input maxlength="1" data-a="S" data-r="6" data-c="9" aria-label="row 7 column 10" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td class="xb"></td></tr>
-        <tr><td class="xb"></td><td class="xb"></td><td><input maxlength="1" data-a="I" data-r="7" data-c="2" aria-label="row 8 column 3" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td class="xb"></td><td><input maxlength="1" data-a="T" data-r="7" data-c="4" aria-label="row 8 column 5" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td class="xb"></td><td><input maxlength="1" data-a="H" data-r="7" data-c="6" aria-label="row 8 column 7" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td class="xb"></td><td class="xb"></td><td><input maxlength="1" data-a="W" data-r="7" data-c="9" aria-label="row 8 column 10" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td class="xb"></td></tr>
-        <tr><td><span class="xn">11</span><input maxlength="1" data-a="L" data-r="8" data-c="0" aria-label="row 9 column 1" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td class="xb"></td><td><input maxlength="1" data-a="G" data-r="8" data-c="2" aria-label="row 9 column 3" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td class="xb"></td><td class="xb"></td><td><span class="xn">12</span><input maxlength="1" data-a="M" data-r="8" data-c="5" aria-label="row 9 column 6" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td><input maxlength="1" data-a="A" data-r="8" data-c="6" aria-label="row 9 column 7" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td><input maxlength="1" data-a="R" data-r="8" data-c="7" aria-label="row 9 column 8" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td><input maxlength="1" data-a="G" data-r="8" data-c="8" aria-label="row 9 column 9" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td><input maxlength="1" data-a="I" data-r="8" data-c="9" aria-label="row 9 column 10" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td><input maxlength="1" data-a="N" data-r="8" data-c="10" aria-label="row 9 column 11" autocomplete="off" autocapitalize="characters" spellcheck="false"></td></tr>
-        <tr><td><input maxlength="1" data-a="A" data-r="9" data-c="0" aria-label="row 10 column 1" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td class="xb"></td><td><input maxlength="1" data-a="E" data-r="9" data-c="2" aria-label="row 10 column 3" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td class="xb"></td><td class="xb"></td><td class="xb"></td><td><input maxlength="1" data-a="N" data-r="9" data-c="6" aria-label="row 10 column 7" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td class="xb"></td><td class="xb"></td><td><input maxlength="1" data-a="T" data-r="9" data-c="9" aria-label="row 10 column 10" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td class="xb"></td></tr>
-        <tr><td><span class="xn">13</span><input maxlength="1" data-a="D" data-r="10" data-c="0" aria-label="row 11 column 1" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td><input maxlength="1" data-a="O" data-r="10" data-c="1" aria-label="row 11 column 2" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td><input maxlength="1" data-a="O" data-r="10" data-c="2" aria-label="row 11 column 3" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td><input maxlength="1" data-a="R" data-r="10" data-c="3" aria-label="row 11 column 4" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td class="xb"></td><td class="xb"></td><td><input maxlength="1" data-a="C" data-r="10" data-c="6" aria-label="row 11 column 7" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td class="xb"></td><td class="xb"></td><td><input maxlength="1" data-a="C" data-r="10" data-c="9" aria-label="row 11 column 10" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td class="xb"></td></tr>
-        <tr><td><input maxlength="1" data-a="Y" data-r="11" data-c="0" aria-label="row 12 column 1" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td class="xb"></td><td><input maxlength="1" data-a="N" data-r="11" data-c="2" aria-label="row 12 column 3" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td class="xb"></td><td class="xb"></td><td class="xb"></td><td><input maxlength="1" data-a="E" data-r="11" data-c="6" aria-label="row 12 column 7" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td class="xb"></td><td class="xb"></td><td><input maxlength="1" data-a="H" data-r="11" data-c="9" aria-label="row 12 column 10" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td class="xb"></td></tr>
-      </table></div>
-      <div class="xw-btns"><button type="button" id="xw-check">Check</button><button type="button" id="xw-reveal">Reveal all</button><button type="button" id="xw-clear">Clear</button></div>
-      <div class="ws-status" id="xw-status" aria-live="polite"></div>
-    </div>
-    <div class="xw-clues">
-      <div class="box-label">Across</div>
-      <ol>
-          <li><b>5</b> The king's amphitheatre of "incorruptible chance" (A3) <span class="small">(5)</span></li>
-          <li><b>6</b> Fierce beast behind one of the king's two doors (A3) <span class="small">(5)</span></li>
-          <li><b>7</b> Chances, as a bookmaker would say <span class="small">(4)</span></li>
-          <li><b>8</b> She knew the secret of the doors (A3) <span class="small">(8)</span></li>
-          <li><b>12</b> Price minus the cost of making one more item (A2) <span class="small">(6)</span></li>
-          <li><b>13</b> Open one and find your fate <span class="small">(4)</span></li>
+      <div class="kicker">Saturday surprise · Colour quiz</div>
+      <h2>Ten questions in full colour</h2>
+      <p class="instr">Answer out loud, then peek. Tick the ones you got right.</p>
+      <ol id="quiz" class="riddles" style="margin:0;padding-left:1.4em;display:flex;flex-direction:column;gap:12px">
+        <li>Shine red, green and blue light onto the same white wall, all equally bright. What colour do you see where they overlap?
+          <details><summary>Show answer</summary>White. Light colours add together. That's how every pixel on your phone screen works: tiny red, green and blue dots.</details><label class="got"><input type="checkbox"> I got it</label></li>
+        <li>Which pigment makes leaves green?
+          <details><summary>Show answer</summary>Chlorophyll. It soaks up red and blue light for photosynthesis and bounces back the green.</details><label class="got"><input type="checkbox"> I got it</label></li>
+        <li>A polar bear's fur looks white. What colour is its skin?
+          <details><summary>Show answer</summary>Black. The fur hairs are actually see-through and scatter light, which makes them look white.</details><label class="got"><input type="checkbox"> I got it</label></li>
+        <li>Flamingos are born grey. What turns them pink?
+          <details><summary>Show answer</summary>Their food. Algae and tiny shrimps contain pink-orange pigments called carotenoids (the same family as the colour in carrots).</details><label class="got"><input type="checkbox"> I got it</label></li>
+        <li>Why is the daytime sky blue?
+          <details><summary>Show answer</summary>Sunlight hits the gas molecules in the air, and shorter, bluer wavelengths get scattered around the sky far more than red ones. Scientists call it Rayleigh scattering.</details><label class="got"><input type="checkbox"> I got it</label></li>
+        <li>An aeroplane's "black box" flight recorder is actually painted which colour, and why?
+          <details><summary>Show answer</summary>Bright orange, so search teams can spot it in wreckage or water.</details><label class="got"><input type="checkbox"> I got it</label></li>
+        <li>Ancient "Tyrian purple", worn by Roman emperors, was made from what?
+          <details><summary>Show answer</summary>Sea snails. Thousands of them were needed for a tiny amount of dye, which is why purple became the colour of royalty.</details><label class="got"><input type="checkbox"> I got it</label></li>
+        <li>About how many men have some form of red-green colour blindness: 1 in 12, 1 in 100, or 1 in 1,000?
+          <details><summary>Show answer</summary>About 1 in 12 men, but only about 1 in 200 women. The genes involved sit on the X chromosome, and boys have only one X.</details><label class="got"><input type="checkbox"> I got it</label></li>
+        <li>On Singapore's flag, what does the red stand for?
+          <details><summary>Show answer</summary>Universal brotherhood and equality of man. The white stands for pervading and everlasting purity and virtue.</details><label class="got"><input type="checkbox"> I got it</label></li>
+        <li>Mix yellow and blue <i>paint</i> and you get green. Mix yellow and blue <i>light</i> and you get…?
+          <details><summary>Show answer</summary>(Close to) white! Paint works by <i>removing</i> colours from light; light works by <i>adding</i> them. That's why question 1 and question 10 give such different answers.</details><label class="got"><input type="checkbox"> I got it</label></li>
       </ol>
-      <div class="box-label" style="margin-top:14px">Down</div>
-      <ol>
-          <li><b>1</b> The booby prize hiding behind two of the three doors (A1) <span class="small">(4)</span></li>
-          <li><b>2</b> Semi-barbaric ruler with "exuberant fancy" (A3) <span class="small">(4)</span></li>
-          <li><b>3</b> One of two in today's logic riddle: one lies, one doesn't (A4) <span class="small">(5)</span></li>
-          <li><b>4</b> What's left after every cost is paid (A2) <span class="small">(6)</span></li>
-          <li><b>8</b> Bird that learned to switch better than humans did (A1) <span class="small">(6)</span></li>
-          <li><b>9</b> Probability, or plain luck <span class="small">(6)</span></li>
-          <li><b>10</b> The winning move in the three-door game show puzzle (A1) <span class="small">(6)</span></li>
-          <li><b>11</b> The happier thing that might step out (A3) <span class="small">(4)</span></li>
-      </ol>
+      <div class="quiz-score" id="quiz-score" aria-live="polite">Score: 0 / 10</div>
     </div>
+    <div class="riddles">
+      <div class="kicker">Brain teasers</div>
+      <h2>Seven riddles for a lazy Saturday</h2>
+      <ol>
+        <li>I have a face and two hands, but no arms, no legs, and no head. What am I?
+          <details><summary>Show answer</summary>A clock. (Pareidolia, the riddle edition.)</details></li>
+        <li>A man points at a portrait and says: "Brothers and sisters I have none, but that man's father is my father's son." Who is in the portrait?
+          <details><summary>Show answer</summary>His son. "My father's son", with no brothers, can only be the speaker himself. So the man in the portrait's father is the speaker.</details></li>
+        <li>What has one eye but can't see? (There are two good answers: one lives in a sewing kit, the other over the sea.)
+          <details><summary>Show answer</summary>A needle, and a typhoon (or hurricane).</details></li>
+        <li>A woman shoots her husband. Then she holds him under water for five minutes. Finally, she hangs him up. Half an hour later, they go out for dinner together. How?
+          <details><summary>Show answer</summary>She's a photographer. She shot a photo of him, developed it in a tray of chemicals, and hung it up to dry. (This is how film photos were made before digital cameras.)</details></li>
+        <li>I'm lighter than a feather, yet the strongest person in the world can't hold me for more than a few minutes. What am I?
+          <details><summary>Show answer</summary>Your breath.</details></li>
+        <li>字谜：有心走不快，见水装不完，长草难收拾，遇食就可餐。（打一字）
+          <details><summary>看答案</summary>曼。加"忄"是"慢"，加"氵"是"漫"，加"艹"是"蔓"，加"饣"是"馒"。</details></li>
+        <li>歇后语：丈二和尚——？
+          <details><summary>看答案</summary>摸不着头脑。和尚有一丈二尺那么高，别人伸手也摸不到他的头。比喻弄不清是怎么回事。读完今天A3版的小说，你可能也会有这种感觉！</details></li>
+      </ol>
     </div>
   </section>
 
   <hr class="rule-sec">
 
-  <section class="riddles" aria-label="Logic puzzles and riddles">
-    <div class="kicker">Brain teasers</div>
-    <h2>Two logic puzzles and five riddles</h2>
-    <ol>
-      <li><b>The two guards.</b> You stand before two doors. One leads to freedom, the other to a very hungry tiger. Each door has a guard. One guard always tells the truth; the other always lies. You don't know which is which, and you may ask <i>one</i> guard <i>one</i> question. What do you ask?
-        <details><summary>Show answer</summary>Point at either guard and ask: "If I asked the <i>other</i> guard which door leads to freedom, which door would he point to?" Then take the <i>opposite</i> door. If you asked the truth-teller, he truthfully reports the liar's wrong answer. If you asked the liar, he lies about the truth-teller's right answer. Either way, the answer you hear is the tiger door.</details></li>
-      <li><b>The mislabelled boxes.</b> Three boxes are labelled APPLES, ORANGES and MIXED. Every label is wrong. You may take out one fruit from one box, without looking inside. How can you then label all three correctly?
-        <details><summary>Show answer</summary>Take a fruit from the box labelled MIXED. Since its label is wrong, it holds only one kind. Say you pull out an apple: that box is APPLES. The box labelled ORANGES can't be oranges (wrong label) and can't be apples (taken), so it's MIXED. The last box is ORANGES.</details></li>
-      <li>What can you hold in your left hand but never in your right hand?
-        <details><summary>Show answer</summary>Your right elbow. (Try it.)</details></li>
-      <li>I have cities but no houses, forests but no trees, and rivers but no water. What am I?
-        <details><summary>Show answer</summary>A map.</details></li>
-      <li>Which nine-letter English word stays a real word each time you remove one letter, all the way down to a single letter?
-        <details><summary>Show answer</summary>STARTLING → starting → staring → string → sting → sing → sin → in → I.</details></li>
-      <li>一人一张口，口下长只手。（打一字）
-        <details><summary>看答案</summary>拿。"人"字头、"一"、"口"，下面再加一个"手"，合起来就是"拿"。</details></li>
-      <li>歇后语：哑巴吃黄连——？
-        <details><summary>看答案</summary>有苦说不出。黄连是很苦的中药，哑巴吃了却说不出来。比喻心里有委屈或痛苦，却没办法讲出来。</details></li>
-    </ol>
+  <section class="puzzles" aria-label="Word search">
+    <div>
+      <div class="kicker">Word search · every word is in today's paper</div>
+      <h2>Find the ten hidden words</h2>
+      <p class="instr">Words can run across, down, diagonally, or backwards. Click the first letter, then the last letter.</p>
+      <div class="ws-wrap"><table class="ws" id="ws" aria-label="Word search grid"></table></div>
+      <div class="ws-status" id="ws-status" aria-live="polite"></div>
+      <ul class="wordlist" id="wordlist" aria-label="Words to find"></ul>
+    </div>
+    <div>
+      <div class="tryit">
+        <div class="box-label">Weekend challenge · Make your own pareidolia gallery</div>
+        <p>Collect your five face photos from A1. Give each one a name and a one-line personality ("Mr Kettle: thinks he's better than the toaster"). Send the best one to a friend and see if they spot the face without a hint.</p>
+        <p class="small">Extra credit: find a face in a cloud, then watch it change as the wind moves it. How long does it last?</p>
+      </div>
+      <div class="exhibit">
+        <div class="box-label">Story corner · what's coming</div>
+        <p>Every edition until 31 December has a story. Next week: more classics, and another episode of <b>Juni of the Desert</b>, our own series about a 14-year-old scientist-detective in Tucson, Arizona.</p>
+      </div>
+    </div>
   </section>
 
   <section class="week" aria-label="This week's line-up">
@@ -641,8 +854,8 @@ p{margin:0 0 .8em;hyphens:auto}
     <div><b>Tue</b>Recipe &amp; word search</div>
     <div><b>Wed</b>Science quiz &amp; riddles</div>
     <div><b>Thu</b>Comic &amp; fun facts</div>
-    <div class="today"><b>Fri · today</b>Crossword &amp; logic puzzles</div>
-    <div><b>Sat</b>Weekend classic: The Yellow Wallpaper</div>
+    <div><b>Fri</b>Crossword &amp; logic puzzles</div>
+    <div class="today"><b>Sat · today</b>Weekend classic: The Yellow Wallpaper</div>
     <div><b>Sun</b>Weekend classic &amp; surprise</div>
   </section>
 
@@ -650,7 +863,8 @@ p{margin:0 0 .8em;hyphens:auto}
     <div class="box-label">往期 · Past editions</div>
     <ul>
 <!--ARCHIVE-->
-      <li><a href="editions/2026-11-27.html" aria-current="page">Fri 27 Nov 2026</a></li>
+      <li><a href="editions/2026-11-28.html" aria-current="page">Sat 28 Nov 2026</a></li>
+      <li><a href="editions/2026-11-27.html">Fri 27 Nov 2026</a></li>
       <li><a href="editions/2026-11-26.html">Thu 26 Nov 2026</a></li>
       <li><a href="editions/2026-11-25.html">Wed 25 Nov 2026</a></li>
       <li><a href="editions/2026-11-24.html">Tue 24 Nov 2026</a></li>
@@ -658,62 +872,72 @@ p{margin:0 0 .8em;hyphens:auto}
     </ul>
   </nav>
 
-  <div class="colophon">The Little Lion Daily · Printed with pixels in Singapore · News stories belong to CNA and Lianhe Zaobao</div>
+  <div class="colophon">The Little Lion Daily · Printed with pixels in Singapore · News stories belong to The Straits Times and Lianhe Zaobao</div>
 </article>
 
 <script>
 (function(){
-  var cells=[].slice.call(document.querySelectorAll("#xw input")), status=document.getElementById("xw-status");
-  var at={}; cells.forEach(function(c){at[c.dataset.r+","+c.dataset.c]=c;});
-  var dir="A";
-  function cell(r,c){return at[r+","+c];}
-  function move(el,step){
-    var r=+el.dataset.r,c=+el.dataset.c, dr=dir==="A"?0:1, dc=dir==="A"?1:0;
-    var n=cell(r+dr*step,c+dc*step);
-    if(!n){dir=dir==="A"?"D":"A";dr=dir==="A"?0:1;dc=dir==="A"?1:0;n=cell(r+dr*step,c+dc*step);if(!n)dir=dir==="A"?"D":"A";}
-    if(n)n.focus();
+  var WORDS=["WALLPAPER","YELLOW","ARSENIC","PAREIDOLIA","MARS","POTATO","GREEN","PATTERN","POISON","MOON"];
+  var N=12, grid=[], placed=[];
+  // Seeded random so the puzzle is the same for everyone today
+  var seed=20261128;
+  function rnd(){seed=(seed*1103515245+12345)%2147483648;return seed/2147483648;}
+  var DIRS=[[0,1],[1,0],[1,1],[-1,1],[0,-1],[-1,0],[-1,-1],[1,-1]];
+  for(var r=0;r<N;r++){grid.push(new Array(N).fill(""));}
+  WORDS.slice().sort(function(a,b){return b.length-a.length;}).forEach(function(w){
+    for(var tries=0;tries<500;tries++){
+      var d=DIRS[Math.floor(rnd()*DIRS.length)];
+      var r0=Math.floor(rnd()*N), c0=Math.floor(rnd()*N);
+      var rEnd=r0+d[0]*(w.length-1), cEnd=c0+d[1]*(w.length-1);
+      if(rEnd<0||rEnd>=N||cEnd<0||cEnd>=N) continue;
+      var ok=true;
+      for(var i=0;i<w.length;i++){var ch=grid[r0+d[0]*i][c0+d[1]*i];if(ch&&ch!==w[i]){ok=false;break;}}
+      if(!ok) continue;
+      for(i=0;i<w.length;i++) grid[r0+d[0]*i][c0+d[1]*i]=w[i];
+      placed.push(w); return;
+    }
+  });
+  var A="ABCDEFGHIJKLMNOPRSTUVWY";
+  for(r=0;r<N;r++)for(var c=0;c<N;c++) if(!grid[r][c]) grid[r][c]=A[Math.floor(rnd()*A.length)];
+
+  var table=document.getElementById("ws"), list=document.getElementById("wordlist"), status=document.getElementById("ws-status");
+  var cells=[];
+  for(r=0;r<N;r++){
+    var tr=document.createElement("tr"), row=[];
+    for(c=0;c<N;c++){
+      var td=document.createElement("td");
+      td.textContent=grid[r][c]; td.tabIndex=0; td.dataset.r=r; td.dataset.c=c;
+      tr.appendChild(td); row.push(td);
+    }
+    table.appendChild(tr); cells.push(row);
   }
-  cells.forEach(function(el){
-    el.addEventListener("focus",function(){
-      var r=+el.dataset.r,c=+el.dataset.c;
-      var hasA=cell(r,c-1)||cell(r,c+1), hasD=cell(r-1,c)||cell(r+1,c);
-      if(dir==="A"&&!hasA&&hasD)dir="D"; else if(dir==="D"&&!hasD&&hasA)dir="A";
-      el.select();
-    });
-    el.addEventListener("click",function(){
-      var r=+el.dataset.r,c=+el.dataset.c;
-      if((cell(r,c-1)||cell(r,c+1))&&(cell(r-1,c)||cell(r+1,c))&&document.activeElement===el&&el._clicked)dir=dir==="A"?"D":"A";
-      el._clicked=true;
-    });
-    el.addEventListener("input",function(){
-      el.value=el.value.replace(/[^a-z]/gi,"").slice(-1).toUpperCase();
-      el.classList.remove("ok","bad"); status.textContent="";
-      if(el.value)move(el,1);
-    });
-    el.addEventListener("keydown",function(e){
-      var r=+el.dataset.r,c=+el.dataset.c,n=null;
-      if(e.key==="Backspace"&&!el.value){e.preventDefault();move(el,-1);return;}
-      if(e.key==="ArrowRight"){dir="A";n=cell(r,c+1);}
-      else if(e.key==="ArrowLeft"){dir="A";n=cell(r,c-1);}
-      else if(e.key==="ArrowDown"){dir="D";n=cell(r+1,c);}
-      else if(e.key==="ArrowUp"){dir="D";n=cell(r-1,c);}
-      else return;
-      e.preventDefault(); if(n)n.focus();
-    });
-  });
-  document.getElementById("xw-check").addEventListener("click",function(){
-    var right=0,filled=0;
-    cells.forEach(function(el){el.classList.remove("ok","bad");if(!el.value)return;filled++;
-      if(el.value===el.dataset.a){right++;el.classList.add("ok");}else el.classList.add("bad");});
-    status.textContent= right===cells.length ? "Solved! Every square is right. Have a great weekend." : right+" of "+cells.length+" squares correct"+(filled>right?", "+(filled-right)+" to fix.":".");
-  });
-  document.getElementById("xw-reveal").addEventListener("click",function(){
-    cells.forEach(function(el){el.value=el.dataset.a;el.classList.remove("bad");el.classList.add("ok");});
-    status.textContent="All answers revealed.";
-  });
-  document.getElementById("xw-clear").addEventListener("click",function(){
-    cells.forEach(function(el){el.value="";el.classList.remove("ok","bad");});
-    status.textContent="";
+  placed.sort().forEach(function(w){var li=document.createElement("li");li.textContent=w;li.id="w-"+w;list.appendChild(li);});
+
+  var start=null, found=0;
+  function pick(td){
+    var r=+td.dataset.r, c=+td.dataset.c;
+    if(!start){start=[r,c];td.classList.add("sel");status.textContent="Now click the last letter.";return;}
+    var r0=start[0], c0=start[1];
+    cells[r0][c0].classList.remove("sel"); start=null;
+    var dr=Math.sign(r-r0), dc=Math.sign(c-c0), len=Math.max(Math.abs(r-r0),Math.abs(c-c0))+1;
+    if(!(r-r0===0||c-c0===0||Math.abs(r-r0)===Math.abs(c-c0))||len<2){status.textContent="Pick letters in a straight line.";return;}
+    var s="", path=[];
+    for(var i=0;i<len;i++){var rr=r0+dr*i, cc=c0+dc*i;s+=grid[rr][cc];path.push(cells[rr][cc]);}
+    var rev=s.split("").reverse().join(""), w=placed.indexOf(s)>-1?s:(placed.indexOf(rev)>-1?rev:null);
+    var li=w&&document.getElementById("w-"+w);
+    if(li&&!li.classList.contains("done")){
+      li.classList.add("done"); path.forEach(function(t){t.classList.add("hit");}); found++;
+      status.textContent=found===placed.length?"All "+found+" found. Well done!":"Found "+w+"! "+(placed.length-found)+" to go.";
+    } else status.textContent="Not a word on the list. Try again.";
+  }
+  table.addEventListener("click",function(e){var td=e.target.closest("td");if(td)pick(td);});
+  table.addEventListener("keydown",function(e){if((e.key==="Enter"||e.key===" ")&&e.target.tagName==="TD"){e.preventDefault();pick(e.target);}});
+})();
+(function(){
+  var quiz=document.getElementById("quiz"), out=document.getElementById("quiz-score");
+  quiz.addEventListener("change",function(){
+    var n=quiz.querySelectorAll(".got input:checked").length;
+    out.textContent="Score: "+n+" / 10"+(n===10?" · Full marks, you colourful genius!":"");
   });
 })();
 </script>
