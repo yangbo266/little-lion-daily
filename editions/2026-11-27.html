@@ -1,0 +1,721 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#a8262e">
+<meta name="apple-mobile-web-app-title" content="小狮日报">
+<link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32.png?v=2">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png?v=2">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta name="edition" content="2026-11-27">
+<script>(function(){var me="2026-11-27",busy=0;function c(){if(document.visibilityState!=="visible"||busy)return;busy=1;fetch("../index.html",{cache:"no-store"}).then(function(r){return r.text();}).then(function(t){var m=t.match(/name="edition" content="([^"]+)"/);if(m&&m[1]>me&&location.pathname.indexOf("/editions/")<0)location.reload();}).catch(function(){}).then(function(){busy=0;});}document.addEventListener("visibilitychange",c);addEventListener("pageshow",c);addEventListener("focus",c);})();</script>
+<style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body>
+<title>The Little Lion Daily</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Libre+Caslon+Display&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Noto+Serif+SC:wght@400;700&family=IBM+Plex+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: printed sheets (A1, A2, A3…) stacked; multi-column newsprint inside, one column on phones */
+:root{
+  --paper:#eeebe3;
+  --sheet:#f7f5ef;
+  --ink:#1c1b18;
+  --ink-soft:#4d4a42;
+  --rule:#1c1b18;
+  --hair:#c9c4b6;
+  --spot:#a8262e;
+  --found:#e9d98c;
+  --f-mast:"UnifrakturMaguntia","Old English Text MT",serif;
+  --f-head:"Libre Caslon Display","Didot","Bodoni 72",Georgia,serif;
+  --f-body:"Source Serif 4","Iowan Old Style",Georgia,serif;
+  --f-zh:"Noto Serif SC","Songti SC","STSong",serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --paper:#111214; --sheet:#1b1c1f; --ink:#e7e3d8; --ink-soft:#b2ad9f;
+    --rule:#e7e3d8; --hair:#3d3d40; --spot:#e4706f; --found:#5c5222;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --paper:#111214; --sheet:#1b1c1f; --ink:#e7e3d8; --ink-soft:#b2ad9f;
+  --rule:#e7e3d8; --hair:#3d3d40; --spot:#e4706f; --found:#5c5222;
+}
+
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--f-body);font-size:17px;line-height:1.55;padding-inline:16px;padding-block:28px 60px}
+.sheet{max-width:1120px;margin:0 auto 36px;background:var(--sheet);padding:28px clamp(16px,4vw,44px) 36px;box-shadow:0 1px 0 var(--hair),0 10px 30px -18px rgba(0,0,0,.35);position:relative}
+.folio{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-family:var(--f-mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft);border-bottom:1px solid var(--rule);padding-bottom:6px;margin-bottom:18px}
+
+/* Masthead */
+.mast{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:16px}
+.ear{border:1px solid var(--rule);padding:8px 10px;font-family:var(--f-mono);font-size:11.5px;line-height:1.45;text-transform:uppercase;letter-spacing:.05em;max-width:200px}
+.ear.r{justify-self:end;text-align:right}
+.ear b{display:block;font-size:13px;color:var(--spot)}
+.title{text-align:center}
+.title h1{font-family:var(--f-mast);font-weight:400;font-size:clamp(44px,8vw,92px);line-height:.95;margin:0;letter-spacing:.01em}
+.title .zh{font-family:var(--f-zh);font-size:15px;letter-spacing:.5em;margin-top:6px;color:var(--ink-soft)}
+.dateline{display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px 18px;border-top:3px double var(--rule);border-bottom:1px solid var(--rule);margin-top:14px;padding:6px 0;font-family:var(--f-mono);font-size:12.5px;text-transform:uppercase;letter-spacing:.06em}
+
+h2,h3{font-family:var(--f-head);font-weight:400;text-wrap:balance;margin:0}
+.kicker{font-family:var(--f-mono);font-size:11.5px;text-transform:uppercase;letter-spacing:.12em;color:var(--spot);margin-bottom:6px}
+.byline{font-family:var(--f-mono);font-size:12px;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.05em;margin:8px 0 12px}
+p{margin:0 0 .8em;hyphens:auto}
+.dropcap::first-letter{font-family:var(--f-head);float:left;font-size:4.1em;line-height:.8;padding:6px 8px 0 0;color:var(--spot)}
+.rule-sec{border:0;border-top:1px solid var(--rule);margin:26px 0 18px}
+
+/* Pictures */
+.fig{margin:14px 0 16px;break-inside:avoid}
+.fig img{display:block;width:100%;max-width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;filter:grayscale(.2) contrast(1.04) sepia(.08);border:1px solid var(--hair)}
+.fig figcaption{font-size:14px;line-height:1.4;color:var(--ink-soft);margin-top:6px;font-style:italic}
+.fig .credit{display:block;font-style:normal;font-family:var(--f-mono);font-size:10.5px;letter-spacing:.04em;text-transform:uppercase;margin-top:3px}
+
+/* Front page: briefing */
+.brief{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:22px;border-bottom:1px solid var(--rule)}
+.story{padding:4px 22px 20px 0}
+.story + .story{padding:4px 0 20px 22px;border-left:1px solid var(--hair)}
+.story h2{font-size:clamp(26px,3vw,34px);line-height:1.08;margin-bottom:10px}
+.story h2.zh{font-family:var(--f-zh);font-weight:700;font-size:clamp(23px,2.6vw,29px);line-height:1.3}
+.story .src{font-family:var(--f-mono);font-size:12px;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.05em}
+.story p.why{font-size:16px;color:var(--ink-soft);margin-top:10px}
+.story .zh-body{font-family:var(--f-zh);font-size:16px;line-height:1.8}
+.readlink{display:inline-block;margin-top:6px;font-family:var(--f-mono);font-size:13px;font-weight:600;color:var(--ink);text-decoration:none;border:1px solid var(--rule);padding:7px 12px;letter-spacing:.04em}
+.readlink:hover{background:var(--ink);color:var(--sheet)}
+.readlink:focus-visible,button:focus-visible,.ws td:focus-visible,summary:focus-visible,.archive a:focus-visible{outline:2px solid var(--spot);outline-offset:2px}
+
+/* Feature with sidebar */
+.with-side{display:grid;grid-template-columns:2.2fr 1fr;gap:28px;margin-top:22px}
+.feature h2{font-size:clamp(32px,4.4vw,50px);line-height:1.02}
+.deck{font-family:var(--f-body);font-style:italic;font-size:19px;color:var(--ink-soft);margin:10px 0 6px;max-width:60ch}
+.cols{column-count:2;column-gap:26px;column-rule:1px solid var(--hair)}
+.fact{break-inside:avoid;border-top:2px solid var(--rule);border-bottom:1px solid var(--rule);padding:10px 0;margin:6px 0 14px;font-family:var(--f-head);font-size:22px;line-height:1.2;text-align:center}
+.fact small{display:block;font-family:var(--f-mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft);margin-top:4px}
+.side{border-left:1px solid var(--hair);padding-left:24px;display:flex;flex-direction:column;gap:24px}
+.box-label{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;border-bottom:1px solid var(--rule);padding-bottom:4px;margin-bottom:10px}
+.quote blockquote{margin:0;font-family:var(--f-head);font-size:27px;line-height:1.18}
+.quote cite{display:block;margin-top:10px;font-style:normal;font-family:var(--f-mono);font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-soft)}
+.quote p{font-size:15px;color:var(--ink-soft);margin-top:10px}
+.joke p{font-size:16px}
+.joke .punch{font-style:italic}
+.index ol{list-style:none;margin:0;padding:0;font-size:15px}
+.index li{display:flex;justify-content:space-between;gap:10px;border-bottom:1px dotted var(--hair);padding:5px 0}
+.index li span:last-child{font-family:var(--f-mono);font-variant-numeric:tabular-nums;color:var(--ink-soft)}
+
+/* Chinese corner */
+.zhbox{font-family:var(--f-zh)}
+.zhbox .idiom{font-size:38px;font-weight:700;letter-spacing:.2em;line-height:1.2}
+.zhbox .py{font-family:var(--f-mono);font-size:13px;color:var(--ink-soft);margin-bottom:8px}
+.zhbox p{font-size:16px;line-height:1.85}
+
+/* Recipe */
+.recipe{display:grid;grid-template-columns:1fr 1.4fr;gap:28px;align-items:start}
+.recipe h2{font-size:clamp(30px,4vw,44px);line-height:1.04}
+.recipe .meta{display:flex;flex-wrap:wrap;gap:6px 16px;font-family:var(--f-mono);font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-soft);margin:8px 0 14px}
+.recipe h3{font-family:var(--f-mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;border-bottom:1px solid var(--rule);padding-bottom:4px;margin:4px 0 10px}
+.recipe ul,.recipe ol{margin:0 0 14px;padding-left:1.2em;font-size:16px}
+.recipe li{margin-bottom:6px}
+.tip{border:1px solid var(--rule);padding:10px 14px;font-size:15px}
+.tip b{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--spot)}
+
+/* Fun page */
+.puzzles{display:grid;grid-template-columns:auto 1fr;gap:30px;align-items:start}
+.puzzles h2,.riddles h2{font-size:32px;line-height:1.05;margin-bottom:6px}
+.instr{font-size:15px;color:var(--ink-soft);max-width:46ch}
+.ws-wrap{overflow-x:auto}
+.ws{border-collapse:collapse;font-family:var(--f-mono);font-weight:600;user-select:none;margin-top:8px}
+.ws td{width:32px;height:32px;text-align:center;border:1px solid var(--hair);font-size:16px;cursor:pointer;padding:0}
+.ws td.sel{background:var(--ink);color:var(--sheet)}
+.ws td.hit{background:var(--found)}
+.wordlist{display:flex;flex-wrap:wrap;gap:6px 14px;list-style:none;padding:0;margin:12px 0 0;font-family:var(--f-mono);font-size:13.5px;max-width:420px}
+.wordlist li.done{text-decoration:line-through;color:var(--ink-soft)}
+.ws-status{font-family:var(--f-mono);font-size:13px;margin-top:8px;color:var(--spot);min-height:1.4em}
+.riddles ol{margin:0;padding-left:1.4em;display:flex;flex-direction:column;gap:12px}
+.riddles li{font-size:16.5px}
+.riddles details summary{cursor:pointer;font-family:var(--f-mono);font-size:12.5px;color:var(--spot);letter-spacing:.04em;margin-top:2px}
+.riddles details[open] summary{margin-bottom:2px}
+.week-note{grid-column:1/-1;margin:0 0 8px;font-family:var(--f-mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--spot)}
+.week{margin-top:26px;border-top:3px double var(--rule);padding-top:12px;display:grid;grid-template-columns:repeat(7,1fr);gap:0}
+.week div{padding:4px 10px;border-left:1px solid var(--hair);font-size:14px}
+.week div:first-child{border-left:0}
+.week b{display:block;font-family:var(--f-mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase}
+.week .today{background:var(--ink);color:var(--sheet)}
+.archive{margin-top:22px}
+.archive ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.archive a{display:inline-block;font-family:var(--f-mono);font-size:13px;color:var(--ink);text-decoration:none;border:1px solid var(--hair);padding:6px 10px}
+.archive a:hover{border-color:var(--rule)}
+.archive a[aria-current]{background:var(--ink);color:var(--sheet);border-color:var(--ink)}
+.colophon{text-align:center;font-family:var(--f-mono);font-size:11.5px;color:var(--ink-soft);margin-top:18px;letter-spacing:.05em}
+
+@page{size:A4;margin:12mm}
+@media print{
+  :root,:root[data-theme="dark"]{color-scheme:light;--paper:#fff;--sheet:#fff;--ink:#111;--ink-soft:#444;--rule:#111;--hair:#bbb;--spot:#a8262e;--found:#e9d98c}
+  body{padding:0;font-size:11pt;background:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .sheet{max-width:none;margin:0;padding:0;box-shadow:none;break-after:page}
+  .sheet:last-of-type{break-after:auto}
+  .fig,.fact,.book,.tip,.zhbox,.recipe>div,.riddles li,.ws-wrap{break-inside:avoid}
+  .readlink{border:0;padding:0;text-decoration:underline}
+  .readlink::after{content:" " attr(href);font-weight:400;font-size:9pt;word-break:break-all}
+  .ws-status,.archive{display:none}
+  .riddles details>*:not(summary){display:none}
+}
+@media (max-width:860px){
+  .with-side,.puzzles,.recipe{grid-template-columns:1fr}
+  .side{border-left:0;padding-left:0;border-top:1px solid var(--rule);padding-top:18px}
+  .week{grid-template-columns:repeat(4,1fr);row-gap:10px}
+  .week div:nth-child(5){border-left:0}
+}
+@media (max-width:640px){
+  body{font-size:16.5px}
+  .mast{grid-template-columns:1fr}
+  .ear{display:none}
+  .brief{grid-template-columns:1fr}
+  .story{padding-right:0}
+  .story + .story{padding-left:0;border-left:0;border-top:1px solid var(--hair);padding-top:16px}
+  .cols{column-count:1}
+  .ws td{width:26px;height:26px;font-size:14px}
+  .week{grid-template-columns:repeat(2,1fr)}
+  .week div:nth-child(odd){border-left:0}
+}
+/* Print keeps the desktop column layout on A4 */
+@media print{
+  .with-side{grid-template-columns:2.2fr 1fr;gap:20px}
+  .side{border-left:1px solid var(--hair);padding-left:16px;border-top:0;padding-top:0}
+  .recipe{grid-template-columns:1fr 1.4fr}
+  .puzzles{grid-template-columns:auto 1fr}
+  .week{grid-template-columns:repeat(7,1fr)}
+  .week div{border-left:1px solid var(--hair)}
+  .week div:first-child{border-left:0}
+  .ear{max-width:150px}
+}
+/* Highlights-style boxes */
+.timeline{font-size:16px;line-height:1.7;border-left:3px solid var(--spot);padding-left:12px}
+.timeline b{font-family:var(--f-mono);font-size:13px;letter-spacing:.04em;display:inline-block;min-width:68px}
+.sfx{font-family:var(--f-head);font-size:22px;color:var(--spot);letter-spacing:.04em}
+.weird,.tryit{break-inside:avoid;margin:8px 0 16px;padding:12px 14px;font-size:15.5px}
+.weird{background:var(--found)}
+.weird ul{margin:0;padding-left:1.1em;display:flex;flex-direction:column;gap:8px}
+.weird .box-label,.tryit .box-label{margin-bottom:8px}
+.tryit{border:2px dashed var(--rule)}
+.tryit p{margin-bottom:.5em}
+.small{font-size:14px;color:var(--ink-soft)}
+/* Future You */
+.future-head h2{font-size:clamp(28px,3.6vw,40px);line-height:1.05}
+.future-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:14px}
+.future-grid>div{padding:0 18px;border-left:1px solid var(--hair);font-size:15.5px}
+.future-grid>div:first-child{padding-left:0;border-left:0}
+.future-grid>div:last-child{padding-right:0}
+@media (max-width:860px){.future-grid{grid-template-columns:1fr;gap:16px}.future-grid>div{padding:0;border-left:0}}
+@media print{.future-grid{grid-template-columns:repeat(3,1fr)}.future-grid>div{padding:0 12px;border-left:1px solid var(--hair)}.future-grid>div:first-child{padding-left:0;border-left:0}}
+/* Wednesday: quiz + riddles side by side, case-file boxes */
+.duo{display:grid;grid-template-columns:1.15fr 1fr;gap:30px;align-items:start}
+.duo h2{font-size:32px;line-height:1.05;margin-bottom:6px}
+.got{display:inline-flex;align-items:center;gap:6px;font-family:var(--f-mono);font-size:12px;color:var(--ink-soft);margin-left:10px;cursor:pointer}
+.quiz-score{font-family:var(--f-mono);font-size:13.5px;margin-top:14px;color:var(--spot);min-height:1.4em}
+.exhibit{break-inside:avoid;border:1px solid var(--rule);padding:10px 14px;margin:8px 0 14px;font-size:15.5px}
+.exhibit .box-label{color:var(--spot)}
+.exhibit ol{margin:0;padding-left:1.2em;display:flex;flex-direction:column;gap:6px}
+.tryit details summary,.exhibit details summary,.future details summary{cursor:pointer;font-family:var(--f-mono);font-size:12.5px;color:var(--spot);letter-spacing:.04em}
+.fig.diagram img{aspect-ratio:auto;object-fit:contain;filter:none;background:#fff}
+.fig.tall img{aspect-ratio:auto}
+@media (max-width:860px){.duo{grid-template-columns:1fr}}
+@media print{.duo{grid-template-columns:1.15fr 1fr}.got,.quiz-score{display:none}.exhibit details>*:not(summary),.tryit details>*:not(summary),.future details>*:not(summary){display:none}}
+/* Daily story */
+.tale h2{font-size:clamp(34px,4.8vw,54px);line-height:1.02}
+.tale-intro{border-top:2px solid var(--rule);border-bottom:1px solid var(--rule);padding:12px 0 4px;margin:6px 0 18px;font-size:16px;column-count:2;column-gap:26px}
+.tale .cols{column-count:2}
+.tale .end{font-family:var(--f-mono);font-size:12px;color:var(--spot);text-align:center}
+.tale-extras{display:grid;grid-template-columns:1fr 1.3fr;gap:28px;margin-top:20px;border-top:1px solid var(--rule);padding-top:14px;font-size:15.5px}
+.tale-extras dl{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;margin:0}
+.tale-extras dt{font-weight:600}
+.tale-extras dd{margin:0;color:var(--ink-soft)}
+.tale-extras ol{margin:0;padding-left:1.2em;display:flex;flex-direction:column;gap:8px}
+@media (max-width:640px){.tale-intro,.tale .cols{column-count:1}.tale-extras{grid-template-columns:1fr}}
+@media print{.tale-extras{grid-template-columns:1fr 1.3fr}}
+</style>
+<style>
+/* Thursday: comic strip + fun facts */
+.comic{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:12px}
+.comic svg{display:block;width:100%;height:auto;border:2px solid var(--rule);background:var(--sheet);color:var(--ink)}
+.comic .bub{fill:var(--sheet);stroke:currentColor;stroke-width:1.5}
+.comic text{fill:currentColor;font-family:var(--f-body);font-size:12.5px}
+.comic text.sfx-t{font-family:var(--f-head);font-size:22px;fill:var(--spot)}
+.comic text.cap{font-family:var(--f-mono);font-size:10px;letter-spacing:.06em}
+.comic .ln{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.comic .solid{fill:currentColor}
+.comic .stain{fill:#9a6a3a;opacity:.75}
+.facts-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:12px;border-top:2px solid var(--rule)}
+.facts-grid>div{padding:12px 14px;border-left:1px solid var(--hair);border-bottom:1px solid var(--hair);font-size:15px}
+.facts-grid>div:nth-child(4n+1){border-left:0;padding-left:0}
+.facts-grid b.n{display:block;font-family:var(--f-head);font-size:30px;line-height:1;color:var(--spot);margin-bottom:4px}
+.poem{font-size:24px;line-height:1.9;letter-spacing:.12em;text-align:center;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:8px 0;margin:8px 0 12px}
+.voice{break-inside:avoid;border-left:3px solid var(--spot);padding:6px 0 6px 12px;margin:0 0 14px;font-size:15.5px;font-style:italic}
+.voice b{font-style:normal;font-family:var(--f-mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;display:block;color:var(--spot)}
+.count{font-family:var(--f-head);font-size:40px;line-height:1;color:var(--spot);float:left;margin:0 10px 0 0}
+@media (max-width:860px){.comic{grid-template-columns:repeat(2,1fr)}.facts-grid{grid-template-columns:1fr 1fr}.facts-grid>div:nth-child(4n+1){border-left:1px solid var(--hair);padding-left:14px}.facts-grid>div:nth-child(2n+1){border-left:0;padding-left:0}}
+@media (max-width:480px){.comic{grid-template-columns:1fr}.facts-grid{grid-template-columns:1fr}.facts-grid>div{border-left:0!important;padding-left:0!important}}
+@media print{.comic{grid-template-columns:repeat(4,1fr)}.facts-grid{grid-template-columns:repeat(4,1fr)}}
+</style>
+
+<style>
+/* Friday: interactive crossword */
+.xw-layout{display:grid;grid-template-columns:auto 1fr;gap:30px;align-items:start}
+.xw-wrap{overflow-x:auto}
+.xw{border-collapse:collapse;margin-top:8px}
+.xw td{width:34px;height:34px;padding:0;border:1px solid var(--rule);position:relative;background:var(--sheet)}
+.xw td.xb{background:transparent;border-color:transparent}
+.xw .xn{position:absolute;top:1px;left:2px;font-family:var(--f-mono);font-size:9px;line-height:1;color:var(--ink-soft);pointer-events:none}
+.xw input{width:100%;height:100%;border:0;background:transparent;text-align:center;font-family:var(--f-mono);font-weight:600;font-size:17px;text-transform:uppercase;color:var(--ink);padding:6px 0 0;caret-color:var(--spot)}
+.xw input:focus{outline:2px solid var(--spot);outline-offset:-2px;background:var(--found)}
+.xw input.ok{color:#2e7d32}
+.xw input.bad{color:var(--spot);text-decoration:line-through}
+.xw-btns{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.xw-btns button{font-family:var(--f-mono);font-size:12.5px;background:transparent;color:var(--ink);border:1px solid var(--rule);padding:6px 10px;cursor:pointer}
+.xw-btns button:hover{background:var(--ink);color:var(--sheet)}
+.xw-clues ol{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px;font-size:15.5px}
+.xw-clues b{font-family:var(--f-mono);display:inline-block;min-width:24px;color:var(--spot)}
+@media (max-width:860px){.xw-layout{grid-template-columns:1fr}}
+@media (max-width:480px){.xw td{width:27px;height:27px}.xw input{font-size:14px}}
+@media print{.xw-layout{grid-template-columns:auto 1fr}.xw-btns,#xw-status{display:none}.xw input{color:transparent}}
+</style>
+
+<!-- ==================== PAGE A1 ==================== -->
+<article class="sheet" aria-label="Front page">
+  <div class="folio"><span>Vol. I · No. 4</span><span>Page A1</span><span>Singapore edition</span></div>
+
+  <header class="mast">
+    <div class="ear"><b>Read time</b>15 minutes, plus 2 news links and a 13-minute story</div>
+    <div class="title">
+      <h1>The Little Lion Daily</h1>
+      <div class="zh">小狮日报</div>
+    </div>
+    <div class="ear r"><b>Friday crossword</b>Fill it in on screen · Page A4</div>
+  </header>
+  <div class="dateline">
+    <span>Friday, 27 November 2026</span>
+    <span>星期五 · 十一月二十七日</span>
+    <span>Price: free for curious minds</span>
+  </div>
+
+  <!-- Today's news: links only -->
+  <section class="brief" aria-label="Today's news">
+    <div class="story">
+      <div class="kicker">Today's news · Your rights as a shopper</div>
+      <h2>Cooling-off period for prepaid packages, stronger influencer ad oversight among recommendations to better protect consumers</h2>
+      <div class="src">CNA · Singapore · 27 Nov 2026</div>
+      <p class="why">Why read it: Singapore's Consumer Protection Review Panel has released seven recommendations, covering things like losing money on prepaid packages and pressure selling, plus closer oversight of influencer advertising. You are a consumer every time you buy bubble tea, top up a game or sign up for a class, and you scroll past influencer ads every day. Notice which ideas would change how shops can sell to you. (It also pairs nicely with today's Future You · Business column on A2.)</p>
+      <a class="readlink" href="https://www.channelnewsasia.com/singapore/consumer-protection-case-influencer-scalping-prepaid-packages-6586471" target="_blank" rel="noopener">Read on CNA →</a>
+    </div>
+    <div class="story">
+      <div class="kicker">今日中文新闻 · 联合早报</div>
+      <h2 class="zh">就业居民名义收入中位数今年首破6000元　劳动参与率连跌五年</h2>
+      <div class="src">联合早报 · 新加坡 · 2026年11月27日</div>
+      <p class="zh-body why">为什么值得读：全职就业居民的每月收入中位数第一次超过6000元，听起来是好消息。可是报道也说，企业加薪越来越谨慎，通货膨胀又走高，所以"实际收入"的增长明显放慢了。读的时候请抓住两个关键词："名义收入"是工资单上的数字，"实际收入"是扣除物价上涨以后，这笔钱真正能买到多少东西。为什么两者会不一样？</p>
+      <a class="readlink" href="https://www.zaobao.com.sg/news/singapore/story20261127-10063528" target="_blank" rel="noopener">在联合早报阅读 →</a>
+    </div>
+  </section>
+
+  <div class="with-side">
+    <section class="feature">
+      <div class="kicker">Maths mystery · You be the judge · 6 min read + 1 game</div>
+      <h2>Three doors, one car, and the puzzle that made professors furious</h2>
+      <p class="deck">A game show question so sneaky that it fooled mathematicians with PhDs. A flock of pigeons, meanwhile, got it right.</p>
+      <div class="byline">By the Little Lion puzzles desk</div>
+      <div class="cols">
+        <p class="dropcap">Lights. Music. A studio audience screaming. You are standing on a TV stage in front of three closed doors, labelled 1, 2 and 3.</p>
+        <p>Behind one door is a shiny new car. Behind each of the other two is a goat. (A real one. It is chewing something. You don't want a goat.)</p>
+        <p class="timeline"><b>Step 1</b> You point at Door 1.<br><b>Step 2</b> The host, who <i>knows</i> where the car is, walks over to Door 3 and flings it open. <span class="sfx">MEHHH.</span> A goat.<br><b>Step 3</b> He smiles. "Do you want to stick with Door 1… or switch to Door 2?"</p>
+        <p>Stop. Before you read on, decide. Stick or switch? Does it even matter?</p>
+        <p>If you said "It doesn't matter, it's 50–50 now, two doors left," congratulations: you're in excellent company. You're also wrong. <b>You should switch.</b> Switching wins the car <b>two times out of three</b>.</p>
+
+        <div class="fact">Stick: wins 1 in 3<br>Switch: wins 2 in 3<small>As long as the host knows where the car is, always opens a goat door, and always offers the swap</small></div>
+
+        <p><b>Case file: where it came from.</b> The puzzle is named after <b>Monty Hall</b>, the Canadian-born host of the American TV game show <i>Let's Make a Deal</i>, which began in 1963. Contestants on the show really did choose between doors, and the booby prizes even had a name: "zonks". In 1975, a statistician called <b>Steve Selvin</b> wrote up a version of the three-door puzzle in a letter to the journal <i>The American Statistician</i>.</p>
+        <p>It stayed a quiet nerd riddle until <b>1990</b>, when a reader sent it to <b>Marilyn vos Savant</b>, who wrote a popular question-and-answer column in <i>Parade</i> magazine. She replied: switch. Her mailbag exploded. She received thousands of letters, and nearly a thousand of them were from people with PhDs, many telling her, sometimes rudely, that she had made a basic mistake.</p>
+        <p>She hadn't. Even the legendary Hungarian mathematician <b>Paul Erdős</b>, who wrote more research papers than almost anyone in history, reportedly refused to believe it until a friend showed him a computer simulation.</p>
+
+        <figure class="fig tall">
+          <img src="../img/lets-make-a-deal-1974.jpg" alt="Black-and-white publicity photo of three smiling people from the TV show Let's Make a Deal: a woman, Monty Hall in the middle, and a man in a suit" width="692" height="744">
+          <figcaption>The real Monty Hall (centre) with Carol Merrill and announcer Jay Stewart, in a publicity photo for <i>Let's Make a Deal</i>.<span class="credit">Photo: ABC Television / Wikimedia Commons, Public domain</span></figcaption>
+        </figure>
+
+        <p><b>So why does switching work?</b> Forget the goat drama and look at your first pick.</p>
+        <p>When you pointed at Door 1, you had a <b>1-in-3</b> chance of being right. That means there was a <b>2-in-3</b> chance the car was somewhere in "the other two doors".</p>
+        <p>Now the host opens one of those other two doors. But he isn't guessing. He <i>knows</i> where the car is and he will <i>always</i> show you a goat. So opening that door doesn't change the odds of your first pick at all. It just squeezes the whole 2-in-3 chance of "the other two" into the one door left standing.</p>
+        <p>Put another way: switching wins every time your first pick was a goat. And your first pick is a goat two times out of three.</p>
+
+        <figure class="fig diagram">
+          <img src="../img/monty-hall-probabilities.png" alt="Diagram of the three possible games. In two of them the player's first pick hides a goat, and switching wins the car. In one, the first pick hides the car, and staying wins." width="960" height="960">
+          <figcaption>All three ways the game can go. You start with the yellow door. In two out of three, switching wins.<span class="credit">Diagram: Rick Block / Wikimedia Commons, Public domain</span></figcaption>
+        </figure>
+
+        <p><b>Still not convinced? Make it huge.</b> Imagine <b>100 doors</b>. You pick Door 1. The host, who knows everything, opens 98 other doors, all goats, leaving only your door and Door 74. Would you really stick? Your first pick had a 1-in-100 chance. Door 74 survived a host who was carefully avoiding the car. Switch!</p>
+        <p><b>The fine print.</b> The trick only works because the host knows and always opens a goat door. If he opened a door at random and it <i>happened</i> to show a goat, then it really would be 50–50. And in a 1991 interview with <i>The New York Times</i>, Monty Hall himself pointed out that on the real show he didn't have to offer a switch at all, so a sneaky host could use the offer to tempt you away from a winner. Maths only works when you know the rules of the game.</p>
+
+        <div class="weird">
+          <div class="box-label">Weird but true</div>
+          <ul>
+            <li>In a 2010 study, scientists Walter Herbranson and Julia Schroeder gave pigeons a Monty Hall–style game with lit-up keys. After lots of practice, the pigeons learned to switch almost every time. The human volunteers didn't get close.</li>
+            <li>Many people stick with their first door even after the maths is explained. One idea: we feel worse about losing after switching ("I had it and I gave it away!") than after sticking.</li>
+            <li>Hall was born in Winnipeg, Canada, in 1921 and hosted the show for decades. A probability puzzle is now his most famous legacy.</li>
+          </ul>
+        </div>
+        <div class="tryit">
+          <div class="box-label">Try this · The three-cup game (5 minutes, 1 friend)</div>
+          <p>You need three cups and a coin. Your friend is the host: they hide the coin under one cup while you look away, and they must remember where it is.</p>
+          <p><b>1.</b> You point at a cup. <b>2.</b> The host lifts an <i>empty</i> cup from the other two. <b>3.</b> Play 15 rounds where you always <b>stick</b>, then 15 where you always <b>switch</b>. Tally the wins.</p>
+          <details><summary>What to expect</summary><p class="small">Over many rounds, sticking should win about a third of the time (around 5 of 15) and switching about two-thirds (around 10 of 15). With only 15 rounds, luck can wobble the numbers, so pool results with classmates. The more rounds you play, the closer you'll get to 1/3 and 2/3. That's the law of large numbers in action.</p></details>
+        </div>
+        <div class="exhibit">
+          <div class="box-label">You decide</div>
+          <p>In today's story on A3, a young man also faces doors: one hides a lady, the other a tiger. The princess knows the secret and signals him. But unlike Monty's rules, we don't know whose side she's on. Is knowing who the "host" is, and what they want, more important than any maths?</p>
+        </div>
+      </div>
+    </section>
+
+    <aside class="side">
+      <div class="quote">
+        <div class="box-label">Quote of the day</div>
+        <blockquote>"Two roads diverged in a wood, and I— / I took the one less traveled by, / And that has made all the difference."</blockquote>
+        <cite>Robert Frost, "The Road Not Taken" (1916)</cite>
+        <p>Famous at graduations, but read the whole poem. Earlier, the speaker admits the two paths were worn "really about the same". It's a poem about how we tell the story of our choices afterwards. A good thought for a day full of doors.</p>
+      </div>
+      <div class="joke">
+        <div class="box-label">Laugh line</div>
+        <p>I used to be indecisive.</p>
+        <p class="punch">Now I'm not so sure.</p>
+      </div>
+      <div class="joke">
+        <div class="box-label">And another</div>
+        <p>A statistician tried to cross a river that was, on average, one metre deep.</p>
+        <p class="punch">He drowned.</p>
+        <p class="small">(An average hides the deep bits. Always ask what the numbers leave out.)</p>
+      </div>
+      <nav class="index" aria-label="Inside this edition">
+        <div class="box-label">Inside</div>
+        <ol>
+          <li><span>Today's news (2 links)</span><span>A1</span></li>
+          <li><span>Three doors: the Monty Hall puzzle</span><span>A1</span></li>
+          <li><span>Myth or fact: too many choices?</span><span>A2</span></li>
+          <li><span>成语角 · 朝三暮四</span><span>A2</span></li>
+          <li><span>Future You · Business</span><span>A2</span></li>
+          <li><span>Daily story: The Lady, or the Tiger?</span><span>A3</span></li>
+          <li><span>Friday crossword</span><span>A4</span></li>
+          <li><span>Logic puzzles &amp; riddles</span><span>A4</span></li>
+        </ol>
+      </nav>
+    </aside>
+  </div>
+</article>
+
+<!-- ==================== PAGE A2 ==================== -->
+<article class="sheet" aria-label="Page A2">
+  <div class="folio"><span>The Little Lion Daily</span><span>Page A2</span><span>Friday, 27 November 2026</span></div>
+
+  <div class="with-side" style="margin-top:0">
+    <section class="feature">
+      <div class="kicker">Psychology · Myth vs fact · 4 min read</div>
+      <h2>Can too many choices make you choose nothing?</h2>
+      <p class="deck">The bubble tea queue, the 40-item menu, and a famous experiment with jam.</p>
+      <div class="byline">By the Little Lion mind desk</div>
+      <div class="cols">
+        <p class="dropcap">You've reached the front of the bubble tea queue. Behind you, eleven people. In front of you, a menu board the size of an HDB void deck: milk teas, fruit teas, brown sugar, cheese foam, five sugar levels, four ice levels, nine toppings. Your brain goes <span class="sfx">bzzzt</span>. You say, "Er… same as last time."</p>
+        <p>Sound familiar? Psychologists have a name for that frozen feeling: <b>choice overload</b>. And it all started with jam.</p>
+        <p><b>The experiment.</b> In 2000, psychologists <b>Sheena Iyengar</b> and <b>Mark Lepper</b> published a study run at an upmarket supermarket in California. On some days, a tasting table offered <b>24</b> flavours of jam. On other days, just <b>6</b>.</p>
+        <p class="timeline"><b>24 jams</b> More shoppers stopped to look (about 60%). But only about <b>3%</b> of those who stopped bought a jar.<br><b>6 jams</b> Fewer shoppers stopped (about 40%). But about <b>30%</b> of them bought a jar.</p>
+        <p>More choice got people's attention, and then scared their wallets away. The study became hugely famous, and businesses started trimming their menus.</p>
+        <p><b>The twist.</b> Science doesn't end with one experiment. Other researchers tried to repeat the effect, sometimes finding it and sometimes not. A 2010 review that pooled dozens of choice experiments found that, on average, the effect was close to zero. Choice overload is real, but only in certain situations, for example when:</p>
+        <p class="timeline"><b>①</b> the options are hard to compare,<br><b>②</b> you don't already know what you like,<br><b>③</b> you're tired or rushed (hello, eleven people in the queue).</p>
+
+        <div class="exhibit">
+          <div class="box-label">You be the judge: myth or fact?</div>
+          <ol>
+            <li>"More choice is always better." <details><summary>Verdict</summary><p class="small">Myth. Sometimes extra options just add effort and regret.</p></details></li>
+            <li>"Too much choice always makes people give up." <details><summary>Verdict</summary><p class="small">Also a myth. It depends on the situation. Experts with clear preferences often enjoy big menus.</p></details></li>
+            <li>"Deciding your rules in advance makes choosing easier." <details><summary>Verdict</summary><p class="small">Fact, and it's a trick you can use today (see below).</p></details></li>
+          </ol>
+        </div>
+        <div class="tryit">
+          <div class="box-label">Try this · Be a "satisficer"</div>
+          <p>The economist Herbert Simon coined the word <b>satisficing</b> (satisfy + suffice): instead of hunting for the perfect option, you pick the first one that meets your standards. Next time you face a giant menu, set two rules <i>before</i> you look, e.g. "less sugar, under $4". Choose the first drink that passes. Then stop looking. Notice whether you enjoy it any less.</p>
+        </div>
+      </div>
+    </section>
+
+    <aside class="side">
+      <section class="zhbox">
+        <div class="box-label">成语角</div>
+        <div class="idiom">朝三暮四</div>
+        <div class="py">zhāo sān mù sì</div>
+        <p><b>故事：</b>《庄子·齐物论》里有一位养猴子的老人，叫"狙公"。他给猴子分橡子（古文叫"芧"），说："早上三颗，晚上四颗。"猴子们全都生气了。老人改口说："那就早上四颗，晚上三颗。"猴子们全都高兴了。</p>
+        <p><b>想一想：</b>一天加起来，还是七颗呀！东西一点没变，只是换了个说法，猴子的心情就完全不同。（《列子》里也记载了这个故事。）</p>
+        <p><b>意思：</b>这个成语原来指用花招骗人，现在多用来形容一个人<b>主意变来变去、反复无常</b>。例句：做计划要坚持，不能朝三暮四，今天学吉他、明天学画画。</p>
+        <p><b>和今天有什么关系？</b>A1版的蒙提·霍尔问题告诉我们：人的直觉很容易被"说法"带着走。商店把价格写成$9.99而不是$10，也是同一个道理。你会不会也有当"猴子"的时候？</p>
+        <p><b>小考考：</b>"朝三暮四"的"朝"读什么？是什么意思？</p>
+        <details><summary>看答案</summary><p>读 zhāo，意思是"早晨"（和"朝阳"的"朝"一样）。不读 cháo（朝代、朝向）。</p></details>
+      </section>
+    </aside>
+  </div>
+
+  <hr class="rule-sec">
+
+  <section class="future" aria-label="Future You">
+    <div class="future-head">
+      <div class="kicker">Future You · Business</div>
+      <h2>Unit economics: does each cup actually make money?</h2>
+    </div>
+    <div class="future-grid">
+      <div>
+        <div class="box-label">Know this</div>
+        <p><b>Unit economics</b> means looking at the money made or lost on <i>one</i> unit: one cup, one haircut, one app subscriber. It's the first question investors ask, because a business that loses money on every sale can't fix it by selling more.</p>
+        <p>Take an imaginary bubble tea shop. A cup sells for <b>$4.00</b>. Tea, milk, pearls, the cup, straw and sealing film cost <b>$1.40</b>. What's left, <b>$2.60</b>, is the <b>contribution margin</b>: what each cup contributes towards the <b>fixed costs</b> that don't change with sales, like rent and wages. If those are <b>$13,000</b> a month, the shop must sell 13,000 ÷ 2.60 = <b>5,000 cups</b> (about 167 a day) just to <b>break even</b>. Cup number 5,001 is the first real profit.</p>
+      </div>
+      <div>
+        <div class="box-label">Try this</div>
+        <p>Your CCA runs a brownie stall at a school carnival. One tray costs $12 and makes 24 brownies. The booth fee is $30. You plan to sell each brownie for $1.50.</p>
+        <p class="small"><b>1.</b> What does one brownie cost to make? <b>2.</b> What is the margin on each? <b>3.</b> How many must you sell to break even? <b>4.</b> A friend says, "Cut the price to $1, we'll sell loads!" How many do you need to sell now?</p>
+        <details><summary>Answers</summary><p class="small"><b>1.</b> $12 ÷ 24 = $0.50. <b>2.</b> $1.50 − $0.50 = $1.00. <b>3.</b> $30 ÷ $1.00 = 30 brownies. <b>4.</b> The margin halves to $0.50, so you need 60 brownies, double the sales just to break even. A small discount can take a big bite out of your margin.</p></details>
+      </div>
+      <div>
+        <div class="box-label">For your application</div>
+        <p>Singapore's three main undergraduate business schools are <b>NUS Business School</b>, <b>NTU's Nanyang Business School</b> and <b>SMU's Lee Kong Chian School of Business</b>. Many business programmes look beyond grades, and some use interviews or other assessments, so check each school's official site for the current process.</p>
+        <p>The best evidence is something you actually ran. If you do a fundraiser or a CCA stall, keep a <b>numbers log</b>: costs, price, units sold, margin, and one thing you'd change. "We sold 84 brownies, but cutting the price halved our margin" is far stronger than "I am interested in business". Practise by explaining one business news story a week in three sentences, starting with today's consumer protection story on A1.</p>
+      </div>
+    </div>
+  </section>
+</article>
+
+<!-- ==================== STORY PAGE ==================== -->
+<article class="sheet" aria-label="Page A3 story">
+  <div class="folio"><span>The Little Lion Daily</span><span>Page A3 · Daily story</span><span>Friday, 27 November 2026</span></div>
+
+  <section class="tale">
+    <div class="kicker">Daily story · a classic · about 13 minutes</div>
+    <h2>The Lady, or the Tiger?</h2>
+    <div class="byline">By Frank R. Stockton · first published 1882</div>
+    <div class="tale-intro">
+      <p><b>Before you read.</b> Frank R. Stockton (1834–1902) was an American writer, best known in his day for funny, fairy-tale-like stories for children and adults. This one first appeared in <i>The Century</i> magazine in November 1882 and made him famous overnight. Readers wrote to him for the rest of his life demanding the answer. He never gave one.</p>
+      <p>The language is old-fashioned and the sentences are long, so take your time; the narrator is being playful, especially with the word "semi-barbaric". Watch the princess closely: what does she know, what does she feel, and what might she choose? Then decide your answer before you reach the end, and see if you change your mind.</p>
+    </div>
+    <div class="cols">
+      <p class="dropcap">In the very olden time, there lived a semi-barbaric king, whose ideas, though somewhat polished and sharpened by the progressiveness of distant Latin neighbors, were still large, florid, and untrammelled, as became the half of him which was barbaric. He was a man of exuberant fancy, and, withal, of an authority so irresistible that, at his will, he turned his varied fancies into facts. He was greatly given to self-communing; and, when he and himself agreed upon any thing, the thing was done. When every member of his domestic and political systems moved smoothly in its appointed course, his nature was bland and genial; but whenever there was a little hitch, and some of his orbs got out of their orbits, he was blander and more genial still, for nothing pleased him so much as to make the crooked straight, and crush down uneven places.</p>
+      <p>Among the borrowed notions by which his barbarism had become semified was that of the public arena, in which, by exhibitions of manly and beastly valor, the minds of his subjects were refined and cultured.</p>
+      <p>But even here the exuberant and barbaric fancy asserted itself. The arena of the king was built, not to give the people an opportunity of hearing the rhapsodies of dying gladiators, nor to enable them to view the inevitable conclusion of a conflict between religious opinions and hungry jaws, but for purposes far better adapted to widen and develop the mental energies of the people. This vast amphitheatre, with its encircling galleries, its mysterious vaults, and its unseen passages, was an agent of poetic justice, in which crime was punished, or virtue rewarded, by the decrees of an impartial and incorruptible chance.</p>
+      <p>When a subject was accused of a crime of sufficient importance to interest the king, public notice was given that on an appointed day the fate of the accused person would be decided in the king's arena,—a structure which well deserved its name; for, although its form and plan were borrowed from afar, its purpose emanated solely from the brain of this man, who, every barleycorn a king, knew no tradition to which he owed more allegiance than pleased his fancy, and who ingrafted on every adopted form of human thought and action the rich growth of his barbaric idealism.</p>
+      <p>When all the people had assembled in the galleries, and the king, surrounded by his court, sat high up on his throne of royal state on one side of the arena, he gave a signal, a door beneath him opened, and the accused subject stepped out into the amphitheatre. Directly opposite him, on the other side of the enclosed space, were two doors, exactly alike and side by side. It was the duty and the privilege of the person on trial, to walk directly to these doors and open one of them. He could open either door he pleased: he was subject to no guidance or influence but that of the aforementioned impartial and incorruptible chance. If he opened the one, there came out of it a hungry tiger, the fiercest and most cruel that could be procured, which immediately sprang upon him, and tore him to pieces, as a punishment for his guilt. The moment that the case of the criminal was thus decided, doleful iron bells were clanged, great wails went up from the hired mourners posted on the outer rim of the arena, and the vast audience, with bowed heads and downcast hearts, wended slowly their homeward way, mourning greatly that one so young and fair, or so old and respected, should have merited so dire a fate.</p>
+      <p>But, if the accused person opened the other door, there came forth from it a lady, the most suitable to his years and station that his majesty could select among his fair subjects; and to this lady he was immediately married, as a reward of his innocence. It mattered not that he might already possess a wife and family, or that his affections might be engaged upon an object of his own selection: the king allowed no such subordinate arrangements to interfere with his great scheme of retribution and reward. The exercises, as in the other instance, took place immediately, and in the arena. Another door opened beneath the king, and a priest, followed by a band of choristers, and dancing maidens blowing joyous airs on golden horns and treading an epithalamic measure, advanced to where the pair stood, side by side; and the wedding was promptly and cheerily solemnized. Then the gay brass bells rang forth their merry peals, the people shouted glad hurrahs, and the innocent man, preceded by children strewing flowers on his path, led his bride to his home.</p>
+      <p>This was the king's semi-barbaric method of administering justice. Its perfect fairness is obvious. The criminal could not know out of which door would come the lady: he opened either he pleased, without having the slightest idea whether, in the next instant, he was to be devoured or married. On some occasions the tiger came out of one door, and on some out of the other. The decisions of this tribunal were not only fair, they were positively determinate: the accused person was instantly punished if he found himself guilty; and, if innocent, he was rewarded on the spot, whether he liked it or not. There was no escape from the judgments of the king's arena.</p>
+      <p>The institution was a very popular one. When the people gathered together on one of the great trial days, they never knew whether they were to witness a bloody slaughter or a hilarious wedding. This element of uncertainty lent an interest to the occasion which it could not otherwise have attained. Thus, the masses were entertained and pleased, and the thinking part of the community could bring no charge of unfairness against this plan; for did not the accused person have the whole matter in his own hands?</p>
+      <p>This semi-barbaric king had a daughter as blooming as his most florid fancies, and with a soul as fervent and imperious as his own. As is usual in such cases, she was the apple of his eye, and was loved by him above all humanity. Among his courtiers was a young man of that fineness of blood and lowness of station common to the conventional heroes of romance who love royal maidens. This royal maiden was well satisfied with her lover, for he was handsome and brave to a degree unsurpassed in all this kingdom; and she loved him with an ardor that had enough of barbarism in it to make it exceedingly warm and strong. This love affair moved on happily for many months, until one day the king happened to discover its existence. He did not hesitate nor waver in regard to his duty in the premises. The youth was immediately cast into prison, and a day was appointed for his trial in the king's arena. This, of course, was an especially important occasion; and his majesty, as well as all the people, was greatly interested in the workings and development of this trial. Never before had such a case occurred; never before had a subject dared to love the daughter of a king. In after-years such things became commonplace enough; but then they were, in no slight degree, novel and startling.</p>
+      <p>The tiger-cages of the kingdom were searched for the most savage and relentless beasts, from which the fiercest monster might be selected for the arena; and the ranks of maiden youth and beauty throughout the land were carefully surveyed by competent judges, in order that the young man might have a fitting bride in case fate did not determine for him a different destiny. Of course, everybody knew that the deed with which the accused was charged had been done. He had loved the princess, and neither he, she, nor any one else thought of denying the fact; but the king would not think of allowing any fact of this kind to interfere with the workings of the tribunal, in which he took such great delight and satisfaction. No matter how the affair turned out, the youth would be disposed of; and the king would take an æsthetic pleasure in watching the course of events, which would determine whether or not the young man had done wrong in allowing himself to love the princess.</p>
+      <p>The appointed day arrived. From far and near the people gathered, and thronged the great galleries of the arena; and crowds, unable to gain admittance, massed themselves against its outside walls. The king and his court were in their places, opposite the twin doors,—those fateful portals, so terrible in their similarity.</p>
+      <p>All was ready. The signal was given. A door beneath the royal party opened, and the lover of the princess walked into the arena. Tall, beautiful, fair, his appearance was greeted with a low hum of admiration and anxiety. Half the audience had not known so grand a youth had lived among them. No wonder the princess loved him! What a terrible thing for him to be there!</p>
+      <p>As the youth advanced into the arena, he turned, as the custom was, to bow to the king: but he did not think at all of that royal personage; his eyes were fixed upon the princess, who sat to the right of her father. Had it not been for the moiety of barbarism in her nature, it is probable that lady would not have been there; but her intense and fervid soul would not allow her to be absent on an occasion in which she was so terribly interested. From the moment that the decree had gone forth, that her lover should decide his fate in the king's arena, she had thought of nothing, night or day, but this great event and the various subjects connected with it. Possessed of more power, influence, and force of character than any one who had ever before been interested in such a case, she had done what no other person had done,—she had possessed herself of the secret of the doors. She knew in which of the two rooms, that lay behind those doors, stood the cage of the tiger, with its open front, and in which waited the lady. Through these thick doors, heavily curtained with skins on the inside, it was impossible that any noise or suggestion should come from within to the person who should approach to raise the latch of one of them; but gold, and the power of a woman's will, had brought the secret to the princess.</p>
+      <p>And not only did she know in which room stood the lady ready to emerge, all blushing and radiant, should her door be opened, but she knew who the lady was. It was one of the fairest and loveliest of the damsels of the court who had been selected as the reward of the accused youth, should he be proved innocent of the crime of aspiring to one so far above him; and the princess hated her. Often had she seen, or imagined that she had seen, this fair creature throwing glances of admiration upon the person of her lover, and sometimes she thought these glances were perceived and even returned. Now and then she had seen them talking together; it was but for a moment or two, but much can be said in a brief space; it may have been on most unimportant topics, but how could she know that? The girl was lovely, but she had dared to raise her eyes to the loved one of the princess; and, with all the intensity of the savage blood transmitted to her through long lines of wholly barbaric ancestors, she hated the woman who blushed and trembled behind that silent door.</p>
+      <p>When her lover turned and looked at her, and his eye met hers as she sat there paler and whiter than any one in the vast ocean of anxious faces about her, he saw, by that power of quick perception which is given to those whose souls are one, that she knew behind which door crouched the tiger, and behind which stood the lady. He had expected her to know it. He understood her nature, and his soul was assured that she would never rest until she had made plain to herself this thing, hidden to all other lookers-on, even to the king. The only hope for the youth in which there was any element of certainty was based upon the success of the princess in discovering this mystery; and the moment he looked upon her, he saw she had succeeded, as in his soul he knew she would succeed.</p>
+      <p>Then it was that his quick and anxious glance asked the question: "Which?" It was as plain to her as if he shouted it from where he stood. There was not an instant to be lost. The question was asked in a flash; it must be answered in another.</p>
+      <p>Her right arm lay on the cushioned parapet before her. She raised her hand, and made a slight, quick movement toward the right. No one but her lover saw her. Every eye but his was fixed on the man in the arena.</p>
+      <p>He turned, and with a firm and rapid step he walked across the empty space. Every heart stopped beating, every breath was held, every eye was fixed immovably upon that man. Without the slightest hesitation, he went to the door on the right, and opened it.</p>
+      <p>Now, the point of the story is this: Did the tiger come out of that door, or did the lady?</p>
+      <p>The more we reflect upon this question, the harder it is to answer. It involves a study of the human heart which leads us through devious mazes of passion, out of which it is difficult to find our way. Think of it, fair reader, not as if the decision of the question depended upon yourself, but upon that hot-blooded, semi-barbaric princess, her soul at a white heat beneath the combined fires of despair and jealousy. She had lost him, but who should have him?</p>
+      <p>How often, in her waking hours and in her dreams, had she started in wild horror, and covered her face with her hands as she thought of her lover opening the door on the other side of which waited the cruel fangs of the tiger!</p>
+      <p>But how much oftener had she seen him at the other door! How in her grievous reveries had she gnashed her teeth, and torn her hair, when she saw his start of rapturous delight as he opened the door of the lady! How her soul had burned in agony when she had seen him rush to meet that woman, with her flushing cheek and sparkling eye of triumph; when she had seen him lead her forth, his whole frame kindled with the joy of recovered life; when she had heard the glad shouts from the multitude, and the wild ringing of the happy bells; when she had seen the priest, with his joyous followers, advance to the couple, and make them man and wife before her very eyes; and when she had seen them walk away together upon their path of flowers, followed by the tremendous shouts of the hilarious multitude, in which her one despairing shriek was lost and drowned!</p>
+      <p>Would it not be better for him to die at once, and go to wait for her in the blessed regions of semi-barbaric futurity?</p>
+      <p>And yet, that awful tiger, those shrieks, that blood!</p>
+      <p>Her decision had been indicated in an instant, but it had been made after days and nights of anguished deliberation. She had known she would be asked, she had decided what she would answer, and, without the slightest hesitation, she had moved her hand to the right.</p>
+      <p>The question of her decision is one not to be lightly considered, and it is not for me to presume to set myself up as the one person able to answer it. And so I leave it with all of you: Which came out of the opened door,—the lady, or the tiger?</p>
+      <p class="end">— THE END —</p>
+      <figure class="fig tall">
+        <img src="../img/frank-stockton.jpg" alt="Black-and-white portrait of Frank R. Stockton, a man with a moustache wearing a dark jacket" width="960" height="1313">
+        <figcaption>Frank R. Stockton. He later wrote a follow-up story, "The Discourager of Hesitancy" (1885), which still refuses to say which door opened.<span class="credit">Photo: Unknown author / Wikimedia Commons, Public domain</span></figcaption>
+      </figure>
+    </div>
+    <div class="tale-extras">
+      <div>
+        <div class="box-label">Glossary</div>
+        <dl>
+          <dt>semi-barbaric</dt><dd>half-civilised, half-savage (Stockton's running joke)</dd>
+          <dt>florid</dt><dd>very showy and over-decorated</dd>
+          <dt>exuberant</dt><dd>full of energy and excitement; overflowing</dd>
+          <dt>amphitheatre</dt><dd>a round open-air arena with rising rows of seats</dd>
+          <dt>retribution</dt><dd>punishment given as payback</dd>
+          <dt>imperious</dt><dd>proud and commanding, expecting to be obeyed</dd>
+          <dt>fervid</dt><dd>burning with strong feeling</dd>
+          <dt>parapet</dt><dd>a low wall along the edge of a balcony</dd>
+        </dl>
+      </div>
+      <div>
+        <div class="box-label">Talk about it</div>
+        <ol>
+          <li>Lady or tiger? Give your answer, then find two clues in the story that support it, and one that argues against it.</li>
+          <li>The king calls his arena a place of "impartial and incorruptible chance". Is it really fair? What does the princess's secret do to that idea?</li>
+          <li>Stockton refused to give an ending for the rest of his life. Was that a clever move or a cheat? Why do you think the story is still taught today?</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+</article>
+
+<!-- ==================== PAGE A4 ==================== -->
+<article class="sheet" aria-label="Page A4">
+  <div class="folio"><span>The Little Lion Daily</span><span>Page A4 · Fun &amp; games</span><span>Friday, 27 November 2026</span></div>
+
+  <section aria-label="Crossword">
+    <div class="kicker">Friday crossword · every answer is hiding in today's paper</div>
+    <h2 style="font-size:32px;line-height:1.05">Doors, odds and tigers</h2>
+    <p class="instr">Tap a square and type. Use the page numbers in brackets if you're stuck. Press <b>Check</b> to see which letters are right.</p>
+    <div class="xw-layout">
+    <div>
+      <div class="xw-wrap"><table class="xw" id="xw">
+        <tr><td><span class="xn">1</span><input maxlength="1" data-a="G" data-r="0" data-c="0" aria-label="row 1 column 1" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td class="xb"></td><td><span class="xn">2</span><input maxlength="1" data-a="K" data-r="0" data-c="2" aria-label="row 1 column 3" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td class="xb"></td><td class="xb"></td><td class="xb"></td><td><span class="xn">3</span><input maxlength="1" data-a="G" data-r="0" data-c="6" aria-label="row 1 column 7" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td class="xb"></td><td class="xb"></td><td class="xb"></td><td class="xb"></td></tr>
+        <tr><td><input maxlength="1" data-a="O" data-r="1" data-c="0" aria-label="row 2 column 1" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td class="xb"></td><td><input maxlength="1" data-a="I" data-r="1" data-c="2" aria-label="row 2 column 3" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td class="xb"></td><td class="xb"></td><td class="xb"></td><td><input maxlength="1" data-a="U" data-r="1" data-c="6" aria-label="row 2 column 7" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td class="xb"></td><td class="xb"></td><td class="xb"></td><td class="xb"></td></tr>
+        <tr><td><input maxlength="1" data-a="A" data-r="2" data-c="0" aria-label="row 3 column 1" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td class="xb"></td><td><input maxlength="1" data-a="N" data-r="2" data-c="2" aria-label="row 3 column 3" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td class="xb"></td><td><span class="xn">4</span><input maxlength="1" data-a="P" data-r="2" data-c="4" aria-label="row 3 column 5" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td class="xb"></td><td><span class="xn">5</span><input maxlength="1" data-a="A" data-r="2" data-c="6" aria-label="row 3 column 7" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td><input maxlength="1" data-a="R" data-r="2" data-c="7" aria-label="row 3 column 8" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td><input maxlength="1" data-a="E" data-r="2" data-c="8" aria-label="row 3 column 9" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td><input maxlength="1" data-a="N" data-r="2" data-c="9" aria-label="row 3 column 10" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td><input maxlength="1" data-a="A" data-r="2" data-c="10" aria-label="row 3 column 11" autocomplete="off" autocapitalize="characters" spellcheck="false"></td></tr>
+        <tr><td><span class="xn">6</span><input maxlength="1" data-a="T" data-r="3" data-c="0" aria-label="row 4 column 1" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td><input maxlength="1" data-a="I" data-r="3" data-c="1" aria-label="row 4 column 2" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td><input maxlength="1" data-a="G" data-r="3" data-c="2" aria-label="row 4 column 3" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td><input maxlength="1" data-a="E" data-r="3" data-c="3" aria-label="row 4 column 4" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td><input maxlength="1" data-a="R" data-r="3" data-c="4" aria-label="row 4 column 5" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td class="xb"></td><td><input maxlength="1" data-a="R" data-r="3" data-c="6" aria-label="row 4 column 7" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td class="xb"></td><td class="xb"></td><td class="xb"></td><td class="xb"></td></tr>
+        <tr><td class="xb"></td><td class="xb"></td><td class="xb"></td><td class="xb"></td><td><span class="xn">7</span><input maxlength="1" data-a="O" data-r="4" data-c="4" aria-label="row 5 column 5" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td><input maxlength="1" data-a="D" data-r="4" data-c="5" aria-label="row 5 column 6" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td><input maxlength="1" data-a="D" data-r="4" data-c="6" aria-label="row 5 column 7" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td><input maxlength="1" data-a="S" data-r="4" data-c="7" aria-label="row 5 column 8" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td class="xb"></td><td class="xb"></td><td class="xb"></td></tr>
+        <tr><td class="xb"></td><td class="xb"></td><td class="xb"></td><td class="xb"></td><td><input maxlength="1" data-a="F" data-r="5" data-c="4" aria-label="row 6 column 5" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td class="xb"></td><td class="xb"></td><td class="xb"></td><td class="xb"></td><td class="xb"></td><td class="xb"></td></tr>
+        <tr><td class="xb"></td><td class="xb"></td><td><span class="xn">8</span><input maxlength="1" data-a="P" data-r="6" data-c="2" aria-label="row 7 column 3" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td><input maxlength="1" data-a="R" data-r="6" data-c="3" aria-label="row 7 column 4" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td><input maxlength="1" data-a="I" data-r="6" data-c="4" aria-label="row 7 column 5" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td><input maxlength="1" data-a="N" data-r="6" data-c="5" aria-label="row 7 column 6" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td><span class="xn">9</span><input maxlength="1" data-a="C" data-r="6" data-c="6" aria-label="row 7 column 7" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td><input maxlength="1" data-a="E" data-r="6" data-c="7" aria-label="row 7 column 8" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td><input maxlength="1" data-a="S" data-r="6" data-c="8" aria-label="row 7 column 9" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td><span class="xn">10</span><input maxlength="1" data-a="S" data-r="6" data-c="9" aria-label="row 7 column 10" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td class="xb"></td></tr>
+        <tr><td class="xb"></td><td class="xb"></td><td><input maxlength="1" data-a="I" data-r="7" data-c="2" aria-label="row 8 column 3" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td class="xb"></td><td><input maxlength="1" data-a="T" data-r="7" data-c="4" aria-label="row 8 column 5" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td class="xb"></td><td><input maxlength="1" data-a="H" data-r="7" data-c="6" aria-label="row 8 column 7" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td class="xb"></td><td class="xb"></td><td><input maxlength="1" data-a="W" data-r="7" data-c="9" aria-label="row 8 column 10" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td class="xb"></td></tr>
+        <tr><td><span class="xn">11</span><input maxlength="1" data-a="L" data-r="8" data-c="0" aria-label="row 9 column 1" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td class="xb"></td><td><input maxlength="1" data-a="G" data-r="8" data-c="2" aria-label="row 9 column 3" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td class="xb"></td><td class="xb"></td><td><span class="xn">12</span><input maxlength="1" data-a="M" data-r="8" data-c="5" aria-label="row 9 column 6" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td><input maxlength="1" data-a="A" data-r="8" data-c="6" aria-label="row 9 column 7" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td><input maxlength="1" data-a="R" data-r="8" data-c="7" aria-label="row 9 column 8" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td><input maxlength="1" data-a="G" data-r="8" data-c="8" aria-label="row 9 column 9" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td><input maxlength="1" data-a="I" data-r="8" data-c="9" aria-label="row 9 column 10" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td><input maxlength="1" data-a="N" data-r="8" data-c="10" aria-label="row 9 column 11" autocomplete="off" autocapitalize="characters" spellcheck="false"></td></tr>
+        <tr><td><input maxlength="1" data-a="A" data-r="9" data-c="0" aria-label="row 10 column 1" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td class="xb"></td><td><input maxlength="1" data-a="E" data-r="9" data-c="2" aria-label="row 10 column 3" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td class="xb"></td><td class="xb"></td><td class="xb"></td><td><input maxlength="1" data-a="N" data-r="9" data-c="6" aria-label="row 10 column 7" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td class="xb"></td><td class="xb"></td><td><input maxlength="1" data-a="T" data-r="9" data-c="9" aria-label="row 10 column 10" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td class="xb"></td></tr>
+        <tr><td><span class="xn">13</span><input maxlength="1" data-a="D" data-r="10" data-c="0" aria-label="row 11 column 1" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td><input maxlength="1" data-a="O" data-r="10" data-c="1" aria-label="row 11 column 2" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td><input maxlength="1" data-a="O" data-r="10" data-c="2" aria-label="row 11 column 3" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td><input maxlength="1" data-a="R" data-r="10" data-c="3" aria-label="row 11 column 4" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td class="xb"></td><td class="xb"></td><td><input maxlength="1" data-a="C" data-r="10" data-c="6" aria-label="row 11 column 7" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td class="xb"></td><td class="xb"></td><td><input maxlength="1" data-a="C" data-r="10" data-c="9" aria-label="row 11 column 10" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td class="xb"></td></tr>
+        <tr><td><input maxlength="1" data-a="Y" data-r="11" data-c="0" aria-label="row 12 column 1" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td class="xb"></td><td><input maxlength="1" data-a="N" data-r="11" data-c="2" aria-label="row 12 column 3" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td class="xb"></td><td class="xb"></td><td class="xb"></td><td><input maxlength="1" data-a="E" data-r="11" data-c="6" aria-label="row 12 column 7" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td class="xb"></td><td class="xb"></td><td><input maxlength="1" data-a="H" data-r="11" data-c="9" aria-label="row 12 column 10" autocomplete="off" autocapitalize="characters" spellcheck="false"></td><td class="xb"></td></tr>
+      </table></div>
+      <div class="xw-btns"><button type="button" id="xw-check">Check</button><button type="button" id="xw-reveal">Reveal all</button><button type="button" id="xw-clear">Clear</button></div>
+      <div class="ws-status" id="xw-status" aria-live="polite"></div>
+    </div>
+    <div class="xw-clues">
+      <div class="box-label">Across</div>
+      <ol>
+          <li><b>5</b> The king's amphitheatre of "incorruptible chance" (A3) <span class="small">(5)</span></li>
+          <li><b>6</b> Fierce beast behind one of the king's two doors (A3) <span class="small">(5)</span></li>
+          <li><b>7</b> Chances, as a bookmaker would say <span class="small">(4)</span></li>
+          <li><b>8</b> She knew the secret of the doors (A3) <span class="small">(8)</span></li>
+          <li><b>12</b> Price minus the cost of making one more item (A2) <span class="small">(6)</span></li>
+          <li><b>13</b> Open one and find your fate <span class="small">(4)</span></li>
+      </ol>
+      <div class="box-label" style="margin-top:14px">Down</div>
+      <ol>
+          <li><b>1</b> The booby prize hiding behind two of the three doors (A1) <span class="small">(4)</span></li>
+          <li><b>2</b> Semi-barbaric ruler with "exuberant fancy" (A3) <span class="small">(4)</span></li>
+          <li><b>3</b> One of two in today's logic riddle: one lies, one doesn't (A4) <span class="small">(5)</span></li>
+          <li><b>4</b> What's left after every cost is paid (A2) <span class="small">(6)</span></li>
+          <li><b>8</b> Bird that learned to switch better than humans did (A1) <span class="small">(6)</span></li>
+          <li><b>9</b> Probability, or plain luck <span class="small">(6)</span></li>
+          <li><b>10</b> The winning move in the three-door game show puzzle (A1) <span class="small">(6)</span></li>
+          <li><b>11</b> The happier thing that might step out (A3) <span class="small">(4)</span></li>
+      </ol>
+    </div>
+    </div>
+  </section>
+
+  <hr class="rule-sec">
+
+  <section class="riddles" aria-label="Logic puzzles and riddles">
+    <div class="kicker">Brain teasers</div>
+    <h2>Two logic puzzles and five riddles</h2>
+    <ol>
+      <li><b>The two guards.</b> You stand before two doors. One leads to freedom, the other to a very hungry tiger. Each door has a guard. One guard always tells the truth; the other always lies. You don't know which is which, and you may ask <i>one</i> guard <i>one</i> question. What do you ask?
+        <details><summary>Show answer</summary>Point at either guard and ask: "If I asked the <i>other</i> guard which door leads to freedom, which door would he point to?" Then take the <i>opposite</i> door. If you asked the truth-teller, he truthfully reports the liar's wrong answer. If you asked the liar, he lies about the truth-teller's right answer. Either way, the answer you hear is the tiger door.</details></li>
+      <li><b>The mislabelled boxes.</b> Three boxes are labelled APPLES, ORANGES and MIXED. Every label is wrong. You may take out one fruit from one box, without looking inside. How can you then label all three correctly?
+        <details><summary>Show answer</summary>Take a fruit from the box labelled MIXED. Since its label is wrong, it holds only one kind. Say you pull out an apple: that box is APPLES. The box labelled ORANGES can't be oranges (wrong label) and can't be apples (taken), so it's MIXED. The last box is ORANGES.</details></li>
+      <li>What can you hold in your left hand but never in your right hand?
+        <details><summary>Show answer</summary>Your right elbow. (Try it.)</details></li>
+      <li>I have cities but no houses, forests but no trees, and rivers but no water. What am I?
+        <details><summary>Show answer</summary>A map.</details></li>
+      <li>Which nine-letter English word stays a real word each time you remove one letter, all the way down to a single letter?
+        <details><summary>Show answer</summary>STARTLING → starting → staring → string → sting → sing → sin → in → I.</details></li>
+      <li>一人一张口，口下长只手。（打一字）
+        <details><summary>看答案</summary>拿。"人"字头、"一"、"口"，下面再加一个"手"，合起来就是"拿"。</details></li>
+      <li>歇后语：哑巴吃黄连——？
+        <details><summary>看答案</summary>有苦说不出。黄连是很苦的中药，哑巴吃了却说不出来。比喻心里有委屈或痛苦，却没办法讲出来。</details></li>
+    </ol>
+  </section>
+
+  <section class="week" aria-label="This week's line-up">
+    <p class="week-note">Until 31 December: a short story in every edition.</p>
+    <div><b>Mon</b>Comic strip</div>
+    <div><b>Tue</b>Recipe &amp; word search</div>
+    <div><b>Wed</b>Science quiz &amp; riddles</div>
+    <div><b>Thu</b>Comic &amp; fun facts</div>
+    <div class="today"><b>Fri · today</b>Crossword &amp; logic puzzles</div>
+    <div><b>Sat</b>Weekend classic: The Yellow Wallpaper</div>
+    <div><b>Sun</b>Weekend classic &amp; surprise</div>
+  </section>
+
+  <nav class="archive" aria-label="Past editions">
+    <div class="box-label">往期 · Past editions</div>
+    <ul>
+<!--ARCHIVE-->
+      <li><a href="2026-11-27.html" aria-current="page">Fri 27 Nov 2026</a></li>
+      <li><a href="2026-11-26.html">Thu 26 Nov 2026</a></li>
+      <li><a href="2026-11-25.html">Wed 25 Nov 2026</a></li>
+      <li><a href="2026-11-24.html">Tue 24 Nov 2026</a></li>
+<!--/ARCHIVE-->
+    </ul>
+  </nav>
+
+  <div class="colophon">The Little Lion Daily · Printed with pixels in Singapore · News stories belong to CNA and Lianhe Zaobao</div>
+</article>
+
+<script>
+(function(){
+  var cells=[].slice.call(document.querySelectorAll("#xw input")), status=document.getElementById("xw-status");
+  var at={}; cells.forEach(function(c){at[c.dataset.r+","+c.dataset.c]=c;});
+  var dir="A";
+  function cell(r,c){return at[r+","+c];}
+  function move(el,step){
+    var r=+el.dataset.r,c=+el.dataset.c, dr=dir==="A"?0:1, dc=dir==="A"?1:0;
+    var n=cell(r+dr*step,c+dc*step);
+    if(!n){dir=dir==="A"?"D":"A";dr=dir==="A"?0:1;dc=dir==="A"?1:0;n=cell(r+dr*step,c+dc*step);if(!n)dir=dir==="A"?"D":"A";}
+    if(n)n.focus();
+  }
+  cells.forEach(function(el){
+    el.addEventListener("focus",function(){
+      var r=+el.dataset.r,c=+el.dataset.c;
+      var hasA=cell(r,c-1)||cell(r,c+1), hasD=cell(r-1,c)||cell(r+1,c);
+      if(dir==="A"&&!hasA&&hasD)dir="D"; else if(dir==="D"&&!hasD&&hasA)dir="A";
+      el.select();
+    });
+    el.addEventListener("click",function(){
+      var r=+el.dataset.r,c=+el.dataset.c;
+      if((cell(r,c-1)||cell(r,c+1))&&(cell(r-1,c)||cell(r+1,c))&&document.activeElement===el&&el._clicked)dir=dir==="A"?"D":"A";
+      el._clicked=true;
+    });
+    el.addEventListener("input",function(){
+      el.value=el.value.replace(/[^a-z]/gi,"").slice(-1).toUpperCase();
+      el.classList.remove("ok","bad"); status.textContent="";
+      if(el.value)move(el,1);
+    });
+    el.addEventListener("keydown",function(e){
+      var r=+el.dataset.r,c=+el.dataset.c,n=null;
+      if(e.key==="Backspace"&&!el.value){e.preventDefault();move(el,-1);return;}
+      if(e.key==="ArrowRight"){dir="A";n=cell(r,c+1);}
+      else if(e.key==="ArrowLeft"){dir="A";n=cell(r,c-1);}
+      else if(e.key==="ArrowDown"){dir="D";n=cell(r+1,c);}
+      else if(e.key==="ArrowUp"){dir="D";n=cell(r-1,c);}
+      else return;
+      e.preventDefault(); if(n)n.focus();
+    });
+  });
+  document.getElementById("xw-check").addEventListener("click",function(){
+    var right=0,filled=0;
+    cells.forEach(function(el){el.classList.remove("ok","bad");if(!el.value)return;filled++;
+      if(el.value===el.dataset.a){right++;el.classList.add("ok");}else el.classList.add("bad");});
+    status.textContent= right===cells.length ? "Solved! Every square is right. Have a great weekend." : right+" of "+cells.length+" squares correct"+(filled>right?", "+(filled-right)+" to fix.":".");
+  });
+  document.getElementById("xw-reveal").addEventListener("click",function(){
+    cells.forEach(function(el){el.value=el.dataset.a;el.classList.remove("bad");el.classList.add("ok");});
+    status.textContent="All answers revealed.";
+  });
+  document.getElementById("xw-clear").addEventListener("click",function(){
+    cells.forEach(function(el){el.value="";el.classList.remove("ok","bad");});
+    status.textContent="";
+  });
+})();
+</script>
+</body>
+</html>
